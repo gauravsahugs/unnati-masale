@@ -1,96 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Indian Spice Brand Colors */
+    --background: 251 247 243; /* Warm cream background */
+    --foreground: 69 39 30; /* Deep brown text */
+    
+    /* Traditional Indian spice colors */
+    --spice-red: 197 40 40; /* Rich red like chili */
+    --spice-turmeric: 218 165 32; /* Golden turmeric */
+    --spice-green: 76 127 75; /* Natural green like coriander */
+    --spice-orange: 212 114 55; /* Warm orange */
+    --spice-brown: 101 67 33; /* Earthy brown */
+    
+    /* Primary brand colors */
+    --primary: var(--spice-red);
+    --primary-foreground: 254 249 246;
+    
+    --secondary: 236 229 221; /* Light spice tone */
+    --secondary-foreground: var(--spice-brown);
+    
+    --accent: var(--spice-turmeric);
+    --accent-foreground: var(--spice-brown);
+    
+    --muted: 245 241 237;
+    --muted-foreground: 120 113 108;
+    
+    --card: 254 252 250;
+    --card-foreground: var(--spice-brown);
+    
+    --popover: 254 252 250;
+    --popover-foreground: var(--spice-brown);
+    
+    --border: 231 219 208;
+    --input: 231 219 208;
+    --ring: var(--spice-red);
+    
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    
+    --radius: 0.75rem;
+    
+    /* Spice-themed gradients */
+    --gradient-spice: linear-gradient(135deg, hsl(var(--spice-red)), hsl(var(--spice-orange)));
+    --gradient-warm: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--spice-red) / 0.9), hsl(var(--spice-turmeric) / 0.8));
+    
+    /* Shadows with spice colors */
+    --shadow-spice: 0 10px 30px -10px hsl(var(--spice-red) / 0.3);
+    --shadow-warm: 0 4px 20px -4px hsl(var(--spice-brown) / 0.2);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 42 25 20; /* Dark spice background */
+    --foreground: 254 249 246;
+    
+    --primary: var(--spice-red);
+    --primary-foreground: 254 249 246;
+    
+    --secondary: 69 39 30;
+    --secondary-foreground: 254 249 246;
+    
+    --accent: var(--spice-turmeric);
+    --accent-foreground: var(--spice-brown);
+    
+    --muted: 69 39 30;
+    --muted-foreground: 163 157 152;
+    
+    --card: 58 35 28;
+    --card-foreground: 254 249 246;
+    
+    --popover: 58 35 28;
+    --popover-foreground: 254 249 246;
+    
+    --border: 69 39 30;
+    --input: 69 39 30;
+    --ring: var(--spice-turmeric);
   }
 }
 
@@ -98,8 +87,53 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+  }
+}
+
+@layer components {
+  .spice-gradient {
+    background: var(--gradient-spice);
+  }
+  
+  .warm-gradient {
+    background: var(--gradient-warm);
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-spice {
+    box-shadow: var(--shadow-spice);
+  }
+  
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+  
+  .text-spice-red {
+    color: hsl(var(--spice-red));
+  }
+  
+  .text-spice-turmeric {
+    color: hsl(var(--spice-turmeric));
+  }
+  
+  .text-spice-green {
+    color: hsl(var(--spice-green));
+  }
+  
+  .bg-spice-red {
+    background-color: hsl(var(--spice-red));
+  }
+  
+  .bg-spice-turmeric {
+    background-color: hsl(var(--spice-turmeric));
+  }
+  
+  .bg-spice-green {
+    background-color: hsl(var(--spice-green));
   }
 }

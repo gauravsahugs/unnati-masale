@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+				'merriweather': ['Merriweather', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,6 +65,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				spice: {
+					red: 'hsl(var(--spice-red))',
+					turmeric: 'hsl(var(--spice-turmeric))',
+					green: 'hsl(var(--spice-green))',
+					orange: 'hsl(var(--spice-orange))',
+					brown: 'hsl(var(--spice-brown))'
 				}
 			},
 			borderRadius: {
