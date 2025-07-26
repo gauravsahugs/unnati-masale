@@ -8,7 +8,7 @@ import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 const Contact = () => {
   const contactInfo = [
     {
-      icon: <MapPin className="w-6 h-6 text-spice-red" />,
+      icon: <MapPin className="w-6 h-6 text-unnati-coral" />,
       title: 'Our Location',
       details: [
         'Plot No. 56, New Industrial Area',
@@ -17,24 +17,24 @@ const Contact = () => {
       ]
     },
     {
-      icon: <Phone className="w-6 h-6 text-spice-green" />,
+      icon: <Phone className="w-6 h-6 text-unnati-coral" />,
       title: 'Phone',
       details: ['+91-8224-929592']
     },
     {
-      icon: <Mail className="w-6 h-6 text-spice-turmeric" />,
+      icon: <Mail className="w-6 h-6 text-unnati-coral" />,
       title: 'Email',
       details: ['unnatimasaleguna@gmail.com']
     },
     {
-      icon: <Globe className="w-6 h-6 text-spice-orange" />,
+      icon: <Globe className="w-6 h-6 text-unnati-coral" />,
       title: 'Website',
       details: ['www.unnatimasale.com']
     }
   ];
 
   return (
-    <section id="contact" className="py-20 warm-gradient">
+    <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -42,8 +42,7 @@ const Contact = () => {
             Connect with Us
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to bring authentic flavors to your kitchen? Get in touch with us for 
-            bulk orders, partnerships, or any queries about our premium spices.
+            Have questions about our products? We'd love to hear from you.
           </p>
         </div>
 
@@ -61,7 +60,7 @@ const Contact = () => {
             {/* Contact Info Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {contactInfo.map((info, index) => (
-                <Card key={index} className="bg-card border-border shadow-warm">
+                <Card key={index} className="bg-card border-border shadow-soft">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="p-2 bg-secondary rounded-lg">
@@ -84,7 +83,7 @@ const Contact = () => {
             </div>
 
             {/* Business Hours */}
-            <Card className="bg-card border-border shadow-warm">
+            <Card className="bg-card border-border shadow-soft">
               <CardHeader>
                 <CardTitle className="text-card-foreground">Business Hours</CardTitle>
               </CardHeader>
@@ -108,7 +107,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="bg-card border-border shadow-warm">
+          <Card className="bg-card border-border shadow-soft">
             <CardHeader>
               <CardTitle className="text-card-foreground">Send us a Message</CardTitle>
               <CardDescription>
@@ -151,7 +150,7 @@ const Contact = () => {
                 />
               </div>
 
-              <Button className="w-full shadow-warm">
+              <Button className="w-full shadow-soft">
                 Send Message
               </Button>
 

@@ -6,80 +6,81 @@
 
 @layer base {
   :root {
-    /* Indian Spice Brand Colors */
-    --background: 251 247 243; /* Warm cream background */
-    --foreground: 69 39 30; /* Deep brown text */
+    /* Unnati Masale Brand Colors - Matching the actual website */
+    --background: 248 244 240; /* Warm cream background like the site */
+    --foreground: 64 64 64; /* Softer gray text */
     
-    /* Traditional Indian spice colors */
-    --spice-red: 197 40 40; /* Rich red like chili */
-    --spice-turmeric: 218 165 32; /* Golden turmeric */
-    --spice-green: 76 127 75; /* Natural green like coriander */
-    --spice-orange: 212 114 55; /* Warm orange */
-    --spice-brown: 101 67 33; /* Earthy brown */
+    /* Brand colors from the actual website */
+    --unnati-red: 220 53 69; /* Coral-red from the logo and buttons */
+    --unnati-coral: 231 76 60; /* The exact coral from explore button */
+    --unnati-cream: 248 244 240; /* Background cream */
+    --unnati-light-cream: 252 248 244; /* Lighter cream */
+    --unnati-dark-gray: 64 64 64; /* Text color */
+    --unnati-light-gray: 156 163 175; /* Muted text */
     
     /* Primary brand colors */
-    --primary: var(--spice-red);
-    --primary-foreground: 254 249 246;
+    --primary: var(--unnati-coral);
+    --primary-foreground: 255 255 255;
     
-    --secondary: 236 229 221; /* Light spice tone */
-    --secondary-foreground: var(--spice-brown);
+    --secondary: 249 245 241; /* Very light cream */
+    --secondary-foreground: var(--unnati-dark-gray);
     
-    --accent: var(--spice-turmeric);
-    --accent-foreground: var(--spice-brown);
+    --accent: var(--unnati-coral);
+    --accent-foreground: 255 255 255;
     
-    --muted: 245 241 237;
-    --muted-foreground: 120 113 108;
+    --muted: 249 245 241;
+    --muted-foreground: var(--unnati-light-gray);
     
-    --card: 254 252 250;
-    --card-foreground: var(--spice-brown);
+    --card: 255 255 255;
+    --card-foreground: var(--unnati-dark-gray);
     
-    --popover: 254 252 250;
-    --popover-foreground: var(--spice-brown);
+    --popover: 255 255 255;
+    --popover-foreground: var(--unnati-dark-gray);
     
-    --border: 231 219 208;
-    --input: 231 219 208;
-    --ring: var(--spice-red);
+    --border: 238 234 230;
+    --input: 238 234 230;
+    --ring: var(--unnati-coral);
     
     --destructive: 239 68 68;
-    --destructive-foreground: 248 250 252;
+    --destructive-foreground: 255 255 255;
     
-    --radius: 0.75rem;
+    --radius: 0.5rem;
     
-    /* Spice-themed gradients */
-    --gradient-spice: linear-gradient(135deg, hsl(var(--spice-red)), hsl(var(--spice-orange)));
-    --gradient-warm: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--spice-red) / 0.9), hsl(var(--spice-turmeric) / 0.8));
+    /* Elegant gradients matching the website */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--unnati-cream)), hsl(var(--unnati-light-cream)));
+    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(var(--unnati-light-cream)));
+    --gradient-coral: linear-gradient(135deg, hsl(var(--unnati-coral)), hsl(var(--unnati-red)));
     
-    /* Shadows with spice colors */
-    --shadow-spice: 0 10px 30px -10px hsl(var(--spice-red) / 0.3);
-    --shadow-warm: 0 4px 20px -4px hsl(var(--spice-brown) / 0.2);
+    /* Subtle shadows */
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-elegant: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .dark {
-    --background: 42 25 20; /* Dark spice background */
-    --foreground: 254 249 246;
+    --background: 31 31 31;
+    --foreground: 255 255 255;
     
-    --primary: var(--spice-red);
-    --primary-foreground: 254 249 246;
+    --primary: var(--unnati-coral);
+    --primary-foreground: 255 255 255;
     
-    --secondary: 69 39 30;
-    --secondary-foreground: 254 249 246;
+    --secondary: 51 51 51;
+    --secondary-foreground: 255 255 255;
     
-    --accent: var(--spice-turmeric);
-    --accent-foreground: var(--spice-brown);
+    --accent: var(--unnati-coral);
+    --accent-foreground: 255 255 255;
     
-    --muted: 69 39 30;
-    --muted-foreground: 163 157 152;
+    --muted: 51 51 51;
+    --muted-foreground: 156 163 175;
     
-    --card: 58 35 28;
-    --card-foreground: 254 249 246;
+    --card: 43 43 43;
+    --card-foreground: 255 255 255;
     
-    --popover: 58 35 28;
-    --popover-foreground: 254 249 246;
+    --popover: 43 43 43;
+    --popover-foreground: 255 255 255;
     
-    --border: 69 39 30;
-    --input: 69 39 30;
-    --ring: var(--spice-turmeric);
+    --border: 64 64 64;
+    --input: 64 64 64;
+    --ring: var(--unnati-coral);
   }
 }
 
@@ -93,47 +94,43 @@
 }
 
 @layer components {
-  .spice-gradient {
-    background: var(--gradient-spice);
-  }
-  
-  .warm-gradient {
-    background: var(--gradient-warm);
-  }
-  
   .hero-gradient {
     background: var(--gradient-hero);
   }
   
-  .shadow-spice {
-    box-shadow: var(--shadow-spice);
+  .card-gradient {
+    background: var(--gradient-card);
   }
   
-  .shadow-warm {
-    box-shadow: var(--shadow-warm);
+  .coral-gradient {
+    background: var(--gradient-coral);
   }
   
-  .text-spice-red {
-    color: hsl(var(--spice-red));
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
   }
   
-  .text-spice-turmeric {
-    color: hsl(var(--spice-turmeric));
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
   }
   
-  .text-spice-green {
-    color: hsl(var(--spice-green));
+  .text-unnati-coral {
+    color: hsl(var(--unnati-coral));
   }
   
-  .bg-spice-red {
-    background-color: hsl(var(--spice-red));
+  .text-unnati-red {
+    color: hsl(var(--unnati-red));
   }
   
-  .bg-spice-turmeric {
-    background-color: hsl(var(--spice-turmeric));
+  .bg-unnati-coral {
+    background-color: hsl(var(--unnati-coral));
   }
   
-  .bg-spice-green {
-    background-color: hsl(var(--spice-green));
+  .bg-unnati-red {
+    background-color: hsl(var(--unnati-red));
+  }
+  
+  .bg-unnati-cream {
+    background-color: hsl(var(--unnati-cream));
   }
 }

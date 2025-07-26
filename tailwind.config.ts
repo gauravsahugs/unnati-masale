@@ -66,12 +66,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				spice: {
-					red: 'hsl(var(--spice-red))',
-					turmeric: 'hsl(var(--spice-turmeric))',
-					green: 'hsl(var(--spice-green))',
-					orange: 'hsl(var(--spice-orange))',
-					brown: 'hsl(var(--spice-brown))'
+				unnati: {
+					coral: 'hsl(var(--unnati-coral))',
+					red: 'hsl(var(--unnati-red))',
+					cream: 'hsl(var(--unnati-cream))',
+					'light-cream': 'hsl(var(--unnati-light-cream))',
+					'dark-gray': 'hsl(var(--unnati-dark-gray))',
+					'light-gray': 'hsl(var(--unnati-light-gray))'
 				}
 			},
 			borderRadius: {

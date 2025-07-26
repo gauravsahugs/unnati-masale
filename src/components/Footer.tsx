@@ -1,7 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
-import { Facebook, Instagram, Twitter, Youtube, Mail } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Mail } from 'lucide-react';
+import { FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { SiFlipkart } from 'react-icons/si';
 import unnatiLogo from '@/assets/unnati-logo.png';
 
 const Footer = () => {
@@ -14,18 +16,11 @@ const Footer = () => {
   ];
 
   const productCategories = [
-    'Ground Spices',
-    'Blended Spices',
-    'Whole Spices',
-    'Specialty Masalas',
-    'Organic Range'
-  ];
-
-  const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, href: '#', label: 'Facebook' },
-    { icon: <Instagram className="w-5 h-5" />, href: '#', label: 'Instagram' },
-    { icon: <Twitter className="w-5 h-5" />, href: '#', label: 'Twitter' },
-    { icon: <Youtube className="w-5 h-5" />, href: '#', label: 'YouTube' }
+    'Red Chilli Powder',
+    'Turmeric Powder',
+    'Coriander Powder',
+    'Garam Masala',
+    'Achar Masala'
   ];
 
   return (
@@ -35,7 +30,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl font-bold text-primary-foreground mb-4">
-              Stay Updated with Unnati Masale
+              Connect with us at/Newsletter
             </h3>
             <p className="text-primary-foreground/90 mb-6">
               Get the latest recipes, cooking tips, and special offers delivered to your inbox
@@ -71,29 +66,42 @@ const Footer = () => {
               />
               <div>
                 <h3 className="text-lg font-bold text-card-foreground font-merriweather">
-                  Unnati Masale
+                  Unnati Enterprises
                 </h3>
                 <p className="text-xs text-muted-foreground">Premium Quality Spices</p>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Delivering authentic Indian spices from farm to kitchen. 
-              Experience the true taste of tradition with every pinch.
+              Committed to purity, quality, and traditional flavors.
             </p>
-            <div className="flex space-x-3">
-              {socialLinks.map((social, index) => (
-                <Button
-                  key={index}
-                  variant="outline"
-                  size="icon"
-                  className="h-8 w-8 hover:bg-primary hover:text-primary-foreground transition-colors"
-                  asChild
-                >
-                  <a href={social.href} aria-label={social.label}>
-                    {social.icon}
-                  </a>
-                </Button>
-              ))}
+            <div className="space-y-3">
+              <p className="text-xs text-muted-foreground">
+                <strong>Address:</strong> Plot No. 56, New Industrial Area, Kushmoda, Guna, Madhya Pradesh - 473001
+              </p>
+              <p className="text-xs text-muted-foreground">
+                <strong>Contact:</strong> +91-8224-929592
+              </p>
+              <p className="text-xs text-muted-foreground">
+                <strong>Email:</strong> unnatimasaleguna@gmail.com
+              </p>
+              <p className="text-xs text-muted-foreground">
+                <strong>Website:</strong> www.unnatimasale.com
+              </p>
+            </div>
+            <div className="flex space-x-4">
+              <a href="https://www.instagram.com/unnati_masale?igsh=ZGtlYjI4N2NrbWdo&utm_source=qr" target="_blank" rel="noopener noreferrer">
+                <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+              </a>
+              <a href="https://www.linkedin.com/company/unnati-masale" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+              </a>
+              <a href="https://www.facebook.com/share/14GmBTPK9P4/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+                <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+              </a>
+              <a href="https://x.com/unnatimasale?s=21" target="_blank" rel="noopener noreferrer">
+                <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+              </a>
             </div>
           </div>
 
@@ -131,25 +139,36 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-semibold text-card-foreground mb-4">Contact Info</h4>
-            <div className="space-y-3 text-sm">
-              <div>
-                <p className="text-muted-foreground">
-                  Plot No. 56, New Industrial Area<br />
-                  Kushmoda, Guna, MP – 473001
-                </p>
+          {/* Shopping & Platform Links */}
+          <div className="space-y-4">
+            <h4 className="font-semibold text-card-foreground mb-4">Shop Online</h4>
+            <div className="space-y-3">
+              <a 
+                href="https://www.flipkart.com/product/p/itme?pid=SCMHDAJ6NFUAKT8Z" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <SiFlipkart className="h-4 w-4 text-blue-600" />
+                <span>Shop on Flipkart</span>
+              </a>
+              <div className="flex items-center space-x-3 text-sm text-muted-foreground">
+                <div className="h-4 w-4 bg-yellow-500 rounded flex items-center justify-center text-white text-xs font-bold">B</div>
+                <span>Coming Soon on Blinkit</span>
               </div>
-              <div>
-                <p className="text-muted-foreground">Phone: +91-8224-929592</p>
+              <div className="flex items-center space-x-3 text-sm text-muted-foreground">
+                <div className="h-4 w-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded"></div>
+                <span>Coming Soon on Zepto</span>
               </div>
-              <div>
-                <p className="text-muted-foreground">Email: unnatimasaleguna@gmail.com</p>
-              </div>
-              <div>
-                <p className="text-muted-foreground">Website: www.unnatimasale.com</p>
-              </div>
+              <a 
+                href="https://wa.me/918224929592" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <FaWhatsapp className="h-4 w-4 text-green-500" />
+                <span>WhatsApp Chat</span>
+              </a>
             </div>
           </div>
         </div>
