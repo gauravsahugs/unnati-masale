@@ -6,81 +6,79 @@
 
 @layer base {
   :root {
-    /* Unnati Masale Brand Colors - Matching the actual website */
-    --background: 248 244 240; /* Warm cream background like the site */
-    --foreground: 64 64 64; /* Softer gray text */
-    
-    /* Brand colors from the actual website */
-    --unnati-red: 220 53 69; /* Coral-red from the logo and buttons */
-    --unnati-coral: 231 76 60; /* The exact coral from explore button */
-    --unnati-cream: 248 244 240; /* Background cream */
-    --unnati-light-cream: 252 248 244; /* Lighter cream */
-    --unnati-dark-gray: 64 64 64; /* Text color */
-    --unnati-light-gray: 156 163 175; /* Muted text */
+    /* Unnati Masale Brand Colors - Exact Brand Specification */
+    --background: 39 100% 94%; /* Creamy White (#FFF5E1) */
+    --foreground: 25 76% 31%; /* Earthy Brown (#8B4513) for text */
     
     /* Primary brand colors */
-    --primary: var(--unnati-coral);
-    --primary-foreground: 255 255 255;
+    --deep-red: 0 100% 27%; /* Deep Red (#8B0000) */
+    --warm-yellow: 51 100% 50%; /* Warm Yellow (#FFD700) */
+    --earthy-brown: 25 76% 31%; /* Earthy Brown (#8B4513) */
+    --creamy-white: 39 100% 94%; /* Creamy White (#FFF5E1) */
     
-    --secondary: 249 245 241; /* Very light cream */
-    --secondary-foreground: var(--unnati-dark-gray);
+    /* Semantic color assignments */
+    --primary: var(--deep-red); /* Deep Red for headers and accents */
+    --primary-foreground: var(--creamy-white);
     
-    --accent: var(--unnati-coral);
-    --accent-foreground: 255 255 255;
+    --secondary: var(--warm-yellow); /* Warm Yellow for backgrounds and highlights */
+    --secondary-foreground: var(--earthy-brown);
     
-    --muted: 249 245 241;
-    --muted-foreground: var(--unnati-light-gray);
+    --accent: var(--warm-yellow);
+    --accent-foreground: var(--earthy-brown);
     
-    --card: 255 255 255;
-    --card-foreground: var(--unnati-dark-gray);
+    --muted: 39 50% 88%; /* Lighter cream for muted areas */
+    --muted-foreground: 25 50% 45%; /* Lighter brown for muted text */
     
-    --popover: 255 255 255;
-    --popover-foreground: var(--unnati-dark-gray);
+    --card: var(--creamy-white);
+    --card-foreground: var(--earthy-brown);
     
-    --border: 238 234 230;
-    --input: 238 234 230;
-    --ring: var(--unnati-coral);
+    --popover: var(--creamy-white);
+    --popover-foreground: var(--earthy-brown);
     
-    --destructive: 239 68 68;
-    --destructive-foreground: 255 255 255;
+    --border: 25 40% 70%; /* Light brown for borders */
+    --input: 25 40% 70%;
+    --ring: var(--deep-red);
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--creamy-white);
     
     --radius: 0.5rem;
     
-    /* Elegant gradients matching the website */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--unnati-cream)), hsl(var(--unnati-light-cream)));
-    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(var(--unnati-light-cream)));
-    --gradient-coral: linear-gradient(135deg, hsl(var(--unnati-coral)), hsl(var(--unnati-red)));
+    /* Brand gradients using the specified colors */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--deep-red)), hsl(var(--warm-yellow)));
+    --gradient-card: linear-gradient(180deg, hsl(var(--creamy-white)), hsl(var(--warm-yellow) / 0.3));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--warm-yellow)), hsl(var(--deep-red) / 0.8));
     
-    /* Subtle shadows */
-    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-elegant: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* Elegant shadows using brand colors */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--earthy-brown) / 0.1), 0 2px 4px -1px hsl(var(--earthy-brown) / 0.06);
+    --shadow-elegant: 0 10px 15px -3px hsl(var(--deep-red) / 0.1), 0 4px 6px -2px hsl(var(--deep-red) / 0.05);
   }
 
   .dark {
-    --background: 31 31 31;
-    --foreground: 255 255 255;
+    --background: 25 30% 8%; /* Dark brown background */
+    --foreground: var(--creamy-white);
     
-    --primary: var(--unnati-coral);
-    --primary-foreground: 255 255 255;
+    --primary: var(--deep-red);
+    --primary-foreground: var(--creamy-white);
     
-    --secondary: 51 51 51;
-    --secondary-foreground: 255 255 255;
+    --secondary: 25 30% 15%; /* Dark brown secondary */
+    --secondary-foreground: var(--warm-yellow);
     
-    --accent: var(--unnati-coral);
-    --accent-foreground: 255 255 255;
+    --accent: var(--warm-yellow);
+    --accent-foreground: var(--earthy-brown);
     
-    --muted: 51 51 51;
-    --muted-foreground: 156 163 175;
+    --muted: 25 30% 15%;
+    --muted-foreground: 39 50% 70%;
     
-    --card: 43 43 43;
-    --card-foreground: 255 255 255;
+    --card: 25 30% 12%;
+    --card-foreground: var(--creamy-white);
     
-    --popover: 43 43 43;
-    --popover-foreground: 255 255 255;
+    --popover: 25 30% 12%;
+    --popover-foreground: var(--creamy-white);
     
-    --border: 64 64 64;
-    --input: 64 64 64;
-    --ring: var(--unnati-coral);
+    --border: 25 30% 20%;
+    --input: 25 30% 20%;
+    --ring: var(--warm-yellow);
   }
 }
 
@@ -102,8 +100,8 @@
     background: var(--gradient-card);
   }
   
-  .coral-gradient {
-    background: var(--gradient-coral);
+  .accent-gradient {
+    background: var(--gradient-accent);
   }
   
   .shadow-soft {
@@ -114,23 +112,31 @@
     box-shadow: var(--shadow-elegant);
   }
   
-  .text-unnati-coral {
-    color: hsl(var(--unnati-coral));
+  .text-deep-red {
+    color: hsl(var(--deep-red));
   }
   
-  .text-unnati-red {
-    color: hsl(var(--unnati-red));
+  .text-warm-yellow {
+    color: hsl(var(--warm-yellow));
   }
   
-  .bg-unnati-coral {
-    background-color: hsl(var(--unnati-coral));
+  .text-earthy-brown {
+    color: hsl(var(--earthy-brown));
   }
   
-  .bg-unnati-red {
-    background-color: hsl(var(--unnati-red));
+  .bg-deep-red {
+    background-color: hsl(var(--deep-red));
   }
   
-  .bg-unnati-cream {
-    background-color: hsl(var(--unnati-cream));
+  .bg-warm-yellow {
+    background-color: hsl(var(--warm-yellow));
+  }
+  
+  .bg-earthy-brown {
+    background-color: hsl(var(--earthy-brown));
+  }
+  
+  .bg-creamy-white {
+    background-color: hsl(var(--creamy-white));
   }
 }

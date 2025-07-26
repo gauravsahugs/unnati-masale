@@ -67,12 +67,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				unnati: {
-					coral: 'hsl(var(--unnati-coral))',
-					red: 'hsl(var(--unnati-red))',
-					cream: 'hsl(var(--unnati-cream))',
-					'light-cream': 'hsl(var(--unnati-light-cream))',
-					'dark-gray': 'hsl(var(--unnati-dark-gray))',
-					'light-gray': 'hsl(var(--unnati-light-gray))'
+					'deep-red': 'hsl(var(--deep-red))',
+					'warm-yellow': 'hsl(var(--warm-yellow))',
+					'earthy-brown': 'hsl(var(--earthy-brown))',
+					'creamy-white': 'hsl(var(--creamy-white))'
 				}
 			},
 			borderRadius: {
