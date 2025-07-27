@@ -29,7 +29,7 @@ const Contact = () => {
     {
       icon: <Globe className="w-6 h-6 text-unnati-coral" />,
       title: 'Website',
-      details: ['www.unnatimasale.com']
+      details: ['unnatimasale.com']
     }
   ];
 

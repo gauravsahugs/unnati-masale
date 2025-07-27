@@ -76,7 +76,7 @@ const ProductShowcase = () => {
                   <img 
                     src={product.image} 
                     alt={product.name}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-64 object-contain p-4 group-hover:scale-105 transition-transform duration-300"
                   />
                   {product.badge && (
                     <Badge 
@@ -109,14 +109,12 @@ const ProductShowcase = () => {
                 </div>
               </CardContent>
 
-              <CardFooter className="p-6 pt-0 space-x-2">
-                <Button size="sm" className="flex-1 shadow-warm">
-                  <ShoppingCart className="w-4 h-4 mr-2" />
-                  Buy Now
-                </Button>
-                <Button variant="outline" size="sm">
-                  Details
-                </Button>
+              <CardFooter className="p-6 pt-0">
+                <div className="text-center">
+                  <p className="text-sm text-muted-foreground">
+                    Premium Quality Guaranteed
+                  </p>
+                </div>
               </CardFooter>
             </Card>
           ))}

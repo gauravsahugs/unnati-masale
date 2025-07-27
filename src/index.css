@@ -6,37 +6,37 @@
 
 @layer base {
   :root {
-    /* Unnati Masale Brand Colors - Exact Brand Specification */
-    --background: 39 100% 94%; /* Creamy White (#FFF5E1) */
-    --foreground: 25 76% 31%; /* Earthy Brown (#8B4513) for text */
+    /* Unnati Masale Brand Colors - Sophisticated Premium Palette */
+    --background: 45 60% 96%; /* Softer creamy white */
+    --foreground: 25 35% 45%; /* Lighter earthy brown for text */
     
-    /* Primary brand colors */
-    --deep-red: 0 100% 27%; /* Deep Red (#8B0000) */
-    --warm-yellow: 51 100% 50%; /* Warm Yellow (#FFD700) */
-    --earthy-brown: 25 76% 31%; /* Earthy Brown (#8B4513) */
-    --creamy-white: 39 100% 94%; /* Creamy White (#FFF5E1) */
+    /* Primary brand colors - softer and more premium */
+    --deep-red: 0 50% 35%; /* Softer deep red */
+    --warm-yellow: 45 85% 60%; /* Softer warm yellow */
+    --earthy-brown: 25 35% 45%; /* Lighter earthy brown */
+    --creamy-white: 45 60% 96%; /* Softer creamy white */
     
-    /* Semantic color assignments */
-    --primary: var(--deep-red); /* Deep Red for headers and accents */
+    /* Semantic color assignments - premium and sophisticated */
+    --primary: var(--deep-red);
     --primary-foreground: var(--creamy-white);
     
-    --secondary: var(--warm-yellow); /* Warm Yellow for backgrounds and highlights */
+    --secondary: 45 30% 92%; /* Very light warm tone */
     --secondary-foreground: var(--earthy-brown);
     
     --accent: var(--warm-yellow);
     --accent-foreground: var(--earthy-brown);
     
-    --muted: 39 50% 88%; /* Lighter cream for muted areas */
-    --muted-foreground: 25 50% 45%; /* Lighter brown for muted text */
+    --muted: 45 15% 88%; /* Softer muted background */
+    --muted-foreground: 25 25% 55%; /* Softer muted text */
     
-    --card: var(--creamy-white);
+    --card: 0 0% 98%; /* Very light card background */
     --card-foreground: var(--earthy-brown);
     
-    --popover: var(--creamy-white);
+    --popover: 0 0% 98%;
     --popover-foreground: var(--earthy-brown);
     
-    --border: 25 40% 70%; /* Light brown for borders */
-    --input: 25 40% 70%;
+    --border: 45 15% 82%; /* Very soft borders */
+    --input: 45 15% 85%;
     --ring: var(--deep-red);
     
     --destructive: 0 84% 60%;

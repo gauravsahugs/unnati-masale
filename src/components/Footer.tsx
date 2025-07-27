@@ -11,7 +11,7 @@ const Footer = () => {
     { label: 'Home', href: '#home' },
     { label: 'Products', href: '#products' },
     { label: 'About Us', href: '#about' },
-    { label: 'Recipes', href: '#recipes' },
+    { label: 'Blog', href: '#recipes' },
     { label: 'Contact', href: '#contact' }
   ];
 
@@ -86,7 +86,7 @@ const Footer = () => {
                 <strong>Email:</strong> unnatimasaleguna@gmail.com
               </p>
               <p className="text-xs text-muted-foreground">
-                <strong>Website:</strong> www.unnatimasale.com
+                <strong>Website:</strong> unnatimasale.com
               </p>
             </div>
             <div className="flex space-x-4">

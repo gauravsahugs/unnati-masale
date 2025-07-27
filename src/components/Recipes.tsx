@@ -7,30 +7,30 @@ const Recipes = () => {
   const blogPosts = [
     {
       id: 1,
-      title: '5 Ways to Use Achar Masala',
-      description: 'Discover creative ways to use our signature achar masala beyond pickles. From vegetables to snacks, explore delicious possibilities.',
+      title: 'Authentic Achar (Pickle) Recipe',
+      description: 'Learn the traditional method of making mango pickle using our premium Achar Masala. A time-tested recipe passed down through generations.',
       image: '/placeholder.svg',
-      category: 'Cooking Tips',
-      readTime: '5 min read',
+      category: 'Traditional Recipes',
+      readTime: '15 min read',
       difficulty: 'Easy'
     },
     {
       id: 2,
-      title: 'Why Guntur Chilli is a Gamechanger',
-      description: 'Learn about the unique properties of Guntur red chillies and why they are considered the best for authentic Indian cooking.',
+      title: 'Perfect Turmeric Milk for Health',
+      description: 'Discover the healing properties of golden milk made with our pure turmeric powder. A natural immunity booster for the whole family.',
       image: '/placeholder.svg',
-      category: 'Spice Knowledge',
-      readTime: '7 min read',
+      category: 'Health & Wellness',
+      readTime: '5 min read',
       difficulty: 'Beginner'
     },
     {
       id: 3,
-      title: 'The Secret to Perfect Garam Masala',
-      description: 'Master the art of creating the perfect garam masala blend. Traditional recipes and tips from spice experts.',
+      title: 'Spicy Coriander Chutney',
+      description: 'Create a vibrant and flavorful chutney using fresh coriander and our ground coriander powder. Perfect accompaniment for any meal.',
       image: '/placeholder.svg',
-      category: 'Traditional Recipes',
+      category: 'Recipes',
       readTime: '10 min read',
-      difficulty: 'Intermediate'
+      difficulty: 'Easy'
     }
   ];
 
@@ -61,10 +61,10 @@ const Recipes = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-merriweather">
-            Spice Up Your Cooking
+            Blog & Recipes
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover recipes, cooking tips, and the fascinating world of spices with our expert guides
+            Discover authentic recipes and traditional cooking wisdom with our premium spices
           </p>
         </div>
 
