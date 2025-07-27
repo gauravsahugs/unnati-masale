@@ -1,5 +1,10 @@
 import { Card } from '@/components/ui/card';
 import { Leaf, Award, Shield, Heart } from 'lucide-react';
+import turmericSpice from '@/assets/turmeric-spice.png';
+import redChiliSpice from '@/assets/red-chili-spice.png';
+import corianderSpice from '@/assets/coriander-spice.png';
+import garamMasalaSpice from '@/assets/garam-masala-spice.png';
+import gauravKumarSahu from '@/assets/gaurav-kumar-sahu.png';
 
 const features = [
   {
@@ -129,29 +134,29 @@ const AboutUs = () => {
             <div className="bg-gradient-to-br from-card to-accent/5 rounded-3xl p-8 shadow-soft border border-border/50">
               <h4 className="text-2xl font-semibold text-foreground mb-6 font-merriweather">Premium Sourcing</h4>
               <div className="space-y-4">
-                <div className="flex items-start space-x-4 p-4 bg-background/50 rounded-xl">
-                  <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <div className="flex items-start space-x-4 p-4 bg-background/50 rounded-xl hover:bg-background/70 transition-all duration-300">
+                  <img src={redChiliSpice} alt="Red Chili" className="w-12 h-12 rounded-lg object-cover flex-shrink-0" />
                   <div>
                     <span className="font-medium text-foreground">Red Chili</span>
                     <p className="text-sm text-muted-foreground">from Guntur (Andhra Pradesh)</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4 p-4 bg-background/50 rounded-xl">
-                  <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                <div className="flex items-start space-x-4 p-4 bg-background/50 rounded-xl hover:bg-background/70 transition-all duration-300">
+                  <img src={turmericSpice} alt="Turmeric" className="w-12 h-12 rounded-lg object-cover flex-shrink-0" />
                   <div>
                     <span className="font-medium text-foreground">Turmeric</span>
                     <p className="text-sm text-muted-foreground">from Erode, Salem, Nizamabad & Sangli</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4 p-4 bg-background/50 rounded-xl">
-                  <div className="w-3 h-3 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                <div className="flex items-start space-x-4 p-4 bg-background/50 rounded-xl hover:bg-background/70 transition-all duration-300">
+                  <img src={corianderSpice} alt="Coriander" className="w-12 h-12 rounded-lg object-cover flex-shrink-0" />
                   <div>
                     <span className="font-medium text-foreground">Coriander</span>
                     <p className="text-sm text-muted-foreground">from Guna and Kumbhraj (Madhya Pradesh)</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4 p-4 bg-background/50 rounded-xl">
-                  <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <div className="flex items-start space-x-4 p-4 bg-background/50 rounded-xl hover:bg-background/70 transition-all duration-300">
+                  <img src={garamMasalaSpice} alt="Garam Spices" className="w-12 h-12 rounded-lg object-cover flex-shrink-0" />
                   <div>
                     <span className="font-medium text-foreground">Garam Spices</span>
                     <p className="text-sm text-muted-foreground">from Kerala, Uttarakhand & North-East states</p>
@@ -183,8 +188,8 @@ const AboutUs = () => {
 
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-8">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-soft">
-                  <span className="text-4xl font-bold text-primary">👤</span>
+                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 shadow-elegant border-4 border-accent/20">
+                  <img src={gauravKumarSahu} alt="Gaurav Kumar Sahu" className="w-full h-full object-cover" />
                 </div>
                 <h4 className="text-2xl font-bold text-foreground font-merriweather mb-2">
                   Gaurav Kumar Sahu
