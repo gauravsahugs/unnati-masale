@@ -6,52 +6,54 @@
 
 @layer base {
   :root {
-    /* Unnati Masale Brand Colors - Sophisticated Premium Palette */
-    --background: 45 60% 96%; /* Softer creamy white */
-    --foreground: 25 35% 45%; /* Lighter earthy brown for text */
+    /* Amasale Brand Colors - Premium Authentic Palette */
+    --background: 40 85% 94%; /* #FEF3E2 - Warm cream background */
+    --foreground: 15 45% 25%; /* Dark brown for text */
     
-    /* Primary brand colors - softer and more premium */
-    --deep-red: 0 50% 35%; /* Softer deep red */
-    --warm-yellow: 45 85% 60%; /* Softer warm yellow */
-    --earthy-brown: 25 35% 45%; /* Lighter earthy brown */
-    --creamy-white: 45 60% 96%; /* Softer creamy white */
+    /* Primary brand colors - authentic and premium */
+    --primary-cream: 40 85% 94%; /* #FEF3E2 */
+    --warm-gold: 45 95% 58%; /* #FAB12F */
+    --rich-orange: 25 95% 58%; /* #FA812F */
+    --vibrant-red: 5 95% 58%; /* #FA4032 */
     
-    /* Semantic color assignments - premium and sophisticated */
-    --primary: var(--deep-red);
-    --primary-foreground: var(--creamy-white);
+    /* Semantic color assignments - authentic and premium */
+    --primary: var(--vibrant-red);
+    --primary-foreground: var(--primary-cream);
     
-    --secondary: 45 30% 92%; /* Very light warm tone */
-    --secondary-foreground: var(--earthy-brown);
+    --secondary: var(--rich-orange);
+    --secondary-foreground: var(--primary-cream);
     
-    --accent: var(--warm-yellow);
-    --accent-foreground: var(--earthy-brown);
+    --accent: var(--warm-gold);
+    --accent-foreground: 15 45% 25%;
     
-    --muted: 45 15% 88%; /* Softer muted background */
-    --muted-foreground: 25 25% 55%; /* Softer muted text */
+    --muted: 40 60% 88%;
+    --muted-foreground: 15 30% 55%;
     
-    --card: 0 0% 98%; /* Very light card background */
-    --card-foreground: var(--earthy-brown);
+    --card: var(--primary-cream);
+    --card-foreground: 15 45% 25%;
     
-    --popover: 0 0% 98%;
-    --popover-foreground: var(--earthy-brown);
+    --popover: var(--primary-cream);
+    --popover-foreground: 15 45% 25%;
     
-    --border: 45 15% 82%; /* Very soft borders */
-    --input: 45 15% 85%;
-    --ring: var(--deep-red);
+    --border: 40 40% 82%;
+    --input: 40 40% 85%;
+    --ring: var(--vibrant-red);
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: var(--creamy-white);
+    --destructive-foreground: var(--primary-cream);
     
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
-    /* Brand gradients using the specified colors */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--deep-red)), hsl(var(--warm-yellow)));
-    --gradient-card: linear-gradient(180deg, hsl(var(--creamy-white)), hsl(var(--warm-yellow) / 0.3));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--warm-yellow)), hsl(var(--deep-red) / 0.8));
+    /* Amasale brand gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--vibrant-red)), hsl(var(--warm-gold)));
+    --gradient-card: linear-gradient(180deg, hsl(var(--primary-cream)), hsl(var(--warm-gold) / 0.2));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--warm-gold)), hsl(var(--rich-orange)));
+    --gradient-premium: linear-gradient(135deg, hsl(var(--primary-cream)), hsl(var(--warm-gold) / 0.3), hsl(var(--rich-orange) / 0.2));
     
-    /* Elegant shadows using brand colors */
-    --shadow-soft: 0 4px 6px -1px hsl(var(--earthy-brown) / 0.1), 0 2px 4px -1px hsl(var(--earthy-brown) / 0.06);
-    --shadow-elegant: 0 10px 15px -3px hsl(var(--deep-red) / 0.1), 0 4px 6px -2px hsl(var(--deep-red) / 0.05);
+    /* Premium shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--rich-orange) / 0.1), 0 2px 4px -1px hsl(var(--rich-orange) / 0.06);
+    --shadow-elegant: 0 20px 25px -5px hsl(var(--vibrant-red) / 0.1), 0 10px 10px -5px hsl(var(--vibrant-red) / 0.04);
+    --shadow-premium: 0 25px 50px -12px hsl(var(--warm-gold) / 0.25);
   }
 
   .dark {
@@ -91,20 +93,43 @@
   }
 }
 
-/* Custom animations for Hero section */
+/* Premium animations for Amasale */
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(180deg); }
+  50% { transform: translateY(-15px) rotate(180deg); }
 }
 
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(var(--warm-gold) / 0.4);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 40px hsl(var(--warm-gold) / 0.6);
+    transform: scale(1.05);
+  }
 }
 
-@keyframes spin-reverse {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
+@keyframes slide-up {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from { 
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes gradient {
@@ -116,12 +141,16 @@
   animation: float 6s ease-in-out infinite;
 }
 
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
-.animate-spin-reverse {
-  animation: spin-reverse 15s linear infinite;
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.6s ease-out;
 }
 
 .animate-gradient {
@@ -150,31 +179,52 @@
     box-shadow: var(--shadow-elegant);
   }
   
-  .text-deep-red {
-    color: hsl(var(--deep-red));
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
   }
   
-  .text-warm-yellow {
-    color: hsl(var(--warm-yellow));
+  /* Amasale Brand Color Classes */
+  .text-primary-cream {
+    color: hsl(var(--primary-cream));
   }
   
-  .text-earthy-brown {
-    color: hsl(var(--earthy-brown));
+  .text-warm-gold {
+    color: hsl(var(--warm-gold));
   }
   
-  .bg-deep-red {
-    background-color: hsl(var(--deep-red));
+  .text-rich-orange {
+    color: hsl(var(--rich-orange));
   }
   
-  .bg-warm-yellow {
-    background-color: hsl(var(--warm-yellow));
+  .text-vibrant-red {
+    color: hsl(var(--vibrant-red));
   }
   
-  .bg-earthy-brown {
-    background-color: hsl(var(--earthy-brown));
+  .bg-primary-cream {
+    background-color: hsl(var(--primary-cream));
   }
   
-  .bg-creamy-white {
-    background-color: hsl(var(--creamy-white));
+  .bg-warm-gold {
+    background-color: hsl(var(--warm-gold));
+  }
+  
+  .bg-rich-orange {
+    background-color: hsl(var(--rich-orange));
+  }
+  
+  .bg-vibrant-red {
+    background-color: hsl(var(--vibrant-red));
+  }
+  
+  .from-primary-cream {
+    --tw-gradient-from: hsl(var(--primary-cream));
+  }
+  
+  .via-warm-gold {
+    --tw-gradient-via: hsl(var(--warm-gold));
+  }
+  
+  .to-rich-orange {
+    --tw-gradient-to: hsl(var(--rich-orange));
   }
 }
