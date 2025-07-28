@@ -4,7 +4,7 @@ import turmericSpice from '@/assets/turmeric-spice.png';
 import redChiliSpice from '@/assets/red-chili-spice.png';
 import corianderSpice from '@/assets/coriander-spice.png';
 import garamMasalaSpice from '@/assets/garam-masala-spice.png';
-import gauravKumarSahu from '@/assets/gaurav-kumar-sahu.png';
+import founderAmasale from '@/assets/founder-amasale.png';
 
 const features = [
   {
@@ -188,8 +188,8 @@ const AboutUs = () => {
 
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-8">
-                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 shadow-elegant border-4 border-accent/20">
-                  <img src={gauravKumarSahu} alt="Gaurav Kumar Sahu" className="w-full h-full object-cover" />
+                <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 shadow-elegant border-4 border-primary/20 bg-gradient-to-br from-primary/10 to-accent/10 p-2">
+                  <img src={founderAmasale} alt="Gaurav Kumar Sahu - Founder of Amasale" className="w-full h-full object-cover rounded-full" />
                 </div>
                 <h4 className="text-2xl font-bold text-foreground font-merriweather mb-2">
                   Gaurav Kumar Sahu

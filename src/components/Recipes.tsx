@@ -2,14 +2,20 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Clock, Users, ArrowRight } from 'lucide-react';
+import mangoPickleImage from '@/assets/recipe-mango-pickle.jpg';
+import turmericMilkImage from '@/assets/recipe-turmeric-milk.jpg';
+import corianderChutneyImage from '@/assets/recipe-coriander-chutney.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const Recipes = () => {
+  const navigate = useNavigate();
+  
   const blogPosts = [
     {
       id: 1,
       title: 'Authentic Achar (Pickle) Recipe',
       description: 'Learn the traditional method of making mango pickle using our premium Achar Masala. A time-tested recipe passed down through generations.',
-      image: '/placeholder.svg',
+      image: mangoPickleImage,
       category: 'Traditional Recipes',
       readTime: '15 min read',
       difficulty: 'Easy'
@@ -18,7 +24,7 @@ const Recipes = () => {
       id: 2,
       title: 'Perfect Turmeric Milk for Health',
       description: 'Discover the healing properties of golden milk made with our pure turmeric powder. A natural immunity booster for the whole family.',
-      image: '/placeholder.svg',
+      image: turmericMilkImage,
       category: 'Health & Wellness',
       readTime: '5 min read',
       difficulty: 'Beginner'
@@ -27,7 +33,7 @@ const Recipes = () => {
       id: 3,
       title: 'Spicy Coriander Chutney',
       description: 'Create a vibrant and flavorful chutney using fresh coriander and our ground coriander powder. Perfect accompaniment for any meal.',
-      image: '/placeholder.svg',
+      image: corianderChutneyImage,
       category: 'Recipes',
       readTime: '10 min read',
       difficulty: 'Easy'
@@ -70,29 +76,37 @@ const Recipes = () => {
 
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {blogPosts.map((post) => (
+          {blogPosts.map((post, index) => (
             <Card 
               key={post.id} 
-              className="group hover:shadow-warm transition-all duration-300 hover:-translate-y-2 bg-card border-border"
+              className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-3 hover:scale-105 bg-card/80 backdrop-blur-sm border-border/50 overflow-hidden"
+              style={{
+                animationDelay: `${index * 150}ms`
+              }}
             >
               <CardHeader className="p-0">
                 <div className="relative overflow-hidden rounded-t-lg">
-                  <div className="w-full h-48 bg-gradient-to-br from-spice-red/20 to-spice-turmeric/20 flex items-center justify-center">
-                    <div className="text-6xl opacity-20">🌶️</div>
-                  </div>
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                   <Badge 
-                    className="absolute top-3 left-3 bg-primary text-primary-foreground"
+                    className="absolute top-4 left-4 bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-md animate-pulse-glow"
                   >
                     {post.category}
                   </Badge>
+                  
+                  {/* Animated overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               </CardHeader>
 
               <CardContent className="p-6">
-                <CardTitle className="text-lg font-semibold mb-3 text-card-foreground group-hover:text-primary transition-colors">
+                <CardTitle className="text-lg font-semibold mb-3 text-card-foreground group-hover:text-primary transition-colors duration-300">
                   {post.title}
                 </CardTitle>
-                <CardDescription className="text-muted-foreground mb-4 line-clamp-3">
+                <CardDescription className="text-muted-foreground mb-4 leading-relaxed line-clamp-3">
                   {post.description}
                 </CardDescription>
                 
@@ -101,7 +115,7 @@ const Recipes = () => {
                     <Clock className="w-4 h-4" />
                     <span>{post.readTime}</span>
                   </div>
-                  <Badge variant="outline" className="text-xs">
+                  <Badge variant="outline" className="text-xs bg-secondary/30">
                     {post.difficulty}
                   </Badge>
                 </div>
@@ -110,10 +124,11 @@ const Recipes = () => {
               <CardFooter className="p-6 pt-0">
                 <Button 
                   variant="outline" 
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 hover:scale-105"
+                  onClick={() => navigate('/coming-soon')}
                 >
-                  Read Article
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  Read Recipe
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </CardFooter>
             </Card>
@@ -148,8 +163,12 @@ const Recipes = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button size="lg" className="shadow-warm">
-            Read More Recipes
+          <Button 
+            size="lg" 
+            className="shadow-elegant hover:scale-105 transition-all duration-300"
+            onClick={() => navigate('/coming-soon')}
+          >
+            Explore More Recipes
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </div>

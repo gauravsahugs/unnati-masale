@@ -89,25 +89,31 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Founder Section */}
+          {/* Hero Visual Element */}
           <div className="relative animate-fade-in-scale">
             <div className="relative">
-              {/* Founder Image with Premium Frame */}
+              {/* Premium Spice Display */}
               <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96">
-                <div className="absolute inset-0 bg-gradient-to-br from-warm-gold via-rich-orange to-vibrant-red rounded-full animate-pulse-glow"></div>
-                <div className="absolute inset-2 bg-primary-cream rounded-full shadow-elegant"></div>
-                <img 
-                  src={founderImage} 
-                  alt="Founder of Amasale" 
-                  className="absolute inset-4 w-full h-full object-cover rounded-full shadow-premium"
-                />
+                <div className="absolute inset-0 bg-gradient-to-br from-warm-gold via-rich-orange to-vibrant-red rounded-full animate-pulse-glow opacity-20"></div>
+                <div className="absolute inset-2 bg-gradient-to-br from-primary-cream/90 to-background/80 rounded-full shadow-elegant backdrop-blur-sm"></div>
+                
+                {/* Floating Spice Elements */}
+                <div className="absolute inset-8 flex items-center justify-center">
+                  <div className="text-8xl lg:text-9xl opacity-80 animate-pulse-glow text-vibrant-red">🌶️</div>
+                </div>
+                
+                {/* Orbiting Elements */}
+                <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-warm-gold/30 rounded-full animate-orbit"></div>
+                <div className="absolute right-8 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-rich-orange/40 rounded-full animate-orbit-reverse"></div>
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-vibrant-red/35 rounded-full animate-orbit delay-1000"></div>
+                <div className="absolute left-8 top-1/2 transform -translate-y-1/2 w-6 h-6 bg-warm-gold/45 rounded-full animate-orbit-reverse delay-500"></div>
               </div>
               
-              {/* Founder Info Card */}
+              {/* Heritage Badge */}
               <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-card/95 backdrop-blur-md rounded-2xl px-6 py-4 shadow-premium border border-warm-gold/20">
                 <div className="text-center">
-                  <h3 className="font-bold text-lg text-foreground">Gaurav Kumar Sahu</h3>
-                  <p className="text-muted-foreground text-sm">Founder & Heritage Keeper</p>
+                  <h3 className="font-bold text-lg text-foreground">Pure Amasale</h3>
+                  <p className="text-muted-foreground text-sm">Heritage Spices</p>
                   <div className="flex items-center justify-center mt-2 space-x-1">
                     <Star className="w-4 h-4 text-warm-gold fill-current" />
                     <span className="text-xs text-warm-gold font-medium">Authentic Legacy</span>
