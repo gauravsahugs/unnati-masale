@@ -128,7 +128,6 @@
   background-size: 200% 200%;
   animation: gradient 4s ease infinite;
 }
-}
 
 @layer components {
   .hero-gradient {
