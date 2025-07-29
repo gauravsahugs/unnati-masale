@@ -53,17 +53,8 @@ const Hero = () => {
               Experience the true essence of Indian cuisine with our premium quality spices, sourced directly from the finest farms across India.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-vibrant-red to-rich-orange text-white hover:from-vibrant-red/90 hover:to-rich-orange/90 shadow-elegant group font-semibold px-8 py-4 text-lg"
-                onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                <ShoppingCart className="mr-2 h-5 w-5" />
-                Shop Now
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            {/* CTA Button */}
+            <div className="flex justify-center sm:justify-start">
               <Button 
                 variant="outline" 
                 size="lg"
