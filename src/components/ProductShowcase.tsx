@@ -69,9 +69,9 @@ const ProductShowcase = () => {
           {products.map((product, index) => (
             <Card 
               key={product.id} 
-              className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-3 hover:scale-105 border-border/50 bg-card/80 backdrop-blur-sm overflow-hidden"
+              className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] border-border/50 bg-card/80 backdrop-blur-sm overflow-hidden animate-fade-in"
               style={{
-                animationDelay: `${index * 100}ms`
+                animationDelay: `${index * 150}ms`
               }}
             >
               <CardHeader className="p-0">
@@ -107,19 +107,33 @@ const ProductShowcase = () => {
                 <CardTitle className="text-lg font-semibold text-card-foreground group-hover:text-primary transition-colors duration-300">
                   {product.name}
                 </CardTitle>
-                <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+                <CardDescription className="text-sm text-muted-foreground leading-relaxed mb-4">
                   {product.description}
                 </CardDescription>
-                <div className="text-xl font-bold text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  {product.price}
+                <div className="flex items-center justify-between">
+                  <div className="text-2xl font-bold text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    {product.price}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Weight: 1kg
+                  </div>
                 </div>
               </CardContent>
 
               <CardFooter className="p-6 pt-0">
-                <div className="w-full text-center">
-                  <div className="inline-flex items-center space-x-2 text-sm text-muted-foreground bg-secondary/30 px-3 py-1.5 rounded-full">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span>Premium Quality</span>
+                <div className="w-full space-y-3">
+                  <Button 
+                    className="w-full bg-gradient-to-r from-vibrant-red to-rich-orange text-white hover:from-vibrant-red/90 hover:to-rich-orange/90 transition-all duration-300 group"
+                    onClick={() => window.location.href = '/coming-soon'}
+                  >
+                    <ShoppingCart className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                    Add to Cart
+                  </Button>
+                  <div className="text-center">
+                    <div className="inline-flex items-center space-x-2 text-sm text-muted-foreground bg-secondary/30 px-3 py-1.5 rounded-full">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span>Premium Quality</span>
+                    </div>
                   </div>
                 </div>
               </CardFooter>
@@ -136,6 +150,7 @@ const ProductShowcase = () => {
                 key={category}
                 variant="outline" 
                 className="hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-md"
+                onClick={() => window.location.href = '/coming-soon'}
               >
                 {category}
               </Button>

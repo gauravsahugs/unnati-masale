@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Star, Award, Heart } from 'lucide-react';
-// Using the uploaded founder image
-const founderImage = '/lovable-uploads/9423ab2a-273c-4c9b-9362-a0a83a151995.png';
+import { ArrowRight, Award, ShoppingCart } from 'lucide-react';
+import heroSpices from '@/assets/hero-spices.jpg';
 
 const Hero = () => {
   return (
@@ -30,25 +29,28 @@ const Hero = () => {
             {/* Heritage Badge */}
             <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-warm-gold/20 to-rich-orange/20 backdrop-blur-md rounded-full px-6 py-3 border border-warm-gold/30 shadow-premium">
               <Award className="w-5 h-5 text-vibrant-red" />
-              <span className="text-foreground font-semibold">Authentic Heritage Since 2+ Years</span>
+              <span className="text-foreground font-semibold">Farm Fresh • Authentic • Pure</span>
             </div>
 
             {/* Main Heading */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-merriweather leading-tight">
-                <span className="text-vibrant-red">Pure</span>{' '}
                 <span className="bg-gradient-to-r from-warm-gold via-rich-orange to-vibrant-red bg-clip-text text-transparent animate-gradient">
                   Amasale
                 </span>
                 <br />
-                <span className="text-foreground">Heritage</span>
+                <span className="text-foreground">Spices</span>
               </h1>
             </div>
 
+            {/* Tagline */}
+            <p className="text-2xl md:text-3xl text-vibrant-red font-semibold leading-relaxed">
+              Bringing Authentic Indian Spices from Farm to Your Table
+            </p>
+
             {/* Subtext */}
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl">
-              From our family's traditional recipes to your kitchen. 
-              <span className="text-vibrant-red font-semibold">Authentic spices</span> that carry the soul of India.
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+              Experience the true essence of Indian cuisine with our premium quality spices, sourced directly from the finest farms across India.
             </p>
 
             {/* CTA Buttons */}
@@ -58,17 +60,17 @@ const Hero = () => {
                 className="bg-gradient-to-r from-vibrant-red to-rich-orange text-white hover:from-vibrant-red/90 hover:to-rich-orange/90 shadow-elegant group font-semibold px-8 py-4 text-lg"
                 onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Explore Our Spices
+                <ShoppingCart className="mr-2 h-5 w-5" />
+                Shop Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 className="border-2 border-warm-gold text-warm-gold hover:bg-warm-gold hover:text-white backdrop-blur-sm font-semibold px-8 py-4 text-lg transition-all duration-300"
-                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <Heart className="mr-2 h-5 w-5" />
-                Our Heritage
+                Explore Products
               </Button>
             </div>
 
@@ -92,31 +94,30 @@ const Hero = () => {
           {/* Hero Visual Element */}
           <div className="relative animate-fade-in-scale">
             <div className="relative">
-              {/* Premium Spice Display */}
-              <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96">
-                <div className="absolute inset-0 bg-gradient-to-br from-warm-gold via-rich-orange to-vibrant-red rounded-full animate-pulse-glow opacity-20"></div>
-                <div className="absolute inset-2 bg-gradient-to-br from-primary-cream/90 to-background/80 rounded-full shadow-elegant backdrop-blur-sm"></div>
-                
-                {/* Floating Spice Elements */}
-                <div className="absolute inset-8 flex items-center justify-center">
-                  <div className="text-8xl lg:text-9xl opacity-80 animate-pulse-glow text-vibrant-red">🌶️</div>
-                </div>
-                
-                {/* Orbiting Elements */}
-                <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-warm-gold/30 rounded-full animate-orbit"></div>
-                <div className="absolute right-8 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-rich-orange/40 rounded-full animate-orbit-reverse"></div>
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-vibrant-red/35 rounded-full animate-orbit delay-1000"></div>
-                <div className="absolute left-8 top-1/2 transform -translate-y-1/2 w-6 h-6 bg-warm-gold/45 rounded-full animate-orbit-reverse delay-500"></div>
-              </div>
-              
-              {/* Heritage Badge */}
-              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-card/95 backdrop-blur-md rounded-2xl px-6 py-4 shadow-premium border border-warm-gold/20">
-                <div className="text-center">
-                  <h3 className="font-bold text-lg text-foreground">Pure Amasale</h3>
-                  <p className="text-muted-foreground text-sm">Heritage Spices</p>
-                  <div className="flex items-center justify-center mt-2 space-x-1">
-                    <Star className="w-4 h-4 text-warm-gold fill-current" />
-                    <span className="text-xs text-warm-gold font-medium">Authentic Legacy</span>
+              {/* Premium Spice Showcase */}
+              <div className="relative mx-auto max-w-lg">
+                <div className="relative overflow-hidden rounded-3xl shadow-elegant bg-gradient-to-br from-primary-cream/90 to-background/80 backdrop-blur-sm border border-warm-gold/20">
+                  <img 
+                    src={heroSpices} 
+                    alt="Premium Indian Spices Collection"
+                    className="w-full h-80 lg:h-96 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent"></div>
+                  
+                  {/* Floating Quality Badge */}
+                  <div className="absolute top-6 right-6 bg-card/95 backdrop-blur-md rounded-2xl px-4 py-2 shadow-premium border border-warm-gold/20">
+                    <div className="text-center">
+                      <div className="text-vibrant-red font-bold text-sm">100%</div>
+                      <div className="text-xs text-muted-foreground">Pure</div>
+                    </div>
+                  </div>
+                  
+                  {/* Bottom Info Card */}
+                  <div className="absolute bottom-6 left-6 right-6 bg-card/95 backdrop-blur-md rounded-2xl px-6 py-4 shadow-premium border border-warm-gold/20">
+                    <div className="text-center">
+                      <h3 className="font-bold text-lg text-foreground">Premium Spice Collection</h3>
+                      <p className="text-muted-foreground text-sm">Handpicked from India's finest farms</p>
+                    </div>
                   </div>
                 </div>
               </div>
