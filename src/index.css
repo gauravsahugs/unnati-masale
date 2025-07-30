@@ -6,15 +6,15 @@
 
 @layer base {
   :root {
-    /* Amasale Brand Colors - Premium Authentic Palette */
-    --background: 40 85% 94%; /* #FEF3E2 - Warm cream background */
-    --foreground: 15 45% 25%; /* Dark brown for text */
+    /* Unnati Masale Brand Colors - Premium Authentic Palette with Improved Accessibility */
+    --background: 40 85% 96%; /* Lighter cream background for better contrast */
+    --foreground: 15 45% 20%; /* Darker text for better readability */
     
-    /* Primary brand colors - authentic and premium */
-    --primary-cream: 40 85% 94%; /* #FEF3E2 */
-    --warm-gold: 45 95% 58%; /* #FAB12F */
-    --rich-orange: 25 95% 58%; /* #FA812F */
-    --vibrant-red: 5 95% 58%; /* #FA4032 */
+    /* Primary brand colors - authentic and premium with improved contrast */
+    --primary-cream: 40 85% 96%; /* Slightly lighter cream */
+    --warm-gold: 45 85% 50%; /* Reduced saturation for better accessibility */
+    --rich-orange: 25 80% 55%; /* Improved contrast ratio */
+    --vibrant-red: 5 80% 50%; /* Better contrast for text */
     
     /* Semantic color assignments - authentic and premium */
     --primary: var(--vibrant-red);
@@ -24,19 +24,19 @@
     --secondary-foreground: var(--primary-cream);
     
     --accent: var(--warm-gold);
-    --accent-foreground: 15 45% 25%;
+    --accent-foreground: 15 45% 20%; /* Darker for better contrast */
     
-    --muted: 40 60% 88%;
-    --muted-foreground: 15 30% 55%;
+    --muted: 40 60% 92%; /* Lighter muted background */
+    --muted-foreground: 15 30% 45%; /* Improved contrast for muted text */
     
     --card: var(--primary-cream);
-    --card-foreground: 15 45% 25%;
+    --card-foreground: 15 45% 20%;
     
     --popover: var(--primary-cream);
-    --popover-foreground: 15 45% 25%;
+    --popover-foreground: 15 45% 20%;
     
-    --border: 40 40% 82%;
-    --input: 40 40% 85%;
+    --border: 40 40% 80%; /* Slightly darker borders */
+    --input: 40 40% 82%; /* Better input visibility */
     --ring: var(--vibrant-red);
     
     --destructive: 0 84% 60%;
@@ -58,29 +58,29 @@
 
   .dark {
     --background: 25 30% 8%; /* Dark brown background */
-    --foreground: var(--creamy-white);
+    --foreground: 40 85% 96%; /* Light cream text for better contrast */
     
-    --primary: var(--deep-red);
-    --primary-foreground: var(--creamy-white);
+    --primary: 5 80% 60%; /* Brighter red for dark mode */
+    --primary-foreground: 40 85% 96%;
     
-    --secondary: 25 30% 15%; /* Dark brown secondary */
-    --secondary-foreground: var(--warm-yellow);
+    --secondary: 25 80% 60%; /* Brighter orange for dark mode */
+    --secondary-foreground: 40 85% 96%;
     
-    --accent: var(--warm-yellow);
-    --accent-foreground: var(--earthy-brown);
+    --accent: 45 85% 65%; /* Brighter gold for dark mode */
+    --accent-foreground: 25 30% 8%;
     
     --muted: 25 30% 15%;
-    --muted-foreground: 39 50% 70%;
+    --muted-foreground: 39 50% 75%; /* Improved contrast for dark mode */
     
     --card: 25 30% 12%;
-    --card-foreground: var(--creamy-white);
+    --card-foreground: 40 85% 96%;
     
     --popover: 25 30% 12%;
-    --popover-foreground: var(--creamy-white);
+    --popover-foreground: 40 85% 96%;
     
     --border: 25 30% 20%;
     --input: 25 30% 20%;
-    --ring: var(--warm-yellow);
+    --ring: 45 85% 65%; /* Brighter gold ring */
   }
 }
 

@@ -34,18 +34,18 @@ const Hero = () => {
 
             {/* Main Heading */}
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-merriweather leading-tight">
-                <span className="bg-gradient-to-r from-warm-gold via-rich-orange to-vibrant-red bg-clip-text text-transparent animate-gradient">
-                  Amasale
-                </span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-merriweather leading-tight">
+                <span className="text-foreground">Authentic Indian Spices,</span>
                 <br />
-                <span className="text-foreground">Spices</span>
+                <span className="bg-gradient-to-r from-warm-gold via-rich-orange to-vibrant-red bg-clip-text text-transparent animate-gradient">
+                  Crafted for Every Kitchen
+                </span>
               </h1>
             </div>
 
-            {/* Tagline */}
+            {/* Brand */}
             <p className="text-2xl md:text-3xl text-vibrant-red font-semibold leading-relaxed">
-              Bringing Authentic Indian Spices from Farm to Your Table
+              Unnati Masale - Farm to Table Excellence
             </p>
 
             {/* Subtext */}
@@ -56,9 +56,8 @@ const Hero = () => {
             {/* CTA Button */}
             <div className="flex justify-center sm:justify-start">
               <Button 
-                variant="outline" 
                 size="lg"
-                className="border-2 border-warm-gold text-warm-gold hover:bg-warm-gold hover:text-white backdrop-blur-sm font-semibold px-8 py-4 text-lg transition-all duration-300"
+                className="bg-gradient-to-r from-vibrant-red to-rich-orange text-white hover:from-vibrant-red/90 hover:to-rich-orange/90 shadow-elegant font-semibold px-8 py-4 text-lg transition-all duration-300"
                 onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Explore Products

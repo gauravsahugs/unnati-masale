@@ -44,8 +44,13 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Contact Button */}
-          <div className="hidden md:block">
+          {/* Language Selector & Contact Button */}
+          <div className="hidden md:flex items-center space-x-4">
+            <select className="bg-card border border-border rounded-md px-3 py-2 text-sm text-foreground">
+              <option value="en">English</option>
+              <option value="hi">हिंदी</option>
+              <option value="te">తెలుగు</option>
+            </select>
             <Button variant="default" className="shadow-warm">
               Get Quote
             </Button>
@@ -76,7 +81,12 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="default" className="mt-4 shadow-warm">
+              <select className="bg-card border border-border rounded-md px-3 py-2 text-sm text-foreground w-full mb-2">
+                <option value="en">English</option>
+                <option value="hi">हिंदी</option>
+                <option value="te">తెలుగు</option>
+              </select>
+              <Button variant="default" className="mt-2 shadow-warm">
                 Get Quote
               </Button>
             </div>

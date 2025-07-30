@@ -7,6 +7,7 @@ import MeetFounder from '@/components/MeetFounder';
 import Recipes from '@/components/Recipes';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import FloatingContactButton from '@/components/FloatingContactButton';
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <Recipes />
       <Contact />
       <Footer />
+      <FloatingContactButton />
     </div>
   );
 };

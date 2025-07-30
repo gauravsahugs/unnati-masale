@@ -26,24 +26,23 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
       {/* Newsletter Section */}
-      <div className="bg-primary">
+      <div className="bg-gradient-to-r from-warm-gold to-rich-orange">
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-primary-foreground mb-4">
-              Connect with us at/Newsletter
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Stay Updated with Unnati Masale
             </h3>
-            <p className="text-primary-foreground/90 mb-6">
+            <p className="text-white/90 mb-6">
               Get the latest recipes, cooking tips, and special offers delivered to your inbox
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <Input 
                 type="email" 
                 placeholder="Enter your email"
-                className="bg-primary-foreground text-foreground"
+                className="bg-white text-gray-900 border-white"
               />
               <Button 
-                variant="secondary"
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                className="bg-white text-warm-gold hover:bg-white/90 hover:text-rich-orange font-semibold"
               >
                 <Mail className="w-4 h-4 mr-2" />
                 Subscribe

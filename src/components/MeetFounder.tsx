@@ -14,7 +14,7 @@ const MeetFounder = () => {
             Meet the Founder
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            The visionary behind Amasale's authentic spice heritage
+            The visionary behind Unnati Masale's authentic spice heritage
           </p>
         </div>
 
@@ -28,7 +28,7 @@ const MeetFounder = () => {
                   <div className="relative overflow-hidden rounded-2xl">
                     <img 
                       src={founderImage} 
-                      alt="Amasale Founder"
+                      alt="Gaurav Kumar Sahu - Unnati Masale Founder"
                       className="w-full h-96 object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent"></div>
@@ -42,7 +42,7 @@ const MeetFounder = () => {
                       <Award className="w-5 h-5 text-vibrant-red" />
                       <span className="font-bold text-foreground">Founder & CEO</span>
                     </div>
-                    <p className="text-muted-foreground text-sm">Amasale Spices</p>
+                    <p className="text-muted-foreground text-sm">Unnati Masale</p>
                   </div>
                 </div>
               </div>
@@ -56,15 +56,15 @@ const MeetFounder = () => {
               <CardContent className="p-8">
                 <Quote className="w-8 h-8 text-vibrant-red mb-4" />
                 <blockquote className="text-lg text-foreground leading-relaxed mb-6 font-medium">
-                  "Every spice tells a story. At Amasale, we preserve the authentic flavors and traditions 
+                  "Every spice tells a story. At Unnati Masale, we preserve the authentic flavors and traditions 
                   that have been passed down through generations. Our commitment is to bring you the purest, 
-                  most flavorful spices directly from the heart of India."
+                  most flavorful spices directly from the heart of India to your kitchen."
                 </blockquote>
                 <div className="border-l-4 border-vibrant-red pl-4">
                   <p className="text-muted-foreground">
-                    With over two years of dedication to quality and authenticity, our founder has built 
-                    Amasale on the principles of purity, tradition, and trust. Each product reflects 
-                    a deep understanding of Indian culinary heritage.
+                    With over two years of dedication to quality and authenticity, our founder Gaurav Kumar Sahu has built 
+                    Unnati Masale on the principles of purity, tradition, and trust. Located in Guna, Madhya Pradesh, 
+                    each product reflects a deep understanding of Indian culinary heritage and commitment to farm-fresh quality.
                   </p>
                 </div>
               </CardContent>
