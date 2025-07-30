@@ -6,9 +6,11 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { MessageCircle, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 import { FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const FloatingContactButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <>
@@ -28,7 +30,7 @@ const FloatingContactButton = () => {
         <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-center mb-4">
-              Connect with Unnati Masale
+              {t('contact.title')}
             </DialogTitle>
           </DialogHeader>
 
@@ -36,12 +38,12 @@ const FloatingContactButton = () => {
             {/* Contact Information */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-foreground">Get in Touch</h3>
+                <h3 className="text-lg font-semibold mb-4 text-foreground">{t('contact.getInTouch')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <MapPin className="w-5 h-5 text-vibrant-red mt-1" />
                     <div>
-                      <p className="font-medium text-foreground">Address</p>
+                      <p className="font-medium text-foreground">{t('contact.address')}</p>
                       <p className="text-sm text-muted-foreground">
                         Plot No. 56, New Industrial Area<br />
                         Kushmoda, Guna, Madhya Pradesh - 473001
@@ -69,7 +71,7 @@ const FloatingContactButton = () => {
 
               {/* Social Media */}
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-foreground">Follow Us</h3>
+                <h3 className="text-lg font-semibold mb-4 text-foreground">{t('contact.followUs')}</h3>
                 <div className="flex space-x-4">
                   <a 
                     href="https://www.instagram.com/unnati_masale?igsh=ZGtlYjI4N2NrbWdo&utm_source=qr" 
@@ -117,34 +119,34 @@ const FloatingContactButton = () => {
 
             {/* Quick Inquiry Form */}
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-foreground">Quick Inquiry</h3>
+              <h3 className="text-lg font-semibold mb-4 text-foreground">{t('contact.quickInquiry')}</h3>
               <form className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="Enter your first name" />
+                    <Label htmlFor="firstName">{t('contact.firstName')}</Label>
+                    <Input id="firstName" placeholder={t('contact.firstName')} />
                   </div>
                   <div>
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Enter your last name" />
+                    <Label htmlFor="lastName">{t('contact.lastName')}</Label>
+                    <Input id="lastName" placeholder={t('contact.lastName')} />
                   </div>
                 </div>
                 
                 <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="Enter your email" />
+                  <Label htmlFor="email">{t('contact.email')}</Label>
+                  <Input id="email" type="email" placeholder={t('contact.email')} />
                 </div>
                 
                 <div>
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" placeholder="Enter your phone number" />
+                  <Label htmlFor="phone">{t('contact.phone')}</Label>
+                  <Input id="phone" placeholder={t('contact.phone')} />
                 </div>
                 
                 <div>
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message">{t('contact.message')}</Label>
                   <Textarea 
                     id="message" 
-                    placeholder="How can we help you?"
+                    placeholder={t('contact.messagePlaceholder')}
                     className="min-h-[100px]"
                   />
                 </div>
@@ -153,7 +155,7 @@ const FloatingContactButton = () => {
                   type="submit" 
                   className="w-full bg-gradient-to-r from-vibrant-red to-rich-orange text-white hover:from-vibrant-red/90 hover:to-rich-orange/90"
                 >
-                  Send Message
+                  {t('contact.send')}
                 </Button>
               </form>
             </div>

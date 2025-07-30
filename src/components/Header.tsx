@@ -2,16 +2,19 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import unnatiLogo from '@/assets/unnati-logo.png';
+import LanguageSelector from '@/components/LanguageSelector';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Products', href: '#products' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Recipes', href: '#recipes' },
-    { label: 'Contact', href: '#contact' },
+    { label: t('nav.home'), href: '#home' },
+    { label: t('nav.products'), href: '#products' },
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.recipes'), href: '#recipes' },
+    { label: t('nav.contact'), href: '#contact' },
   ];
 
   return (
@@ -27,7 +30,7 @@ const Header = () => {
             />
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-primary font-merriweather">Unnati Masale</h1>
-              <p className="text-xs text-muted-foreground">Premium Quality Spices</p>
+              <p className="text-xs text-muted-foreground">{t('header.tagline')}</p>
             </div>
           </div>
 
@@ -46,13 +49,9 @@ const Header = () => {
 
           {/* Language Selector & Contact Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <select className="bg-card border border-border rounded-md px-3 py-2 text-sm text-foreground">
-              <option value="en">English</option>
-              <option value="hi">हिंदी</option>
-              <option value="te">తెలుగు</option>
-            </select>
+            <LanguageSelector />
             <Button variant="default" className="shadow-warm">
-              Get Quote
+              {t('header.getQuote')}
             </Button>
           </div>
 
@@ -81,13 +80,11 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <select className="bg-card border border-border rounded-md px-3 py-2 text-sm text-foreground w-full mb-2">
-                <option value="en">English</option>
-                <option value="hi">हिंदी</option>
-                <option value="te">తెలుగు</option>
-              </select>
-              <Button variant="default" className="mt-2 shadow-warm">
-                Get Quote
+              <div className="mb-4">
+                <LanguageSelector />
+              </div>
+              <Button variant="default" className="mt-2 shadow-warm w-full">
+                {t('header.getQuote')}
               </Button>
             </div>
           </nav>
