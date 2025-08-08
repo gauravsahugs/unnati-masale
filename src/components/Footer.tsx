@@ -27,7 +27,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-muted border-t border-border">
       {/* Newsletter Section - Blended with Footer */}
       <div className="bg-card/95 border-t border-border">
         <div className="container mx-auto px-4 py-12">

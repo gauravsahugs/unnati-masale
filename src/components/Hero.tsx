@@ -28,18 +28,14 @@ const Hero = () => {
           <div className="absolute bottom-1/3 right-1/5 w-64 h-64 bg-gradient-to-r from-vibrant-red/10 to-warm-gold/10 rounded-full blur-3xl animate-pulse-glow delay-1500" />
         </div>
         {/* Soft overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/60 to-background/30"></div>
+        <div className="absolute inset-0 bg-foreground/10 md:bg-foreground/20"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-screen py-20">
+        <div className="grid grid-cols-1 gap-16 items-center min-h-screen py-20">
           {/* Enhanced Content Section */}
           <div className="space-y-10 animate-slide-up">
-            {/* Premium Heritage Badge */}
-            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-card/90 to-card/80 backdrop-blur-md rounded-full px-8 py-4 border-2 border-warm-gold/30 shadow-elegant">
-              <Award className="w-6 h-6 text-vibrant-red" />
-              <span className="text-foreground font-bold text-lg">Farm Fresh • Authentic • Pure</span>
-            </div>
 
             {/* Main Headline */}
             <div className="space-y-6">
@@ -60,6 +56,12 @@ const Hero = () => {
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
                 {t('hero.description')}
               </p>
+            </div>
+
+            {/* Heritage Badge moved below content */}
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-card/90 to-card/80 backdrop-blur-md rounded-full px-6 py-3 border border-warm-gold/30 shadow-elegant">
+              <Award className="w-5 h-5 text-vibrant-red" />
+              <span className="text-foreground font-semibold text-sm sm:text-base">Farm Fresh • Authentic • Pure</span>
             </div>
 
             {/* CTA Section */}
@@ -91,45 +93,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Enhanced Visual Element */}
-          <div className="relative animate-fade-in-scale">
-            <div className="relative">
-              {/* Premium Product Showcase */}
-              <div className="relative mx-auto max-w-lg">
-                <div className="relative overflow-hidden rounded-3xl shadow-premium bg-gradient-to-br from-card/95 to-card/80 backdrop-blur-sm border-2 border-warm-gold/30 p-4">
-                  <div className="relative overflow-hidden rounded-2xl">
-                    <img 
-                      src={heroSpices} 
-                      alt="Premium Unnati Masale Spices Collection"
-                      className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent"></div>
-                  </div>
-                  
-                  {/* Floating Quality Badge */}
-                  <div className="absolute top-8 right-8 bg-gradient-to-r from-vibrant-red to-rich-orange text-white backdrop-blur-md rounded-2xl px-6 py-3 shadow-premium">
-                    <div className="text-center">
-                      <div className="text-white font-bold text-lg">100%</div>
-                      <div className="text-xs text-white/90">Premium</div>
-                    </div>
-                  </div>
-                  
-                  {/* Enhanced Bottom Info Card */}
-                  <div className="absolute bottom-8 left-8 right-8 bg-gradient-to-r from-card/95 to-card/90 backdrop-blur-md rounded-2xl px-8 py-6 shadow-premium border border-warm-gold/30">
-                    <div className="text-center">
-                      <h3 className="font-bold text-xl text-foreground mb-2">Unnati Masale Collection</h3>
-                      <p className="text-muted-foreground text-sm">Handpicked from India's finest farms</p>
-                      <div className="flex justify-center mt-3 space-x-2">
-                        <div className="w-2 h-2 bg-vibrant-red rounded-full animate-pulse"></div>
-                        <div className="w-2 h-2 bg-warm-gold rounded-full animate-pulse delay-200"></div>
-                        <div className="w-2 h-2 bg-rich-orange rounded-full animate-pulse delay-400"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
