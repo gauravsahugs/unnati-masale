@@ -6,6 +6,7 @@ import redChilliPowder from '@/assets/red-chilli-powder.png';
 import turmericPowder from '@/assets/turmeric-powder.png';
 import corianderPowder from '@/assets/coriander-powder.png';
 import acharMasala from '@/assets/achar-masala.png';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ProductShowcase = () => {
   const products = [
@@ -21,6 +22,7 @@ const ProductShowcase = () => {
     },
     {
       id: 2,
+      key: 'turmeric',
       name: 'Turmeric Powder',
       category: 'Ground Spices', 
       description: 'Golden turmeric powder from Erode. Rich in curcumin with natural healing properties.',
@@ -31,6 +33,7 @@ const ProductShowcase = () => {
     },
     {
       id: 3,
+      key: 'coriander',
       name: 'Coriander Powder',
       category: 'Ground Spices',
       description: 'Fresh ground coriander powder with authentic aroma. Essential for Indian cooking.',
@@ -41,6 +44,7 @@ const ProductShowcase = () => {
     },
     {
       id: 4,
+      key: 'achar',
       name: 'Achar Masala',
       category: 'Blended Spices',
       description: 'Special blend for pickles. Perfect mix of spices for mango, lemon, and mixed vegetable pickles.',
@@ -57,10 +61,10 @@ const ProductShowcase = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-merriweather">
-            Our Premium Products
+            {t('products.title', 'Our Premium Products')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Handpicked from the finest farms across India, each spice tells a story of purity and tradition
+            {t('products.subtitle', 'Handpicked from the finest farms across India, each spice tells a story of purity and tradition')}
           </p>
         </div>
 
@@ -101,21 +105,21 @@ const ProductShowcase = () => {
               <CardContent className="p-6 space-y-4">
                 <div className="mb-2">
                   <Badge variant="secondary" className="text-xs bg-secondary/50 text-secondary-foreground">
-                    {product.category}
+                    {t(`product.${product.key}.category`, product.category)}
                   </Badge>
                 </div>
                 <CardTitle className="text-lg font-semibold text-card-foreground group-hover:text-primary transition-colors duration-300">
-                  {product.name}
+                  {t(`product.${product.key}.name`, product.name)}
                 </CardTitle>
                 <CardDescription className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  {product.description}
+                  {t(`product.${product.key}.description`, product.description)}
                 </CardDescription>
                 <div className="flex items-center justify-between">
                   <div className="text-2xl font-bold text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     {product.price}
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Weight: 1kg
+                    {t('products.weight', 'Weight')}: 1kg
                   </div>
                 </div>
               </CardContent>
@@ -124,7 +128,7 @@ const ProductShowcase = () => {
                 <div className="text-center">
                   <div className="inline-flex items-center space-x-2 text-sm text-muted-foreground bg-secondary/30 px-3 py-1.5 rounded-full">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span>In Stock</span>
+                    <span>{t('products.inStock', 'In Stock')}</span>
                   </div>
                 </div>
               </CardFooter>
@@ -134,16 +138,21 @@ const ProductShowcase = () => {
 
         {/* Categories */}
         <div className="text-center">
-          <h3 className="text-2xl font-semibold mb-6 text-foreground">Browse by Category</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-foreground">{t('products.browseByCategory', 'Browse by Category')}</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {['Ground Spices', 'Blended Spices', 'Whole Spices', 'Specialty Masalas'].map((category) => (
+            {[
+              'categories.groundSpices',
+              'categories.blendedSpices',
+              'categories.wholeSpices',
+              'categories.specialtyMasalas',
+            ].map((key) => (
               <Button 
-                key={category}
+                key={key}
                 variant="outline" 
                 className="hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-md"
                 onClick={() => window.location.href = '/coming-soon'}
               >
-                {category}
+                {t(key, key)}
               </Button>
             ))}
           </div>

@@ -6,9 +6,11 @@ import mangoPickleImage from '@/assets/recipe-mango-pickle.jpg';
 import turmericMilkImage from '@/assets/recipe-turmeric-milk.jpg';
 import corianderChutneyImage from '@/assets/recipe-coriander-chutney.jpg';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Recipes = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   
   const blogPosts = [
     {
@@ -67,10 +69,10 @@ const Recipes = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-merriweather">
-            Blog & Recipes
+            {t('recipes.title', 'Blog & Recipes')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover authentic recipes and traditional cooking wisdom with our premium spices
+            {t('recipes.subtitle', 'Discover authentic recipes and traditional cooking wisdom with our premium spices')}
           </p>
         </div>
 
@@ -127,7 +129,7 @@ const Recipes = () => {
                   className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 hover:scale-105"
                   onClick={() => navigate('/coming-soon')}
                 >
-                  Read Recipe
+                  {t('recipes.readRecipe', 'Read Recipe')}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </CardFooter>
@@ -168,7 +170,7 @@ const Recipes = () => {
             className="shadow-elegant hover:scale-105 transition-all duration-300"
             onClick={() => navigate('/coming-soon')}
           >
-            Explore More Recipes
+            {t('recipes.exploreMore', 'Explore More Recipes')}
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </div>

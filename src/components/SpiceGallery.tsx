@@ -10,8 +10,10 @@ import turmericSpice from '@/assets/turmeric-spice.png';
 import corianderSpice from '@/assets/coriander-spice.png';
 import redChiliSpice from '@/assets/red-chili-spice.png';
 import garamMasalaSpice from '@/assets/garam-masala-spice.png';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const SpiceGallery = () => {
+  const { t } = useLanguage();
   const spiceImages = [
     {
       id: 1,
@@ -44,10 +46,10 @@ const SpiceGallery = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 font-merriweather">
-            Our Spice Collection
+            {t('spiceGallery.title', 'Our Spice Collection')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover the vibrant colors and rich aromas of authentic Indian spices
+            {t('spiceGallery.subtitle', 'Discover the vibrant colors and rich aromas of authentic Indian spices')}
           </p>
         </div>
 

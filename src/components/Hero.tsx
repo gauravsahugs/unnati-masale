@@ -8,8 +8,9 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Enhanced Premium Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-cream via-warm-gold/20 to-rich-orange/30">
+      {/* Premium Background with Image */}
+      <div className="absolute inset-0">
+        <img src={heroSpices} alt="Unnati Masale premium spice collection background" className="w-full h-full object-cover" />
         {/* Animated Elements */}
         <div className="absolute inset-0">
           {/* Floating spice particles */}
@@ -26,6 +27,8 @@ const Hero = () => {
           <div className="absolute top-1/3 left-1/5 w-48 h-48 bg-gradient-to-r from-warm-gold/10 to-rich-orange/10 rounded-full blur-3xl animate-pulse-glow" />
           <div className="absolute bottom-1/3 right-1/5 w-64 h-64 bg-gradient-to-r from-vibrant-red/10 to-warm-gold/10 rounded-full blur-3xl animate-pulse-glow delay-1500" />
         </div>
+        {/* Soft overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/40 to-transparent"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
@@ -63,7 +66,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-vibrant-red to-rich-orange text-white hover:from-vibrant-red/90 hover:to-rich-orange/90 shadow-elegant font-bold px-10 py-6 text-lg transition-all duration-300 group"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-elegant font-bold px-10 py-6 text-lg transition-all duration-300 group"
                 onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 {t('hero.cta')}

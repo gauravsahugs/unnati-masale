@@ -5,7 +5,7 @@ type Language = 'en' | 'hi' | 'te';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string, fallback?: string) => string;
 }
 
 const translations = {
@@ -23,7 +23,7 @@ const translations = {
     'hero.title': 'Authentic Indian Spices, Crafted for Every Kitchen',
     'hero.brand': 'Unnati Masale - Farm to Table Excellence',
     'hero.description': 'Experience the true essence of Indian cuisine with our premium quality spices, sourced directly from the finest farms across India.',
-    'hero.cta': 'Explore Products',
+    'hero.cta': 'Explore Product',
     'hero.natural': '100%',
     'hero.naturalText': 'Natural & Pure',
     'hero.heritage': '2+',
@@ -107,7 +107,7 @@ const translations = {
     'hero.title': 'అసలైన భారతీయ మసాలాలు, ప్రతి వంటగదికి రూపొందించబడినవి',
     'hero.brand': 'ఉన్నతి మసాలే - పొలం నుండి టేబుల్ వరకు అత్యుత్తమత',
     'hero.description': 'భారతదేశంలోని అత్యుత్తమ పొలాల నుండి నేరుగా సేకరించిన మా ప్రీమియం నాణ్యత మసాలాలతో భారతీయ వంటకాల నిజమైన సారాన్ని అనుభవించండి.',
-    'hero.cta': 'ఉత్పత్తులను అన్వేషించండి',
+    'hero.cta': 'ఉత్పత్తిని అన్వేషించండి',
     'hero.natural': '100%',
     'hero.naturalText': 'సహజ మరియు స్వచ్ఛమైన',
     'hero.heritage': '2+',
@@ -134,6 +134,53 @@ const translations = {
     'contact.followUs': 'మమ్మల్ని అనుసరించండి',
     'contact.getInTouch': 'సంప్రదింపులో ఉండండి',
     'contact.address': 'చిరునామా',
+    
+    // Products & Categories
+    'products.title': 'మా ప్రీమియం ఉత్పత్తులు',
+    'products.subtitle': 'భారతదేశంలోని ఉత్తమ రైతు పొలాల నుండి ఎంపిక చేయబడిన ప్రతి మసాలా స్వచ్ఛత మరియు సంప్రదాయ కథ చెబుతుంది',
+    'products.weight': 'బరువు',
+    'products.inStock': 'స్టాక్‌లో ఉంది',
+    'products.browseByCategory': 'వర్గం ద్వారా బ్రౌజ్ చేయండి',
+    'categories.groundSpices': 'పొడి మసాలాలు',
+    'categories.blendedSpices': 'మిశ్రమ మసాలాలు',
+    'categories.wholeSpices': 'సంపూర్ణ మసాలాలు',
+    'categories.specialtyMasalas': 'ప్రత్యేక మసాలాలు',
+
+    // Recipes
+    'recipes.title': 'బ్లాగ్ & వంటకాలు',
+    'recipes.subtitle': 'మా ప్రీమియం మసాలాలతో ప్రామాణిక వంటకాలు మరియు సంప్రదాయ వంట విద్యను కనుగొనండి',
+    'recipes.readRecipe': 'వంటకం చదవండి',
+    'recipes.exploreMore': 'ఇంకా వంటకాలు చూడండి',
+
+    // Spice Gallery
+    'spiceGallery.title': 'మా మసాలాల సేకరణ',
+    'spiceGallery.subtitle': 'అసలైన భారతీయ మసాలాల ప్రకాశవంతమైన రంగులు మరియు సుగంధాలను కనుగొనండి',
+
+    // Footer
+    'footer.quickLinks': 'త్వరిత లింకులు',
+    'footer.ourProducts': 'మా ఉత్పత్తులు',
+    'footer.shopOnline': 'ఆన్ లైన్‌లో కొనండి',
+    'footer.shopOnFlipkart': 'ఫ్లిప్‌కార్ట్‌లో కొనండి',
+    'footer.comingSoonBlinkit': 'బ్లింకిట్‌లో త్వరలో',
+    'footer.comingSoonZepto': 'జెప్టోలో త్వరలో',
+    'footer.whatsappChat': 'వాట్సాప్ చాట్',
+
+    // Individual Products
+    'product.redChilli.name': 'కారం పొడి',
+    'product.redChilli.category': 'పొడి మసాలాలు',
+    'product.redChilli.description': 'గుంటూరు నుండి నాణ్యమైన కారం పొడి. ప్రతి వంటకానికి సరైన కారంపు మరియు మెరిసే రంగు.',
+
+    'product.turmeric.name': 'పసుపు పొడి',
+    'product.turmeric.category': 'పొడి మసాలాలు',
+    'product.turmeric.description': 'ఎరోడ్ నుండి గోల్డెన్ పసుపు. సహజ కర్క్యూమిన్‌తో ఆరోగ్యకరమైన గుణాలు.',
+
+    'product.coriander.name': 'ధనియా పొడి',
+    'product.coriander.category': 'పొడి మసాలాలు',
+    'product.coriander.description': 'తాజాగా నూరిన ధనియా పొడి. భారతీయ వంటలో అవసరమైనది.',
+
+    'product.achar.name': 'ఆచార్ మసాలా',
+    'product.achar.category': 'మిశ్రమ మసాలాలు',
+    'product.achar.description': 'అచ్చుల కోసం ప్రత్యేక మిశ్రమం. మామిడి, నిమ్మకాయ మరియు మిశ్రమ కూరగాయల అచ్చులకు పర్ఫెక్ట్ మిక్స్.',
   }
 };
 
@@ -142,8 +189,10 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>('en');
 
-  const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations[typeof language]] || key;
+  const t = (key: string, fallback?: string): string => {
+    return (
+      (translations[language] as any)[key] || fallback || key
+    );
   };
 
   return (

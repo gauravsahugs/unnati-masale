@@ -14,7 +14,7 @@ const Footer = () => {
     { label: t('nav.home'), href: '#home' },
     { label: t('nav.products'), href: '#products' },
     { label: t('nav.about'), href: '#about' },
-    { label: 'Blog', href: '#recipes' },
+    { label: t('nav.recipes'), href: '#recipes' },
     { label: t('nav.contact'), href: '#contact' }
   ];
 
@@ -28,24 +28,24 @@ const Footer = () => {
 
   return (
     <footer className="bg-card border-t border-border">
-      {/* Newsletter Section - Improved Accessibility */}
-      <div className="bg-gradient-to-r from-warm-gold/90 to-rich-orange/90">
+      {/* Newsletter Section - Blended with Footer */}
+      <div className="bg-card/95 border-t border-border">
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-2xl font-bold text-card-foreground mb-4">
               {t('newsletter.title')}
             </h3>
-            <p className="text-white mb-6 text-lg">
+            <p className="text-card-foreground/80 mb-6 text-lg">
               {t('newsletter.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <Input 
                 type="email" 
                 placeholder={t('newsletter.placeholder')}
-                className="bg-white text-gray-900 border-2 border-white focus:border-white focus:ring-2 focus:ring-white/50"
+                className="bg-background text-foreground border-input focus:border-ring focus:ring-2 focus:ring-ring"
               />
               <Button 
-                className="bg-white text-warm-gold hover:bg-gray-100 hover:text-rich-orange font-bold border-2 border-white"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-elegant"
               >
                 <Mail className="w-4 h-4 mr-2" />
                 {t('newsletter.subscribe')}
@@ -109,7 +109,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-card-foreground mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-card-foreground mb-4">{t('footer.quickLinks', 'Quick Links')}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -126,7 +126,7 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h4 className="font-semibold text-card-foreground mb-4">Our Products</h4>
+            <h4 className="font-semibold text-card-foreground mb-4">{t('footer.ourProducts', 'Our Products')}</h4>
             <ul className="space-y-2">
               {productCategories.map((category, index) => (
                 <li key={index}>
@@ -143,7 +143,7 @@ const Footer = () => {
 
           {/* Shopping & Platform Links */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-card-foreground mb-4">Shop Online</h4>
+            <h4 className="font-semibold text-card-foreground mb-4">{t('footer.shopOnline', 'Shop Online')}</h4>
             <div className="space-y-3">
               <a 
                 href="https://www.flipkart.com/product/p/itme?pid=SCMHDAJ6NFUAKT8Z" 
@@ -152,15 +152,15 @@ const Footer = () => {
                 className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <SiFlipkart className="h-4 w-4 text-blue-600" />
-                <span>Shop on Flipkart</span>
+                <span>{t('footer.shopOnFlipkart', 'Shop on Flipkart')}</span>
               </a>
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <div className="h-4 w-4 bg-yellow-500 rounded flex items-center justify-center text-white text-xs font-bold">B</div>
-                <span>Coming Soon on Blinkit</span>
+                <span>{t('footer.comingSoonBlinkit', 'Coming Soon on Blinkit')}</span>
               </div>
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <div className="h-4 w-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded"></div>
-                <span>Coming Soon on Zepto</span>
+                <span>{t('footer.comingSoonZepto', 'Coming Soon on Zepto')}</span>
               </div>
               <a 
                 href="https://wa.me/918224929592" 
@@ -169,7 +169,7 @@ const Footer = () => {
                 className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <FaWhatsapp className="h-4 w-4 text-green-500" />
-                <span>WhatsApp Chat</span>
+                <span>{t('footer.whatsappChat', 'WhatsApp Chat')}</span>
               </a>
             </div>
           </div>
