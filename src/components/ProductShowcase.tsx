@@ -9,9 +9,11 @@ import acharMasala from '@/assets/achar-masala.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ProductShowcase = () => {
+  const { t } = useLanguage();
   const products = [
     {
       id: 1,
+      key: 'redChilli',
       name: 'Red Chilli Powder',
       category: 'Ground Spices',
       description: 'Premium quality red chilli powder from Guntur. Perfect heat and vibrant color for all your dishes.',
