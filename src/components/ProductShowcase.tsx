@@ -87,17 +87,11 @@ const ProductShowcase = () => {
                     alt={product.name}
                     className="w-full h-64 object-contain p-6 group-hover:scale-110 transition-transform duration-500"
                   />
-                  {product.badge && (
-                    <Badge 
-                      className="absolute top-4 left-4 bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-md animate-pulse-glow"
-                    >
-                      {product.badge}
-                    </Badge>
-                  )}
-                  <div className="absolute top-4 right-4 flex items-center space-x-1 bg-card/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-md">
-                    <Star className="w-3 h-3 text-accent fill-current" />
-                    <span className="text-xs font-medium text-foreground">{product.rating}</span>
-                  </div>
+                  <Badge 
+                    className="absolute top-4 left-4 bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-md animate-pulse-glow"
+                  >
+                    Premium
+                  </Badge>
                   
                   {/* Animated gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-card/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -116,45 +110,29 @@ const ProductShowcase = () => {
                 <CardDescription className="text-sm text-muted-foreground leading-relaxed mb-4">
                   {t(`product.${product.key}.description`, product.description)}
                 </CardDescription>
-                <div className="flex items-center justify-between">
-                  <div className="text-2xl font-bold text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    {product.price}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {t('products.weight', 'Weight')}: 1kg
-                  </div>
-                </div>
               </CardContent>
 
-              <CardFooter className="p-6 pt-0">
-                <div className="text-center">
-                  <div className="inline-flex items-center space-x-2 text-sm text-muted-foreground bg-secondary/30 px-3 py-1.5 rounded-full">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span>{t('products.inStock', 'In Stock')}</span>
-                  </div>
-                </div>
-              </CardFooter>
             </Card>
           ))}
         </div>
 
         {/* Categories */}
         <div className="text-center">
-          <h3 className="text-2xl font-semibold mb-6 text-foreground">{t('products.browseByCategory', 'Browse by Category')}</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-foreground">{t('products.browseByCategory', 'Product Categories')}</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              'categories.groundSpices',
-              'categories.blendedSpices',
-              'categories.wholeSpices',
-              'categories.specialtyMasalas',
-            ].map((key) => (
+              { key: 'categories.groundSpices', label: 'Grounded Spices' },
+              { key: 'categories.blendedSpices', label: 'Blended Spices' },
+              { key: 'categories.wholeSpices', label: 'Whole Spices' },
+              { key: 'categories.saltsSeasonings', label: 'Salts & Seasonings' },
+            ].map(({ key, label }) => (
               <Button 
                 key={key}
                 variant="outline" 
                 className="hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-md"
                 onClick={() => window.location.href = '/coming-soon'}
               >
-                {t(key, key)}
+                {t(key, label)}
               </Button>
             ))}
           </div>

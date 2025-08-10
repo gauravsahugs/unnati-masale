@@ -46,9 +46,10 @@ const Footer = () => {
               />
               <Button 
                 className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-elegant"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Mail className="w-4 h-4 mr-2" />
-                {t('newsletter.subscribe')}
+                {t('newsletter.contact', 'Contact Us')}
               </Button>
             </div>
           </div>

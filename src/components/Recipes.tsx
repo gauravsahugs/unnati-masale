@@ -81,10 +81,11 @@ const Recipes = () => {
           {blogPosts.map((post, index) => (
             <Card 
               key={post.id} 
-              className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-3 hover:scale-105 bg-card/80 backdrop-blur-sm border-border/50 overflow-hidden"
+              className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-3 hover:scale-105 bg-card/80 backdrop-blur-sm border-border/50 overflow-hidden cursor-pointer"
               style={{
                 animationDelay: `${index * 150}ms`
               }}
+              onClick={() => navigate('/coming-soon')}
             >
               <CardHeader className="p-0">
                 <div className="relative overflow-hidden rounded-t-lg">
@@ -144,7 +145,8 @@ const Recipes = () => {
             {quickRecipes.map((recipe, index) => (
               <div 
                 key={index}
-                className="bg-secondary/50 rounded-lg p-4 hover:bg-secondary transition-colors"
+                className="bg-secondary/50 rounded-lg p-4 hover:bg-secondary transition-colors cursor-pointer"
+                onClick={() => navigate('/coming-soon')}
               >
                 <h4 className="font-semibold text-foreground mb-2">{recipe.name}</h4>
                 <p className="text-sm text-muted-foreground mb-3">{recipe.ingredients}</p>

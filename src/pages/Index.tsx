@@ -8,7 +8,7 @@ import Recipes from '@/components/Recipes';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingContactButton from '@/components/FloatingContactButton';
-
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -22,6 +22,7 @@ const Index = () => {
       <Contact />
       <Footer />
       <FloatingContactButton />
+      <FloatingWhatsApp />
     </div>
   );
 };

@@ -33,12 +33,6 @@ const SpiceGallery = () => {
       image: redChiliSpice,
       description: 'Vibrant red chilies for perfect heat'
     },
-    {
-      id: 4,
-      name: 'Garam Masala',
-      image: garamMasalaSpice,
-      description: 'Traditional spice blend'
-    }
   ];
 
   return (
@@ -46,10 +40,10 @@ const SpiceGallery = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 font-merriweather">
-            {t('spiceGallery.title', 'Our Spice Collection')}
+            {t('spiceGallery.title', 'Our Whole Spice Collection')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t('spiceGallery.subtitle', 'Discover the vibrant colors and rich aromas of authentic Indian spices')}
+            {t('spiceGallery.subtitle', 'Explore our whole spices and raw ingredients for authentic flavor')}
           </p>
         </div>
 
