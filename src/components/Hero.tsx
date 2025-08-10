@@ -15,6 +15,14 @@ const Hero = () => {
         {/* Subtle orbs for depth */}
         <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-tr from-warm-gold/20 to-rich-orange/20 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-gradient-to-tl from-vibrant-red/15 to-warm-gold/15 blur-3xl" />
+
+        {/* Floating particles for gentle motion */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute top-20 left-[10%] w-2 h-2 rounded-full bg-vibrant-red/40 animate-float" />
+          <div className="absolute top-1/3 right-[15%] w-2.5 h-2.5 rounded-full bg-warm-gold/40 animate-float delay-1000" />
+          <div className="absolute bottom-1/3 left-[25%] w-3 h-3 rounded-full bg-rich-orange/30 animate-float delay-2000" />
+          <div className="absolute bottom-24 right-[20%] w-2 h-2 rounded-full bg-vibrant-red/35 animate-float delay-500" />
+        </div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
@@ -23,7 +31,7 @@ const Hero = () => {
             {/* Headline */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight font-merriweather">
               <span className="bg-gradient-to-r from-warm-gold via-rich-orange to-vibrant-red bg-clip-text text-transparent animate-gradient">
-                {t('hero.title')}
+                Unnati Masale – Pure & Freah, Premium Quality Spices & Blends
               </span>
             </h1>
 
