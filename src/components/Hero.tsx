@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Award } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import heroImage from '@/assets/hero-spices.jpg';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -9,6 +10,12 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen overflow-hidden">
       {/* Background - brand gradient with subtle texture */}
       <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Premium Indian spices assortment background"
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover opacity-30"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-warm-gold/25 via-rich-orange/20 to-vibrant-red/25" />
         <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
 

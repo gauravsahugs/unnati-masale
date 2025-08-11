@@ -54,6 +54,10 @@
     --shadow-soft: 0 4px 6px -1px hsl(var(--rich-orange) / 0.1), 0 2px 4px -1px hsl(var(--rich-orange) / 0.06);
     --shadow-elegant: 0 20px 25px -5px hsl(var(--vibrant-red) / 0.1), 0 10px 10px -5px hsl(var(--vibrant-red) / 0.04);
     --shadow-premium: 0 25px 50px -12px hsl(var(--warm-gold) / 0.25);
+
+    /* Messaging brand colors */
+    --whatsapp: 142 70% 49%;
+    --whatsapp-foreground: 0 0% 100%;
   }
 
   .dark {
@@ -81,6 +85,10 @@
     --border: 25 30% 20%;
     --input: 25 30% 20%;
     --ring: 45 85% 65%; /* Brighter gold ring */
+
+    /* Messaging brand colors */
+    --whatsapp: 142 70% 49%;
+    --whatsapp-foreground: 0 0% 100%;
   }
 }
 
