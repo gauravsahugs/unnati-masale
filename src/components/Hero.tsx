@@ -1,14 +1,17 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Award } from 'lucide-react';
+import { ArrowRight, Award, ShieldCheck, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import heroImage from '@/assets/hero-spices.jpg';
+import turmericSpice from '@/assets/turmeric-spice.png';
+import corianderSpice from '@/assets/coriander-spice.png';
+import redChiliSpice from '@/assets/red-chili-spice.png';
 
 const Hero = () => {
   const { t } = useLanguage();
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Background - brand gradient with subtle texture */}
+      {/* Background - premium gradient, texture and orbs */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
@@ -25,25 +28,32 @@ const Hero = () => {
 
         {/* Floating particles for gentle motion */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-20 left-[10%] w-2 h-2 rounded-full bg-vibrant-red/40 animate-float" />
-          <div className="absolute top-1/3 right-[15%] w-2.5 h-2.5 rounded-full bg-warm-gold/40 animate-float delay-1000" />
-          <div className="absolute bottom-1/3 left-[25%] w-3 h-3 rounded-full bg-rich-orange/30 animate-float delay-2000" />
-          <div className="absolute bottom-24 right-[20%] w-2 h-2 rounded-full bg-vibrant-red/35 animate-float delay-500" />
+          <div className="absolute top-20 left-[10%] w-2 h-2 rounded-full bg-vibrant-red/40 animate-fade-in" />
+          <div className="absolute top-1/3 right-[15%] w-2.5 h-2.5 rounded-full bg-warm-gold/40 animate-fade-in" />
+          <div className="absolute bottom-1/3 left-[25%] w-3 h-3 rounded-full bg-rich-orange/30 animate-fade-in" />
+          <div className="absolute bottom-24 right-[20%] w-2 h-2 rounded-full bg-vibrant-red/35 animate-fade-in" />
         </div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
-        <div className="grid min-h-screen items-center py-24">
-          <div className="max-w-3xl space-y-8 animate-fade-in">
+        <div className="grid min-h-screen items-center py-20 lg:py-24 lg:grid-cols-12 gap-10">
+          {/* Left: Content */}
+          <div className="lg:col-span-7 space-y-8 animate-fade-in">
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-warm-gold/30 bg-card/80 px-3 py-1.5 text-sm text-foreground shadow-soft backdrop-blur">
+              <ShieldCheck className="h-4 w-4 text-warm-gold" aria-hidden="true" />
+              <span>Since 1996 • 100% Pure • FSSAI Compliant</span>
+            </div>
+
             {/* Headline */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight font-merriweather">
-              <span className="bg-gradient-to-r from-warm-gold via-rich-orange to-vibrant-red bg-clip-text text-transparent animate-gradient">
+              <span className="bg-gradient-to-r from-warm-gold via-rich-orange to-vibrant-red bg-clip-text text-transparent">
                 Unnati Masale – Pure & Freah, Premium Quality Spices & Blends
               </span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-xl md:text-2xl text-foreground font-semibold">
+            <p className="text-xl md:text-2xl text-foreground font-semibold max-w-2xl">
               {t('hero.brand')}
             </p>
 
@@ -51,12 +61,6 @@ const Hero = () => {
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl">
               {t('hero.description')}
             </p>
-
-            {/* Pill - placed after content for better flow */}
-            <div className="inline-flex items-center gap-3 bg-card/90 border border-warm-gold/30 shadow-elegant backdrop-blur-md rounded-full px-5 py-2">
-              <Award className="w-5 h-5 text-vibrant-red" aria-hidden="true" />
-              <span className="text-sm sm:text-base font-medium text-foreground">Farm Fresh • Authentic • Pure</span>
-            </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
@@ -71,20 +75,53 @@ const Hero = () => {
               </Button>
             </div>
 
-            {/* Trust points */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
-              <div className="text-center space-y-2 p-4 bg-card/50 backdrop-blur-sm rounded-2xl border border-warm-gold/20">
-                <div className="text-2xl font-bold text-vibrant-red">{t('hero.natural')}</div>
-                <div className="text-muted-foreground text-sm font-medium">{t('hero.naturalText')}</div>
+            {/* Trust signals */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+              <div className="flex items-center gap-3 p-4 bg-card/60 backdrop-blur-sm rounded-2xl border border-warm-gold/20">
+                <Award className="w-6 h-6 text-vibrant-red" aria-hidden="true" />
+                <div>
+                  <div className="text-sm text-muted-foreground">Quality Assured</div>
+                  <div className="text-base font-semibold text-foreground">Farm Fresh & Authentic</div>
+                </div>
               </div>
-              <div className="text-center space-y-2 p-4 bg-card/50 backdrop-blur-sm rounded-2xl border border-warm-gold/20">
-                <div className="text-2xl font-bold text-rich-orange">{t('hero.heritage')}</div>
-                <div className="text-muted-foreground text-sm font-medium">{t('hero.heritageText')}</div>
+              <div className="flex items-center gap-3 p-4 bg-card/60 backdrop-blur-sm rounded-2xl border border-warm-gold/20">
+                <Star className="w-6 h-6 text-rich-orange" aria-hidden="true" />
+                <div>
+                  <div className="text-sm text-muted-foreground">Customer Love</div>
+                  <div className="text-base font-semibold text-foreground">4.9/5 Average Rating</div>
+                </div>
               </div>
-              <div className="text-center space-y-2 p-4 bg-card/50 backdrop-blur-sm rounded-2xl border border-warm-gold/20">
-                <div className="text-2xl font-bold text-warm-gold">{t('hero.source')}</div>
-                <div className="text-muted-foreground text-sm font-medium">{t('hero.sourceText')}</div>
+              <div className="flex items-center gap-3 p-4 bg-card/60 backdrop-blur-sm rounded-2xl border border-warm-gold/20">
+                <ShieldCheck className="w-6 h-6 text-warm-gold" aria-hidden="true" />
+                <div>
+                  <div className="text-sm text-muted-foreground">Safety First</div>
+                  <div className="text-base font-semibold text-foreground">Hygienic Processing</div>
+                </div>
               </div>
+            </div>
+          </div>
+
+          {/* Right: Visual Composition */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative mx-auto h-[420px] w-[420px] max-w-full">
+              {/* Glass card */}
+              <div className="absolute inset-0 rounded-full bg-card/40 backdrop-blur-md border border-warm-gold/20 shadow-premium" />
+
+              {/* Orbiting spice images */}
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                <img src={turmericSpice} alt="Raw turmeric whole spice" className="h-28 w-28 object-contain drop-shadow" />
+              </div>
+              <div className="absolute top-1/2 -translate-y-1/2 -left-6">
+                <img src={corianderSpice} alt="Raw coriander seeds whole spice" className="h-28 w-28 object-contain drop-shadow" />
+              </div>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
+                <img src={redChiliSpice} alt="Raw red chili whole spice" className="h-28 w-28 object-contain drop-shadow" />
+              </div>
+
+              {/* Glow rings */}
+              <div className="absolute inset-0 rounded-full ring-1 ring-warm-gold/30" />
+              <div className="absolute inset-8 rounded-full ring-1 ring-rich-orange/20" />
+              <div className="absolute inset-16 rounded-full ring-1 ring-vibrant-red/20" />
             </div>
           </div>
         </div>
