@@ -34,7 +34,7 @@ const Hero = () => {
           }}
         />
         {/* Left-side soft beige gradient for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-muted/70 via-muted/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-muted/80 via-muted/60 to-transparent" />
       </div>
 
       {/* Content */}
@@ -42,7 +42,7 @@ const Hero = () => {
         <div className="min-h-[90vh] md:min-h-screen grid items-center py-16 md:py-24">
           <div className="max-w-4xl space-y-8">
             {/* Headline */}
-            <h1 className="font-merriweather text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-accent animate-fade-in">
+            <h1 className="font-merriweather text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground animate-fade-in">
               Pure & Fresh, Premium Quality Spices & Blends
             </h1>
 
