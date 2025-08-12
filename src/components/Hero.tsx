@@ -33,10 +33,8 @@ const Hero = () => {
             transform: `translateY(${offset * -1}px)`,
           }}
         />
-        {/* Warm gradient overlay for contrast */}
-        <div className="absolute inset-0 bg-gradient-to-br from-warm-gold/30 via-rich-orange/20 to-vibrant-red/30" />
-        {/* Neutral veil for WCAG-compliant contrast */}
-        <div className="absolute inset-0 bg-background/60 backdrop-blur-[1px]" />
+        {/* Left-side soft beige gradient for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-muted/70 via-muted/40 to-transparent" />
       </div>
 
       {/* Content */}
@@ -44,23 +42,20 @@ const Hero = () => {
         <div className="min-h-[90vh] md:min-h-screen grid items-center py-16 md:py-24">
           <div className="max-w-4xl space-y-8">
             {/* Headline */}
-            <h1 className="font-merriweather text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in">
-              <span className="bg-gradient-to-r from-warm-gold via-rich-orange to-warm-gold bg-clip-text text-transparent">
-                Unnati Masale – Farm to Table Excellence
-              </span>
+            <h1 className="font-merriweather text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-accent animate-fade-in">
+              Pure & Fresh, Premium Quality Spices & Blends
             </h1>
 
             {/* Supporting copy */}
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl animate-fade-in">
-              Premium Indian spices sourced directly from the finest farms —
-              freshly milled, authentic, and brimming with aroma and purity.
+              Premium Indian spices, freshly milled and sourced from the finest farms across India.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2 animate-fade-in">
               <Button
                 size="lg"
-                className="bg-vibrant-red text-white hover:bg-vibrant-red/90 shadow-elegant px-8 py-6 text-lg transition-all duration-300 transform hover:-translate-y-0.5"
+                className="bg-accent text-white hover:bg-accent/90 shadow-elegant px-8 py-6 text-lg transition-all duration-300 transform hover:-translate-y-0.5"
                 onClick={() => scrollTo('products')}
                 aria-label="Explore products"
               >
@@ -71,7 +66,7 @@ const Hero = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-vibrant-red text-vibrant-red hover:bg-vibrant-red hover:text-white px-8 py-6 text-lg transition-all duration-300 transform hover:-translate-y-0.5"
+                className="px-8 py-6 text-lg transition-all duration-300 transform hover:-translate-y-0.5"
                 onClick={() => scrollTo('about')}
                 aria-label="Know our story"
               >
