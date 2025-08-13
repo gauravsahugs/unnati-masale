@@ -22,7 +22,7 @@ const Hero = () => {
     <section
       id="home"
       aria-label="Unnati Masale premium hero section"
-      className="relative h-screen overflow-hidden"
+      className="relative h-screen overflow-hidden mt-0"
     >
       {/* Background with parallax and readability overlay */}
       <div className="absolute inset-0" aria-hidden="true">
