@@ -22,7 +22,7 @@ const Hero = () => {
     <section
       id="home"
       aria-label="Unnati Masale premium hero section"
-      className="relative min-h-[90vh] md:min-h-screen overflow-hidden"
+      className="relative h-screen overflow-hidden"
     >
       {/* Background with parallax and readability overlay */}
       <div className="absolute inset-0" aria-hidden="true">
@@ -39,7 +39,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4">
-        <div className="min-h-[90vh] md:min-h-screen grid items-center py-16 md:py-24">
+        <div className="h-screen grid items-center">
           <div className="max-w-4xl space-y-8">
             {/* Headline */}
             <h1 className="font-merriweather text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground animate-fade-in">
@@ -66,7 +66,7 @@ const Hero = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="px-8 py-6 text-lg transition-all duration-300 transform hover:-translate-y-0.5"
+                className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-foreground backdrop-blur-sm px-8 py-6 text-lg transition-all duration-300 transform hover:-translate-y-0.5"
                 onClick={() => scrollTo('about')}
                 aria-label="Know our story"
               >
