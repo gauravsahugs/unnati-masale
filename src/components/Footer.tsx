@@ -4,6 +4,7 @@ import { Separator } from '@/components/ui/separator';
 import { Facebook, Instagram, Twitter, Mail } from 'lucide-react';
 import { FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { SiFlipkart } from 'react-icons/si';
+import { Link } from 'react-router-dom';
 import unnatiLogo from '@/assets/unnati-logo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -11,11 +12,11 @@ const Footer = () => {
   const { t } = useLanguage();
 
   const quickLinks = [
-    { label: t('nav.home'), href: '#home' },
-    { label: t('nav.products'), href: '#products' },
-    { label: t('nav.about'), href: '#about' },
-    { label: t('nav.recipes'), href: '#recipes' },
-    { label: t('nav.contact'), href: '#contact' }
+    { label: t('nav.home'), href: '/#home' },
+    { label: t('nav.products'), href: '/#products' },
+    { label: t('nav.about'), href: '/#about' },
+    { label: t('nav.recipes'), href: '/#recipes' },
+    { label: t('nav.contact'), href: '/#contact' }
   ];
 
   const productCategories = [
@@ -119,12 +120,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  <Link 
+                    to={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm animate-fade-in"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -136,12 +137,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {productCategories.map((category, index) => (
                 <li key={index}>
-                  <a 
-                    href="#products"
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  <Link 
+                    to="/#products"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm animate-fade-in"
                   >
                     {category}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -190,15 +191,15 @@ const Footer = () => {
             © 2025 Unnati Masale. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors animate-fade-in">
               Privacy Policy
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors animate-fade-in">
               Terms of Service
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/quality" className="text-muted-foreground hover:text-primary transition-colors animate-fade-in">
               Quality Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>

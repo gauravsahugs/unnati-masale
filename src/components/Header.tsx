@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import unnatiLogo from '@/assets/unnati-logo.png';
 import LanguageSelector from '@/components/LanguageSelector';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -10,11 +11,11 @@ const Header = () => {
   const { t } = useLanguage();
 
   const navItems = [
-    { label: t('nav.home'), href: '#home' },
-    { label: t('nav.products'), href: '#products' },
-    { label: t('nav.about'), href: '#about' },
-    { label: t('nav.recipes'), href: '#recipes' },
-    { label: t('nav.contact'), href: '#contact' },
+    { label: t('nav.home'), href: '/#home' },
+    { label: t('nav.products'), href: '/#products' },
+    { label: t('nav.about'), href: '/#about' },
+    { label: t('nav.recipes'), href: '/#recipes' },
+    { label: t('nav.contact'), href: '/#contact' },
   ];
 
   return (
@@ -27,11 +28,11 @@ const Header = () => {
       <div className="relative z-10 container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/#home" className="flex items-center space-x-3">
             <img 
               src={unnatiLogo} 
               alt="Unnati Masale Logo" 
-              className="h-12 w-12 object-contain"
+              className="h-12 w-12 object-contain animate-pulse"
             />
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-foreground font-merriweather animate-fade-in">
@@ -39,7 +40,7 @@ const Header = () => {
               </h1>
               <p className="text-xs text-foreground/70 font-medium animate-fade-in">{t('header.tagline')}</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
