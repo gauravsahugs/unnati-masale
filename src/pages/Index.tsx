@@ -11,7 +11,7 @@ import FloatingContactButton from '@/components/FloatingContactButton';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background space-y-24 md:space-y-32">
+    <div className="min-h-screen bg-background">
       <Header />
       <Hero />
       <ProductShowcase />

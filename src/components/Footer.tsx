@@ -27,15 +27,20 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-muted border-t border-border">
+    <footer className="relative bg-gradient-to-br from-muted/95 via-card/90 to-muted/95 border-t border-primary/20 overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 animate-pulse"></div>
+      
+      {/* Glass effect overlay */}
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
       {/* Newsletter Section - Blended with Footer */}
-      <div className="bg-card/95 border-t border-border">
-        <div className="container mx-auto px-4 py-12">
+      <div className="relative z-10 bg-gradient-to-r from-background/90 via-card/80 to-background/90 backdrop-blur-md border-t border-primary/20">
+        <div className="relative z-10 container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-card-foreground mb-4">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent mb-4 animate-pulse">
               {t('newsletter.title')}
             </h3>
-            <p className="text-card-foreground/80 mb-6 text-lg">
+            <p className="text-foreground/70 mb-6 text-lg font-medium">
               {t('newsletter.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -45,7 +50,7 @@ const Footer = () => {
                 className="bg-background text-foreground border-input focus:border-ring focus:ring-2 focus:ring-ring"
               />
               <Button 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-elegant"
+                className="bg-gradient-to-r from-primary to-accent text-white hover:from-accent hover:to-primary font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/25"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Mail className="w-4 h-4 mr-2" />
@@ -57,7 +62,7 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="relative z-10 container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
@@ -68,7 +73,7 @@ const Footer = () => {
                 className="h-10 w-10 object-contain"
               />
               <div>
-                <h3 className="text-lg font-bold text-card-foreground font-merriweather">
+                <h3 className="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-merriweather">
                   Unnati Enterprises
                 </h3>
                 <p className="text-xs text-muted-foreground">Premium Quality Spices</p>
@@ -110,7 +115,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-card-foreground mb-4">{t('footer.quickLinks', 'Quick Links')}</h4>
+            <h4 className="font-semibold text-foreground mb-4 relative after:content-[''] after:absolute after:w-12 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-accent after:bottom-0 after:left-0">{t('footer.quickLinks', 'Quick Links')}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -127,7 +132,7 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h4 className="font-semibold text-card-foreground mb-4">{t('footer.ourProducts', 'Our Products')}</h4>
+            <h4 className="font-semibold text-foreground mb-4 relative after:content-[''] after:absolute after:w-12 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-accent after:bottom-0 after:left-0">{t('footer.ourProducts', 'Our Products')}</h4>
             <ul className="space-y-2">
               {productCategories.map((category, index) => (
                 <li key={index}>
@@ -144,7 +149,7 @@ const Footer = () => {
 
           {/* Shopping & Platform Links */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-card-foreground mb-4">{t('footer.shopOnline', 'Shop Online')}</h4>
+            <h4 className="font-semibold text-foreground mb-4 relative after:content-[''] after:absolute after:w-12 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-accent after:bottom-0 after:left-0">{t('footer.shopOnline', 'Shop Online')}</h4>
             <div className="space-y-3">
               <a 
                 href="https://www.flipkart.com/product/p/itme?pid=SCMHDAJ6NFUAKT8Z" 
@@ -179,7 +184,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <Separator />
-      <div className="container mx-auto px-4 py-6">
+      <div className="relative z-10 container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-muted-foreground text-sm">
             © 2025 Unnati Masale. All rights reserved.
