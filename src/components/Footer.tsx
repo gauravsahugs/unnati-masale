@@ -73,13 +73,13 @@ const Footer = () => {
                 className="h-10 w-10 object-contain"
               />
               <div>
-                <h3 className="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-merriweather">
-                  Unnati Enterprises
+                <h3 className="text-lg font-bold text-foreground font-merriweather animate-fade-in">
+                  Unnati Masale
                 </h3>
-                <p className="text-xs text-muted-foreground">Premium Quality Spices</p>
+                <p className="text-xs text-muted-foreground animate-fade-in">Pure & Fresh, Premium Quality Spices & Blends</p>
               </div>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed animate-fade-in">
               Delivering authentic Indian spices from farm to kitchen. 
               Committed to purity, quality, and traditional flavors.
             </p>

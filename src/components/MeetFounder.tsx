@@ -68,14 +68,14 @@ const MeetFounder = () => {
                 <CardContent className="p-8">
                   <Quote className="w-8 h-8 text-accent mb-4" />
                   <blockquote className="text-lg text-foreground leading-relaxed mb-6 font-medium">
-                    "Every spice tells a story. At <span className="text-accent font-semibold">Unnati Masale</span>, we preserve the authentic flavors and traditions 
+                    "Every spice tells a story. At <span className="text-foreground font-bold">Unnati Masale</span>, we preserve the authentic flavors and traditions 
                     that have been passed down through generations. Our commitment is to bring you the purest, 
                     most flavorful spices directly from the heart of India to your kitchen."
                   </blockquote>
                   <div className="border-l-4 border-gradient-to-b from-accent to-primary pl-4">
                     <p className="text-muted-foreground">
                       With over two years of dedication to <span className="text-primary font-medium">quality and authenticity</span>, our founder Gaurav Kumar Sahu has built 
-                      Unnati Masale on the principles of <span className="text-accent font-medium">purity, tradition, and trust</span>. Located in Guna, Madhya Pradesh, 
+                      Unnati Masale on the principles of <span className="text-accent font-medium">purity, tradition, and trust</span>. Located in Guna, Madhya Pradesh,
                       each product reflects a deep understanding of Indian culinary heritage.
                     </p>
                   </div>

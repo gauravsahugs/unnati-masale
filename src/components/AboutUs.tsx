@@ -43,7 +43,7 @@ const AboutUs = () => {
             <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-accent"></div>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 font-merriweather leading-tight">
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Unnati Masale</span>
+            About <span className="text-foreground font-bold animate-pulse">Unnati Masale</span>
           </h2>
           <div className="max-w-3xl mx-auto">
             <p className="text-xl font-light text-accent mb-6 font-merriweather italic">
@@ -71,7 +71,7 @@ const AboutUs = () => {
                   </div>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p className="text-base">
-                      <span className="text-accent font-semibold">Unnati Masale</span> is a leading manufacturer of premium spices and food products. With over 2 years of dedicated experience, 
+                      <span className="text-foreground font-bold">Unnati Masale</span> is a leading manufacturer of premium spices and food products. With over 2 years of dedicated experience, 
                       we specialize in a diverse range of offerings including Red Chilli Powder, Turmeric Powder, Coriander Powder, 
                       Garam Masala, Achar Masala, and a variety of traditional spice blends.
                     </p>
@@ -143,7 +143,7 @@ const AboutUs = () => {
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    At <span className="text-accent font-semibold">Unnati Masale</span>, our goal is to deliver a world-class range of spices, spice blends, and related products 
+                    At <span className="text-foreground font-bold">Unnati Masale</span>, our goal is to deliver a world-class range of spices, spice blends, and related products 
                     to diverse sectors including <span className="text-primary font-medium">Industrial, Retail, and Food Delivery Services</span>.
                   </p>
                   <p>

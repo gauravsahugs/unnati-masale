@@ -34,10 +34,10 @@ const Header = () => {
               className="h-12 w-12 object-contain"
             />
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-merriweather animate-pulse">
+              <h1 className="text-xl font-bold text-foreground font-merriweather animate-fade-in">
                 Unnati Masale
               </h1>
-              <p className="text-xs text-foreground/70 font-medium">{t('header.tagline')}</p>
+              <p className="text-xs text-foreground/70 font-medium animate-fade-in">{t('header.tagline')}</p>
             </div>
           </div>
 

@@ -17,7 +17,7 @@ const translations = {
     'nav.recipes': 'Recipes',
     'nav.contact': 'Contact',
     'header.getQuote': 'Get Quote',
-    'header.tagline': 'Premium Quality Spices',
+    'header.tagline': 'Pure & Fresh, Premium Quality Spices & Blends',
     
     // Hero
     'hero.title': 'Authentic Indian Spices, Crafted for Every Kitchen',
