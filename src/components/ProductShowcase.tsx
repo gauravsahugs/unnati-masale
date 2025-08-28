@@ -18,9 +18,9 @@ const ProductShowcase = () => {
       category: 'Ground Spices',
       description: 'Premium quality red chilli powder from Guntur. Perfect heat and vibrant color for all your dishes.',
       image: redChilliPowder,
-      price: '₹120/kg',
+      price: '₹180/500g',
       rating: 4.8,
-      badge: 'Best Seller'
+      badge: 'Premium'
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ const ProductShowcase = () => {
       category: 'Ground Spices', 
       description: 'Golden turmeric powder from Erode. Rich in curcumin with natural healing properties.',
       image: turmericPowder,
-      price: '₹180/kg',
+      price: '₹180/500g',
       rating: 4.9,
       badge: 'Premium'
     },
@@ -40,9 +40,9 @@ const ProductShowcase = () => {
       category: 'Ground Spices',
       description: 'Fresh ground coriander powder with authentic aroma. Essential for Indian cooking.',
       image: corianderPowder,
-      price: '₹140/kg',
+      price: '₹120/500g',
       rating: 4.7,
-      badge: null
+      badge: 'Premium'
     },
     {
       id: 4,
@@ -51,9 +51,9 @@ const ProductShowcase = () => {
       category: 'Blended Spices',
       description: 'Special blend for pickles. Perfect mix of spices for mango, lemon, and mixed vegetable pickles.',
       image: acharMasala,
-      price: '₹200/500g',
+      price: '₹160/500g',
       rating: 4.8,
-      badge: 'Signature'
+      badge: 'Premium'
     }
   ];
 
@@ -88,37 +88,44 @@ const ProductShowcase = () => {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-accent/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <Card className="relative bg-card/80 backdrop-blur-sm border border-border/30 hover:border-accent/30 transition-all duration-500 hover:transform hover:-translate-y-2 hover:shadow-glow overflow-hidden">
+              <Card className="relative bg-gradient-to-br from-[#f8f5f0] via-[#f3e9d2] to-[#e9d5b4] border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:transform hover:-translate-y-2 hover:scale-[1.025] rounded-3xl overflow-hidden">
                 <CardHeader className="p-0">
-                  <div className="relative overflow-hidden bg-gradient-to-br from-background/30 to-secondary/20 p-6">
+                  <div className="relative flex items-center justify-center h-56 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#fff8f0] via-[#f3e9d2] to-[#e9d5b4]">
+                    <div className="absolute inset-0 pointer-events-none z-0">
+                      <svg width="100%" height="100%" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                        <ellipse cx="200" cy="110" rx="180" ry="80" fill="#f3e9d2" fillOpacity="0.7"/>
+                        <ellipse cx="200" cy="120" rx="120" ry="40" fill="#e9d5b4" fillOpacity="0.5"/>
+                        <ellipse cx="200" cy="100" rx="90" ry="30" fill="#fff8f0" fillOpacity="0.7"/>
+                      </svg>
+                    </div>
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-48 object-contain group-hover:scale-110 transition-transform duration-500"
+                      className="relative z-10 w-40 h-40 object-contain drop-shadow-xl group-hover:scale-110 transition-transform duration-500"
                     />
-                    <Badge 
-                      className="absolute top-4 right-4 bg-gradient-to-r from-accent to-primary text-white shadow-elegant"
-                    >
-                      Premium
-                    </Badge>
-                    <div className="absolute inset-0 bg-gradient-to-t from-card/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    {product.badge && (
+                      <Badge 
+                        className="absolute top-4 right-4 bg-gradient-to-r from-accent to-primary text-white shadow-elegant z-20"
+                      >
+                        {product.badge}
+                      </Badge>
+                    )}
                   </div>
                 </CardHeader>
 
                 <CardContent className="p-6 space-y-4">
                   <div className="mb-2">
-                    <Badge variant="secondary" className="text-xs bg-secondary/30 text-secondary-foreground border border-border/30">
+                    <Badge variant="secondary" className="text-xm bg-secondary/90 text-secondary-foreground border border-border/30">
                       {t(`product.${product.key}.category`, product.category)}
                     </Badge>
                   </div>
-                  <CardTitle className="text-lg font-bold text-foreground group-hover:text-accent transition-colors duration-300">
+                  <CardTitle className="text-lg font-bold text-foreground group-hover:text-accent transition-colors duration-300 font-merriweather">
                     {t(`product.${product.key}.name`, product.name)}
                   </CardTitle>
-                  <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+                  <CardDescription className="text-sm text-foreground leading-relaxed">
                     {t(`product.${product.key}.description`, product.description)}
                   </CardDescription>
-                  <div className="flex items-center justify-between pt-2">
-                    <span className="text-lg font-bold text-primary">{product.price}</span>
+                  <div className="flex items-center justify-end pt-2">
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 fill-accent text-accent" />
                       <span className="text-sm font-medium text-foreground">{product.rating}</span>

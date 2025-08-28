@@ -153,7 +153,7 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4 relative after:content-[''] after:absolute after:w-12 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-accent after:bottom-0 after:left-0">{t('footer.shopOnline', 'Shop Online')}</h4>
             <div className="space-y-3">
               <a 
-                href="https://www.flipkart.com/product/p/itme?pid=SCMHDAJ6NFUAKT8Z" 
+                href="https://www.flipkart.com/search?q=unnati+masale" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
