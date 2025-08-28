@@ -6,54 +6,52 @@
 
 @layer base {
   :root {
-    /* Unnati Masale Brand Colors - Premium Authentic Palette with Improved Accessibility */
-    --background: 40 85% 96%; /* Lighter cream background for better contrast */
-    --foreground: 15 45% 20%; /* Darker text for better readability */
-    
-    /* Primary brand colors - authentic and premium with improved contrast */
-    --primary-cream: 40 85% 96%; /* Slightly lighter cream */
-    --warm-gold: 45 85% 50%; /* Reduced saturation for better accessibility */
-    --rich-orange: 25 80% 55%; /* Improved contrast ratio */
-    --vibrant-red: 5 80% 50%; /* Better contrast for text */
-    
-    /* Semantic color assignments - authentic and premium */
+    /* Light Theme: Creams, whites, and subtle golds for a premium, airy look */
+    --background: 40 85% 98%; /* Very light cream background */
+    --foreground: 15 45% 18%; /* Deep brown text for strong readability */
+
+    --primary-cream: 40 85% 98%; /* Lightest cream */
+    --warm-gold: 43 89% 60%; /* Gold accent */
+    --rich-orange: 28 90% 55%; /* Orange accent */
+    --vibrant-red: 5 80% 60%; /* Red accent */
+
     --primary: var(--vibrant-red);
     --primary-foreground: var(--primary-cream);
-    
+
     --secondary: var(--rich-orange);
     --secondary-foreground: var(--primary-cream);
-    
+
     --accent: var(--warm-gold);
-    --accent-foreground: 15 45% 20%; /* Darker for better contrast */
-    
-    --muted: 40 60% 92%; /* Lighter muted background */
-    --muted-foreground: 15 30% 45%; /* Improved contrast for muted text */
-    
+    --accent-foreground: 15 45% 18%;
+
+    --muted: 40 60% 95%; /* Subtle muted background */
+    --muted-foreground: 15 30% 45%; /* Muted brown text */
+
     --card: var(--primary-cream);
-    --card-foreground: 15 45% 20%;
-    
+    --card-foreground: 15 45% 18%;
+
     --popover: var(--primary-cream);
-    --popover-foreground: 15 45% 20%;
-    
-    --border: 40 40% 80%; /* Slightly darker borders */
-    --input: 40 40% 82%; /* Better input visibility */
+    --popover-foreground: 15 45% 18%;
+
+    --border: 40 40% 85%; /* Light border */
+    --input: 40 40% 90%; /* Very light input background */
     --ring: var(--vibrant-red);
-    
+
     --destructive: 0 84% 60%;
     --destructive-foreground: var(--primary-cream);
-    
+
     --radius: 0.75rem;
-    
-    /* Amasale brand gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--vibrant-red)), hsl(var(--warm-gold)));
-    --gradient-card: linear-gradient(180deg, hsl(var(--primary-cream)), hsl(var(--warm-gold) / 0.2));
+
+    /* Gradients for light mode */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-cream)), hsl(var(--warm-gold)));
+    --gradient-card: linear-gradient(180deg, hsl(var(--primary-cream)), hsl(var(--warm-gold) / 0.12));
     --gradient-accent: linear-gradient(135deg, hsl(var(--warm-gold)), hsl(var(--rich-orange)));
-    --gradient-premium: linear-gradient(135deg, hsl(var(--primary-cream)), hsl(var(--warm-gold) / 0.3), hsl(var(--rich-orange) / 0.2));
-    
-    /* Premium shadows */
-    --shadow-soft: 0 4px 6px -1px hsl(var(--rich-orange) / 0.1), 0 2px 4px -1px hsl(var(--rich-orange) / 0.06);
-    --shadow-elegant: 0 20px 25px -5px hsl(var(--vibrant-red) / 0.1), 0 10px 10px -5px hsl(var(--vibrant-red) / 0.04);
-    --shadow-premium: 0 25px 50px -12px hsl(var(--warm-gold) / 0.25);
+    --gradient-premium: linear-gradient(135deg, hsl(var(--primary-cream)), hsl(var(--warm-gold) / 0.18), hsl(var(--rich-orange) / 0.10));
+
+    /* Shadows for light mode */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--warm-gold) / 0.08), 0 2px 4px -1px hsl(var(--warm-gold) / 0.04);
+    --shadow-elegant: 0 20px 25px -5px hsl(var(--warm-gold) / 0.10), 0 10px 10px -5px hsl(var(--warm-gold) / 0.04);
+    --shadow-premium: 0 25px 50px -12px hsl(var(--warm-gold) / 0.12);
 
     /* Messaging brand colors */
     --whatsapp: 142 70% 49%;
@@ -61,32 +59,32 @@
   }
 
   .dark {
-    --background: 25 30% 8%; /* Dark brown background */
-    --foreground: 40 85% 96%; /* Light cream text for better contrast */
-    
-    --primary: 5 80% 60%; /* Brighter red for dark mode */
-    --primary-foreground: 40 85% 96%;
-    
-    --secondary: 25 80% 60%; /* Brighter orange for dark mode */
-    --secondary-foreground: 40 85% 96%;
-    
-    --accent: 45 85% 65%; /* Brighter gold for dark mode */
-    --accent-foreground: 25 30% 8%;
-    
-    --muted: 25 30% 15%;
-    --muted-foreground: 39 50% 75%; /* Improved contrast for dark mode */
-    
-    --card: 25 30% 12%;
-    --card-foreground: 40 85% 96%;
-    
-    --popover: 25 30% 12%;
-    --popover-foreground: 40 85% 96%;
-    
-    --border: 25 30% 20%;
-    --input: 25 30% 20%;
-    --ring: 45 85% 65%; /* Brighter gold ring */
+    /* Fallback for dark mode, but keep it light for this theme */
+    --background: 40 85% 98%;
+    --foreground: 15 45% 18%;
 
-    /* Messaging brand colors */
+    --primary: var(--vibrant-red);
+    --primary-foreground: var(--primary-cream);
+
+    --secondary: var(--rich-orange);
+    --secondary-foreground: var(--primary-cream);
+
+    --accent: var(--warm-gold);
+    --accent-foreground: 15 45% 18%;
+
+    --muted: 40 60% 95%;
+    --muted-foreground: 15 30% 45%;
+
+    --card: var(--primary-cream);
+    --card-foreground: 15 45% 18%;
+
+    --popover: var(--primary-cream);
+    --popover-foreground: 15 45% 18%;
+
+    --border: 40 40% 85%;
+    --input: 40 40% 90%;
+    --ring: var(--vibrant-red);
+
     --whatsapp: 142 70% 49%;
     --whatsapp-foreground: 0 0% 100%;
   }
@@ -213,7 +211,7 @@
     box-shadow: var(--shadow-premium);
   }
   
-  /* Amasale Brand Color Classes */
+  /* Brand Color Classes for Light Theme */
   .text-primary-cream {
     color: hsl(var(--primary-cream));
   }

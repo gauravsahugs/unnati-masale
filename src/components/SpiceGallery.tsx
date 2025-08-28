@@ -8,9 +8,15 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import turmericSpice from '@/assets/turmeric-spice.png';
 import corianderSpice from '@/assets/coriander-spice.png';
-import redChiliSpice from '@/assets/red-chili-spice.png';
+import redChiliPowderSpice from '@/assets/red-chilli-powder-spices.jpg'; // vibrant red chilli powder spice image
 import garamMasalaSpice from '@/assets/garam-masala-spice.png';
+import acharMasalaSpice from '@/assets/achar-masala-powder.webp'; // achar masala spice image
+import blackSaltSpice from '@/assets/black-salt.avif'; // black salt image
+import pinkSaltSpice from '@/assets/pink-salt.jpg'; // pink salt image
 import { useLanguage } from '@/contexts/LanguageContext';
+
+const CARD_HEIGHT = "h-[320px]"; // decreased height for all cards
+const IMAGE_HEIGHT = "h-32"; // decreased image height
 
 const SpiceGallery = () => {
   const { t } = useLanguage();
@@ -31,9 +37,9 @@ const SpiceGallery = () => {
     },
     {
       id: 3,
-      name: 'Red Chili',
-      image: redChiliSpice,
-      description: 'Vibrant red chilies for perfect heat',
+      name: 'Red Chili Powder',
+      image: redChiliPowderSpice, // use red chilli powder spice image
+      description: 'Vibrant red chilli powder for perfect heat',
       origin: 'Guntur, Andhra Pradesh'
     },
     {
@@ -42,6 +48,27 @@ const SpiceGallery = () => {
       image: garamMasalaSpice,
       description: 'Premium blend of aromatic spices',
       origin: 'Kerala & North-East'
+    },
+    {
+      id: 5,
+      name: 'Achar Masala',
+      image: acharMasalaSpice, // use achar masala spice image
+      description: 'Tangy and spicy achar masala for pickles',
+      origin: 'Pan India'
+    },
+    {
+      id: 6,
+      name: 'Black Salt',
+      image: blackSaltSpice,
+      description: 'Mineral-rich black salt for authentic Indian flavor',
+      origin: 'Himalayan Region'
+    },
+    {
+      id: 7,
+      name: 'Pink Salt',
+      image: pinkSaltSpice,
+      description: 'Pure Himalayan pink salt, naturally harvested',
+      origin: 'Himalayan Region'
     },
   ];
 
@@ -81,25 +108,27 @@ const SpiceGallery = () => {
               <CarouselContent className="gap-6">
                 {spiceImages.map((spice, index) => (
                   <CarouselItem key={spice.id} className="md:basis-1/2 lg:basis-1/3">
-                    <div className="group relative">
+                    <div className="group relative flex h-full">
                       <div className="absolute -inset-1 bg-gradient-to-r from-accent/30 to-primary/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <Card className="relative bg-card/80 backdrop-blur-sm border border-border/30 hover:border-accent/30 transition-all duration-500 hover:transform hover:-translate-y-2 hover:shadow-glow overflow-hidden">
-                        <CardContent className="p-6">
-                          <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-background/30 to-secondary/20 mb-4 p-4">
+                      <Card className={`relative flex flex-col justify-between bg-card/80 backdrop-blur-sm border border-border/30 hover:border-accent/30 transition-all duration-500 hover:transform hover:-translate-y-2 hover:shadow-glow overflow-hidden w-full ${CARD_HEIGHT}`}>
+                        <CardContent className="flex flex-col h-full p-6">
+                          <div className={`relative overflow-hidden rounded-xl bg-gradient-to-br from-background/30 to-secondary/20 mb-4 p-4 flex items-center justify-center ${IMAGE_HEIGHT}`}>
                             <img 
                               src={spice.image} 
                               alt={spice.name}
-                              className="w-full h-40 object-contain group-hover:scale-110 transition-transform duration-500"
+                              className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-card/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                           </div>
-                          <div className="space-y-2">
-                            <h3 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors duration-300">
-                              {spice.name}
-                            </h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                              {spice.description}
-                            </p>
+                          <div className="space-y-2 flex-1 flex flex-col justify-between">
+                            <div>
+                              <h3 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors duration-300">
+                                {spice.name}
+                              </h3>
+                              <p className="text-sm text-muted-foreground leading-relaxed">
+                                {spice.description}
+                              </p>
+                            </div>
                             <div className="flex items-center gap-2 pt-2">
                               <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full"></div>
                               <span className="text-xs font-medium text-accent">
