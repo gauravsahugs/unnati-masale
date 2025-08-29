@@ -4,14 +4,60 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { MapPin, Phone, Mail, Globe, Clock } from 'lucide-react';
+import { useState } from 'react';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    
+    try {
+      // Use Formspree to send email
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+
+      const response = await fetch('https://formspree.io/f/xdoqzqzq', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setError('Failed to send message. Please try again later.');
+      }
+    } catch (error) {
+      setError('Network error. Please check your connection and try again.');
+      console.error('Error submitting form:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6 text-accent" />,
       title: 'Our Location',
       details: [
-        'Plot No. 56, New Industrial Area',
+        'New Industrial Area',
         'Kushmoda, Guna, MP – 473001',
         'India'
       ]
@@ -29,7 +75,7 @@ const Contact = () => {
     {
       icon: <Globe className="w-6 h-6 text-accent" />,
       title: 'Website',
-      details: ['unnatimasale.com']
+      details: ['www.unnatimasale.com']
     }
   ];
 
@@ -132,72 +178,86 @@ const Contact = () => {
                     Fill out the form below and we'll get back to you within 24 hours.
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="firstName" className="text-foreground">First Name</Label>
-                      <Input 
-                        id="firstName" 
-                        placeholder="Enter your first name" 
-                        className="bg-background/50 border-border/30 focus:border-accent/50"
-                      />
+                                <CardContent className="space-y-6">
+                  {submitted ? (
+                    <div className="text-center py-8">
+                      <div className="text-green-600 text-6xl mb-4">✓</div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">Message Sent Successfully!</h3>
+                      <p className="text-muted-foreground mb-4">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                      <Button 
+                        onClick={() => setSubmitted(false)}
+                        variant="outline"
+                        className="border-primary text-primary hover:bg-primary hover:text-white"
+                      >
+                        Send Another Message
+                      </Button>
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="lastName" className="text-foreground">Last Name</Label>
-                      <Input 
-                        id="lastName" 
-                        placeholder="Enter your last name"
-                        className="bg-background/50 border-border/30 focus:border-accent/50"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-foreground">Email</Label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder="Enter your email address"
-                      className="bg-background/50 border-border/30 focus:border-accent/50"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-foreground">Phone Number</Label>
-                    <Input 
-                      id="phone" 
-                      type="tel" 
-                      placeholder="Enter your phone number"
-                      className="bg-background/50 border-border/30 focus:border-accent/50"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="subject" className="text-foreground">Subject</Label>
-                    <Input 
-                      id="subject" 
-                      placeholder="What is this regarding?"
-                      className="bg-background/50 border-border/30 focus:border-accent/50"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="text-foreground">Message</Label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="Tell us more about your inquiry..."
-                      className="min-h-[120px] bg-background/50 border-border/30 focus:border-accent/50"
-                    />
-                  </div>
-
-                  <Button className="w-full bg-gradient-to-r from-primary to-accent text-white hover:from-primary/90 hover:to-accent/90 shadow-elegant font-semibold hover:transform hover:-translate-y-1 transition-all duration-300">
-                    Send Message
-                  </Button>
-
-                  <p className="text-xs text-muted-foreground text-center">
-                    By submitting this form, you agree to our privacy policy and terms of service.
-                  </p>
-                </CardContent>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="name">Name</Label>
+                          <Input 
+                            id="name" 
+                            value={formData.name}
+                            onChange={(e) => setFormData({...formData, name: e.target.value})}
+                            placeholder="Your name" 
+                            required 
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="email">Email</Label>
+                          <Input 
+                            id="email" 
+                            type="email" 
+                            value={formData.email}
+                            onChange={(e) => setFormData({...formData, email: e.target.value})}
+                            placeholder="your@email.com" 
+                            required 
+                          />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="subject">Subject</Label>
+                        <Input 
+                          id="subject" 
+                          value={formData.subject}
+                          onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                          placeholder="How can we help?" 
+                          required 
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="message">Message</Label>
+                        <Textarea 
+                          id="message" 
+                          value={formData.message}
+                          onChange={(e) => setFormData({...formData, message: e.target.value})}
+                          placeholder="Tell us more..." 
+                          rows={4} 
+                          required 
+                        />
+                      </div>
+                      <Button 
+                        type="submit" 
+                        className="w-full bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary"
+                        disabled={loading}
+                      >
+                        {loading ? 'Sending...' : 'Send Message'}
+                      </Button>
+                     </form>
+                   )}
+                   
+                   {/* Error Message */}
+                   {error && (
+                     <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                       <div className="flex items-center space-x-2">
+                         <div className="text-red-600 text-lg">⚠</div>
+                         <p className="text-red-700 text-sm font-medium">{error}</p>
+                       </div>
+                     </div>
+                   )}
+                 </CardContent>
               </Card>
             </div>
           </div>

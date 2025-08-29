@@ -17,7 +17,7 @@ const Terms = () => {
               </Link>
             </Button>
             <h1 className="text-4xl font-bold text-foreground mb-4 font-merriweather">Terms of Service</h1>
-            <p className="text-muted-foreground">Last updated: January 2025</p>
+            <p className="text-muted-foreground">Last updated: August 2025</p>
           </div>
 
           {/* Content */}

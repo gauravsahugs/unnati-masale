@@ -20,7 +20,8 @@ const Recipes = () => {
       image: mangoPickleImage,
       category: 'Traditional Recipes',
       readTime: '15 min read',
-      difficulty: 'Easy'
+      difficulty: 'Easy',
+      route: '/recipe/mango-pickle'
     },
     {
       id: 2,
@@ -29,7 +30,8 @@ const Recipes = () => {
       image: turmericMilkImage,
       category: 'Health & Wellness',
       readTime: '5 min read',
-      difficulty: 'Beginner'
+      difficulty: 'Beginner',
+      route: '/recipe/turmeric-milk'
     },
     {
       id: 3,
@@ -38,31 +40,12 @@ const Recipes = () => {
       image: corianderChutneyImage,
       category: 'Recipes',
       readTime: '10 min read',
-      difficulty: 'Easy'
+      difficulty: 'Easy',
+      route: '/recipe/coriander-chutney'
     }
   ];
 
-  const quickRecipes = [
-    {
-      name: 'Spicy Aloo Bhaji',
-      ingredients: 'Potatoes, Achar Masala, Oil',
-      time: '15 mins',
-      serves: '4 people'
-    },
-    {
-      name: 'Turmeric Milk (Haldi Doodh)',
-      ingredients: 'Milk, Turmeric Powder, Honey',
-      time: '5 mins',
-      serves: '2 people'
-    },
-    {
-      name: 'Coriander Chutney',
-      ingredients: 'Fresh Coriander, Coriander Powder',
-      time: '10 mins',
-      serves: '6 people'
-    }
-  ];
-
+  
   return (
     <section id="recipes" className="relative min-h-screen flex items-center py-20 bg-gradient-to-br from-background via-accent/5 to-secondary/10">
       <div className="container mx-auto px-4">
@@ -92,7 +75,7 @@ const Recipes = () => {
               key={post.id}
               className="group relative cursor-pointer"
               style={{ animationDelay: `${index * 150}ms` }}
-              onClick={() => navigate('/coming-soon')}
+              onClick={() => navigate(post.route)}
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-accent/30 to-primary/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <Card className="relative bg-card/80 backdrop-blur-sm border border-border/30 hover:border-accent/30 transition-all duration-500 hover:transform hover:-translate-y-2 hover:shadow-glow overflow-hidden">
@@ -149,39 +132,7 @@ const Recipes = () => {
         <div className="animate-fade-in">
           <div className="relative">
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full blur-xl"></div>
-            <div className="relative bg-card/60 backdrop-blur-sm rounded-2xl p-8 border border-border/30 shadow-elegant">
-              <div className="flex items-center justify-center gap-3 mb-8">
-                <BookOpen className="w-6 h-6 text-accent" />
-                <h3 className="text-2xl font-bold text-foreground font-merriweather">
-                  Quick Recipe <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Ideas</span>
-                </h3>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {quickRecipes.map((recipe, index) => (
-                  <div 
-                    key={index}
-                    className="group relative cursor-pointer"
-                    onClick={() => navigate('/coming-soon')}
-                  >
-                    <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="relative bg-background/50 rounded-xl p-6 border border-border/30 hover:border-accent/30 transition-all duration-300 hover:transform hover:-translate-y-1">
-                      <h4 className="font-bold text-foreground mb-2 group-hover:text-accent transition-colors duration-300">{recipe.name}</h4>
-                      <p className="text-sm text-muted-foreground mb-4">{recipe.ingredients}</p>
-                      <div className="flex items-center justify-between text-xs">
-                        <div className="flex items-center space-x-1 text-accent">
-                          <Clock className="w-3 h-3" />
-                          <span>{recipe.time}</span>
-                        </div>
-                        <div className="flex items-center space-x-1 text-primary">
-                          <Users className="w-3 h-3" />
-                          <span>{recipe.serves}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+           
           </div>
         </div>
 
@@ -190,7 +141,7 @@ const Recipes = () => {
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-accent to-primary text-white hover:from-accent/90 hover:to-primary/90 shadow-elegant font-semibold px-8 py-4 hover:transform hover:-translate-y-1 transition-all duration-300"
-            onClick={() => navigate('/coming-soon')}
+            onClick={() => navigate('/all-recipes')}
           >
             {t('recipes.exploreMore', 'Explore More Recipes')}
             <ArrowRight className="w-5 h-5 ml-2" />

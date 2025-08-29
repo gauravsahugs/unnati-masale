@@ -7,9 +7,16 @@ import { SiFlipkart } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 import unnatiLogo from '@/assets/unnati-logo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useState } from 'react';
 
 const Footer = () => {
   const { t } = useLanguage();
+  
+  // Newsletter state
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const quickLinks = [
     { label: t('nav.home'), href: '/#home' },
@@ -24,8 +31,45 @@ const Footer = () => {
     'Turmeric Powder',
     'Coriander Powder',
     'Garam Masala',
-    'Achar Masala'
+    'Achar Masala',
+    'Pink Salt',
+    'Black Salt'
   ];
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    if (!email || !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+    setLoading(true);
+    try {
+      // Use Formspree (or similar) for sending email to unnatimasaleguna@gmail.com
+      const formData = new FormData();
+      formData.append('email', email);
+      formData.append('message', `This email (${email}) has subscribed to your newsletter.`);
+
+      // Replace with your Formspree endpoint or similar service
+      const response = await fetch('https://formspree.io/f/xdoqzqzq', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubscribed(true);
+        setEmail('');
+      } else {
+        setError('There was a problem subscribing. Please try again later.');
+      }
+    } catch (err) {
+      setError('There was a problem subscribing. Please try again later.');
+    }
+    setLoading(false);
+  };
 
   return (
     <footer className="relative bg-gradient-to-br from-muted/95 via-card/90 to-muted/95 border-t border-primary/20 overflow-hidden">
@@ -44,20 +88,38 @@ const Footer = () => {
             <p className="text-foreground/70 mb-6 text-lg font-medium">
               {t('newsletter.description')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input 
-                type="email" 
-                placeholder={t('newsletter.placeholder')}
-                className="bg-background text-foreground border-input focus:border-ring focus:ring-2 focus:ring-ring"
-              />
-              <Button 
-                className="bg-gradient-to-r from-primary to-accent text-white hover:from-accent hover:to-primary font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/25"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            {subscribed ? (
+              <div className="text-green-600 font-semibold text-lg py-6">
+                Thanks for subscribing to our newsletter!
+              </div>
+            ) : (
+              <form
+                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+                onSubmit={handleSubscribe}
               >
-                <Mail className="w-4 h-4 mr-2" />
-                {t('newsletter.contact', 'Contact Us')}
-              </Button>
-            </div>
+                <Input
+                  type="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  placeholder={t('newsletter.placeholder')}
+                  className="bg-background text-foreground border-input focus:border-ring focus:ring-2 focus:ring-ring"
+                  required
+                  disabled={loading}
+                />
+                <Button
+                  type="submit"
+                  className="bg-gradient-to-r from-primary to-accent text-white hover:from-accent hover:to-primary font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/25"
+                  disabled={loading}
+                >
+                  <Mail className="w-4 h-4 mr-2" />
+                  {loading ? 'Subscribing...' : t('newsletter.contact', 'Subscribe')}
+                </Button>
+              </form>
+            )}
+            {error && (
+              <div className="text-red-600 mt-2 text-sm">{error}</div>
+            )}
+            {/* End of newsletter section */}
           </div>
         </div>
       </div>
@@ -77,7 +139,7 @@ const Footer = () => {
                 <h3 className="text-lg font-bold text-foreground font-merriweather animate-fade-in">
                   Unnati Masale
                 </h3>
-                <p className="text-xs text-muted-foreground animate-fade-in">Pure & Fresh, Premium Quality Spices & Blends</p>
+                <p className="text-xs text-muted-foreground animate-fade-in">India's Pure & Fresh, Premium Quality Spices & Blends</p>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed animate-fade-in">
@@ -86,7 +148,7 @@ const Footer = () => {
             </p>
             <div className="space-y-3">
               <p className="text-xs text-muted-foreground">
-                <strong>Address:</strong> Plot No. 56, New Industrial Area, Kushmoda, Guna, Madhya Pradesh - 473001
+                <strong>Address:</strong> New Industrial Area, Kushmoda, Guna, Madhya Pradesh - 473001
               </p>
               <p className="text-xs text-muted-foreground">
                 <strong>Contact:</strong> +91-8224-929592
@@ -95,21 +157,24 @@ const Footer = () => {
                 <strong>Email:</strong> unnatimasaleguna@gmail.com
               </p>
               <p className="text-xs text-muted-foreground">
-                <strong>Website:</strong> unnatimasale.com
+                <strong>Website:</strong> www.unnatimasale.com
               </p>
             </div>
-            <div className="flex space-x-4">
+            {/* Original colorful logo of Unnati Masale */}
+            <div className="flex items-center space-x-4">
+             
+              {/* Social Media Icons */}
               <a href="https://www.instagram.com/unnati_masale?igsh=ZGtlYjI4N2NrbWdo&utm_source=qr" target="_blank" rel="noopener noreferrer">
-                <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                <Instagram className="h-5 w-5 text-[#E4405F] hover:text-primary cursor-pointer transition-colors" />
               </a>
               <a href="https://www.linkedin.com/company/unnati-masale" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                <FaLinkedin className="h-5 w-5 text-[#0077B5] hover:text-primary cursor-pointer transition-colors" />
               </a>
               <a href="https://www.facebook.com/share/14GmBTPK9P4/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
-                <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                <Facebook className="h-5 w-5 text-[#1877F3] hover:text-primary cursor-pointer transition-colors" />
               </a>
               <a href="https://x.com/unnatimasale?s=21" target="_blank" rel="noopener noreferrer">
-                <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                <Twitter className="h-5 w-5 text-[#1DA1F2] hover:text-primary cursor-pointer transition-colors" />
               </a>
             </div>
           </div>
@@ -120,12 +185,22 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <Link 
-                    to={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm animate-fade-in"
-                  >
-                    {link.label}
-                  </Link>
+                  {/* Use <a> for hash links to ensure navigation works */}
+                  {link.href.startsWith('/#') ? (
+                    <a
+                      href={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm animate-fade-in"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm animate-fade-in"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -185,7 +260,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <Separator />
-      <div className="relative z-10 container mx-auto px-4 py-6">
+      <div className="relative z-10 container mx-auto px-4 py-2">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-muted-foreground text-sm">
             © 2025 Unnati Masale. All rights reserved.
@@ -200,6 +275,7 @@ const Footer = () => {
             <Link to="/quality" className="text-muted-foreground hover:text-primary transition-colors animate-fade-in">
               Quality Policy
             </Link>
+           
           </div>
         </div>
       </div>

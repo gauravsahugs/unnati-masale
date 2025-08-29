@@ -57,7 +57,7 @@ const ComingSoon = () => {
           {/* Description */}
           <div className="bg-secondary/30 rounded-2xl p-6 mb-8">
             <p className="text-muted-foreground">
-              Stay tuned for exciting updates and new features that will enhance your Amasale experience. 
+              Stay tuned for exciting updates and new features that will enhance your Unnati masale experience. 
               Subscribe to our newsletter to be the first to know when we launch!
             </p>
           </div>
