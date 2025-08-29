@@ -43,7 +43,7 @@ const AboutUs = () => {
             <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-accent"></div>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 font-merriweather leading-tight">
-            About <span className="text-foreground font-bold animate-pulse">Unnati Masale</span>
+            About Unnati Masale
           </h2>
           <div className="max-w-3xl mx-auto">
             <p className="text-xl font-light text-accent mb-6 font-merriweather italic">

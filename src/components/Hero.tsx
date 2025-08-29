@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -7,12 +7,35 @@ import heroImage from '@/assets/hero-banner.jpg';
 const Hero = () => {
   const { t } = useLanguage();
   const [offset, setOffset] = useState(0);
+  const imgRef = useRef<HTMLImageElement>(null);
 
-  // Simple parallax effect for background image
+  // Parallax effect for background image
   useEffect(() => {
     const onScroll = () => setOffset(window.scrollY * 0.15);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Smooth scroll for anchor links (fix navigation)
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A') {
+        const href = (target as HTMLAnchorElement).getAttribute('href');
+        if (href && href.startsWith('/#')) {
+          const id = href.replace('/#', '');
+          const el = document.getElementById(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth' });
+            // Optionally update the URL hash
+            window.history.replaceState(null, '', href);
+          }
+        }
+      }
+    };
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
 
   const scrollTo = (id: string) =>
@@ -23,21 +46,46 @@ const Hero = () => {
       id="home"
       aria-label="Unnati Masale premium hero section"
       className="relative h-screen overflow-hidden mt-0"
+      style={{
+        background: 'transparent',
+      }}
     >
       {/* Background with parallax and readability overlay */}
       <div className="absolute inset-0" aria-hidden="true">
         <div
-          className="absolute inset-0 bg-cover bg-center md:bg-fixed will-change-transform"
+          className="absolute inset-0 w-full h-full flex items-center justify-center will-change-transform"
           style={{
-            backgroundImage: `url(${heroImage})`,
             transform: `translateY(${offset * -1}px)`,
-            filter: 'none',
+            zIndex: 0,
+            overflow: 'hidden',
+            background: 'transparent',
           }}
-        />
+        >
+          <img
+            ref={imgRef}
+            src={heroImage}
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center select-none pointer-events-none block"
+            style={{
+              objectFit: 'cover',
+              width: '100%',
+              height: '100%',
+              minWidth: '100%',
+              minHeight: '100%',
+              maxWidth: 'none',
+              maxHeight: 'none',
+              display: 'block',
+              background: 'transparent',
+              verticalAlign: 'top',
+            }}
+            draggable={false}
+          />
+        </div>
         {/* Left-side subtle gradient for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-muted/70 via-muted/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-muted/70 via-muted/40 to-transparent pointer-events-none" />
         {/* Stronger dark overlay for text contrast */}
-        <div className="absolute inset-0 bg-black/40 md:bg-black/30" />
+        <div className="absolute inset-0 bg-black/40 md:bg-black/30 pointer-events-none" />
       </div>
 
       {/* Content */}

@@ -15,10 +15,10 @@ const FloatingContactButton = () => {
   return (
     <>
       {/* Floating Contact Button */}
-      <div className="fixed bottom-8 right-8 z-50">
+      <div className="fixed bottom-7 right-5 z-50">
         <Button
           onClick={() => setIsModalOpen(true)}
-          className="h-14 w-14 rounded-full bg-gradient-to-r from-vibrant-red to-rich-orange text-white shadow-elegant hover:from-vibrant-red/90 hover:to-rich-orange/90 transition-all duration-300 animate-pulse-glow"
+          className="h-12 w-14 rounded-full bg-gradient-to-r from-vibrant-red to-rich-orange text-white shadow-elegant hover:from-vibrant-red/90 hover:to-rich-orange/90 transition-all duration-300 animate-pulse-glow"
           size="icon"
         >
           <MessageCircle className="h-6 w-6" />

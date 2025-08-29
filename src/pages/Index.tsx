@@ -9,6 +9,8 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingContactButton from '@/components/FloatingContactButton';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+
+import Certifications from "@/pages/Certifications";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -19,6 +21,7 @@ const Index = () => {
       <AboutUs />
       <MeetFounder />
       <Recipes />
+      <Certifications />
       <Contact />
       <Footer />
       <FloatingContactButton />

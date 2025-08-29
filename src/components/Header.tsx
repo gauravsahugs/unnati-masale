@@ -18,27 +18,35 @@ const Header = () => {
     { label: t('nav.contact'), href: '/#contact' },
   ];
 
+  // The header should appear just below the "Shop us on Flipkart" bar.
+  // To achieve this, we set top-0 only on screens where the Flipkart bar is not present,
+  // and on screens where the bar is present, we offset the header by the bar's height.
+  // But since the instruction is to have the header come just below the Flipkart bar,
+  // we assume the Flipkart bar is above and sticky, so we set top-[height_of_bar].
+  // For now, let's use top-[40px] as a placeholder for the bar's height.
+  // If the bar is 40px tall, set top-[40px]. Adjust as needed.
+
   return (
-    <header className="relative bg-gradient-to-r from-background/95 via-card/90 to-background/95 backdrop-blur-md border-b border-primary/20 sticky top-0 z-50 overflow-hidden">
+    <header className="relative bg-gradient-to-r from-background/95 via-card/90 to-background/95 backdrop-blur-md border-b border-primary/20 sticky top-[40px] z-50 overflow-hidden">
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 animate-pulse"></div>
       
       {/* Glass effect background */}
       <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
-      <div className="relative z-10 container mx-auto px-4 py-4">
+      <div className="relative z-10 container mx-auto px-8 py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/#home" className="flex items-center space-x-3">
             <img 
               src={unnatiLogo} 
               alt="Unnati Masale Logo" 
-              className="h-12 w-12 object-contain animate-pulse"
+              className="h-12 w-12 object-contain "
             />
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-foreground font-merriweather animate-fade-in">
+              <h1 className="text-xl font-bold text-foreground font-merriweather">
                 Unnati Masale
               </h1>
-              <p className="text-xs text-foreground/70 font-medium animate-fade-in">{t('header.tagline')}</p>
+              <p className="text-xs text-foreground font-medium">Swaad Bemisaal, Shudhata ke Sath</p>
             </div>
           </Link>
 
@@ -48,7 +56,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-all duration-300 font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gradient-to-r after:from-primary after:to-accent after:transition-all after:duration-300 hover:after:w-full"
+                className="text-foreground/90 hover:text-primary transition-all duration-300 font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gradient-to-r after:from-primary after:to-accent after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.label}
               </a>
@@ -56,15 +64,15 @@ const Header = () => {
           </nav>
 
           {/* Language Selector & Contact Button */}
-          <div className="hidden md:flex items-center space-x-4">
-            <LanguageSelector />
+          {/* <div className="hidden md:flex items-center space-x-4">
+                <LanguageSelector />
             <Button 
               variant="default" 
               className="bg-gradient-to-r from-primary to-accent text-white hover:from-accent hover:to-primary transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/25"
             >
               {t('header.getQuote')}
             </Button>
-          </div>
+          </div>*/}
 
           {/* Mobile Menu Toggle */}
           <Button
@@ -91,15 +99,15 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <div className="mb-4">
-                <LanguageSelector />
+              {/*<div className="mb-4">
+              <LanguageSelector />
               </div>
               <Button 
                 variant="default" 
                 className="mt-2 w-full bg-gradient-to-r from-primary to-accent text-white hover:from-accent hover:to-primary transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 {t('header.getQuote')}
-              </Button>
+              </Button>*/}
             </div>
           </nav>
         )}
