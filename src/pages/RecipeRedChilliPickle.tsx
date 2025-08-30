@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Clock, Users, Star, ArrowLeft, Utensils, Heart, Leaf, Zap } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import redChilliImage from '@/assets/red-chilli-powder.png';
+import redChilliPickle from '@/assets/red chilli pickle.jpeg';
 
 const FLIPKART_URL = 'https://www.flipkart.com/search?q=unnati+red+chilli+powder';
 
@@ -161,7 +162,7 @@ const RecipeRedChilliPickle = () => {
             {/* Recipe Image */}
             <Card className="overflow-hidden border-0 shadow-lg">
               <img 
-                src={redChilliImage} 
+                src={redChilliPickle} 
                 alt="Red Chilli Pickle Recipe" 
                 className="w-full h-64 md:h-80 object-cover"
               />

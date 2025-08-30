@@ -3,107 +3,135 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Clock, Users, Star, ArrowLeft, Utensils, Heart, Leaf, Zap } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import garamMasalaImage from '@/assets/garam-masala-spice.png';
-import masalaTea from '@/assets/garam masala tea.jpeg';
+import pinkSaltChocolateTrufflesImage from '@/assets/chocolate truffles.webp'; // Using placeholder image
+import pinkSaltImage from '@/assets/pink-salt.jpg';
 
-const FLIPKART_URL = 'https://www.flipkart.com/search?q=unnati+garam+masala';
+const FLIPKART_URL = 'https://www.flipkart.com/search?q=unnati+masale+pink+salt';
 
-const RecipeGaramMasalaTea = () => {
+const RecipePinkSaltChocolateTruffles = () => {
   const navigate = useNavigate();
 
   const handleBuyNow = () => {
     window.open(FLIPKART_URL, '_blank', 'noopener,noreferrer');
   };
 
-  const handleMoreRecipes = () => {
+  const handleShopUnnatiSpices = () => {
+    window.open(FLIPKART_URL, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleViewMoreRecipes = () => {
     navigate('/all-recipes');
   };
 
   const ingredients = [
-    { name: 'Water', amount: '2 cups', note: 'Fresh filtered water' },
-    { name: 'Unnati Garam Masala', amount: '1/2 tsp', note: 'Our signature blend' },
-    { name: 'Tea Leaves', amount: '1 tsp', note: 'Black tea or green tea' },
-    { name: 'Ginger', amount: '1/2 inch', note: 'Fresh, grated' },
-    { name: 'Honey', amount: '1 tbsp', note: 'Natural sweetener' },
-    { name: 'Milk', amount: '1/4 cup', note: 'Optional, for creaminess' },
-    { name: 'Cardamom Pods', amount: '2', note: 'Crushed for aroma' },
-    { name: 'Cinnamon Stick', amount: '1 small', note: 'For warmth' }
+    { name: 'Dark Chocolate', amount: '200g', note: '70% cocoa, finely chopped' },
+    { name: 'Heavy Cream', amount: '1/2 cup', note: 'For ganache' },
+    { name: 'Unnati Pink Salt', amount: '1/4 tsp', note: 'Our mineral-rich pink salt' },
+    { name: 'Unsalted Butter', amount: '2 tbsp', note: 'Softened' },
+    { name: 'Vanilla Extract', amount: '1 tsp', note: 'For flavor' },
+    { name: 'Cocoa Powder', amount: 'For dusting', note: 'Unsweetened' },
+    { name: 'Sea Salt Flakes', amount: 'For garnish', note: 'Optional topping' },
+    { name: 'Nuts', amount: 'For garnish', note: 'Chopped almonds or pistachios' }
   ];
 
   const instructions = [
     {
       step: 1,
-      title: 'Boil Water',
-      description: 'Bring 2 cups of water to a rolling boil in a saucepan. Add grated ginger and let it simmer for 2 minutes.',
-      time: '5 mins'
+      title: 'Prepare Chocolate',
+      description: 'Finely chop dark chocolate and place in a heatproof bowl. Ensure chocolate is at room temperature.',
+      time: '10 mins'
     },
     {
       step: 2,
-      title: 'Add Spices',
-      description: 'Add Unnati Garam Masala, crushed cardamom pods, and cinnamon stick. Let the spices infuse for 3-4 minutes.',
-      time: '4 mins'
+      title: 'Heat Cream',
+      description: 'Heat heavy cream in a small saucepan until it just starts to simmer. Do not let it boil.',
+      time: '5 mins'
     },
     {
       step: 3,
-      title: 'Add Tea',
-      description: 'Add tea leaves and simmer for 2-3 minutes until the desired strength is achieved.',
-      time: '3 mins'
+      title: 'Make Ganache',
+      description: 'Pour hot cream over chopped chocolate. Let sit for 2 minutes, then stir until smooth and glossy.',
+      time: '5 mins'
     },
     {
       step: 4,
-      title: 'Strain & Sweeten',
-      description: 'Strain the tea into cups. Add honey to taste and stir well until dissolved.',
-      time: '2 mins'
+      title: 'Add Flavorings',
+      description: 'Add Unnati Pink Salt, softened butter, and vanilla extract. Stir until well combined.',
+      time: '3 mins'
     },
     {
       step: 5,
-      title: 'Add Milk (Optional)',
-      description: 'If desired, add warm milk for a creamier texture. Serve hot and enjoy the aromatic blend.',
-      time: '1 min'
+      title: 'Chill Mixture',
+      description: 'Cover and refrigerate ganache for 2-3 hours until firm enough to shape.',
+      time: '3 hours'
+    },
+    {
+      step: 6,
+      title: 'Shape Truffles',
+      description: 'Using a spoon, scoop small portions and roll into balls. Coat with cocoa powder or garnish as desired.',
+      time: '15 mins'
     }
   ];
 
   const benefits = [
     {
       icon: <Heart className="w-5 h-5 text-red-500" />,
-      title: 'Digestive Aid',
-      description: 'Garam masala spices help improve digestion and reduce bloating after meals.'
+      title: 'Mineral Rich',
+      description: 'Pink salt provides essential minerals like magnesium, calcium, and potassium.'
     },
     {
       icon: <Leaf className="w-5 h-5 text-green-500" />,
-      title: 'Warming Properties',
-      description: 'Perfect winter drink that helps keep the body warm and boosts circulation.'
+      title: 'Antioxidant Benefits',
+      description: 'Dark chocolate contains powerful antioxidants that support heart health.'
     },
     {
       icon: <Zap className="w-5 h-5 text-yellow-500" />,
-      title: 'Immunity Boost',
-      description: 'Natural spices in garam masala strengthen the immune system naturally.'
+      title: 'Mood Enhancement',
+      description: 'Chocolate contains compounds that can improve mood and reduce stress.'
     }
   ];
 
   const tips = [
-    'Use fresh, high-quality garam masala for the best aroma and flavor',
-    'Adjust the amount of garam masala based on your spice preference',
-    'Let spices simmer longer for stronger flavor infusion',
-    'Add a pinch of black pepper for extra warmth',
-    'Can be served with or without milk based on preference'
+    'Use high-quality dark chocolate for the best flavor',
+    'Don\'t let cream boil - it should just simmer',
+    'Let ganache chill completely before shaping',
+    'Work quickly when shaping to prevent melting',
+    'Store in refrigerator for up to 1 week'
+  ];
+
+  const servingSuggestions = [
+    {
+      name: 'After Dinner',
+      description: 'Perfect dessert to end a meal',
+      pairing: 'Coffee, Tea, Dessert Wine'
+    },
+    {
+      name: 'Gift Giving',
+      description: 'Beautiful homemade gift option',
+      pairing: 'Gift Box, Ribbon, Decorative Paper'
+    },
+    {
+      name: 'Party Dessert',
+      description: 'Elegant addition to dessert tables',
+      pairing: 'Fresh Berries, Whipped Cream, Ice Cream'
+    }
   ];
 
   const variations = [
     {
-      name: 'Masala Chai',
-      description: 'Add milk and sugar for traditional masala chai',
-      ingredients: 'Milk, Sugar, Extra Spices'
+      name: 'Orange Truffles',
+      description: 'Add orange zest and orange liqueur for citrus flavor',
+      ingredients: 'Orange Zest, Orange Liqueur'
     },
     {
-      name: 'Iced Garam Masala Tea',
-      description: 'Chill and serve over ice for a refreshing summer drink',
-      ingredients: 'Ice Cubes, Mint Leaves'
+      name: 'Coffee Truffles',
+      description: 'Add instant coffee powder for coffee flavor',
+      ingredients: 'Instant Coffee Powder, Coffee Liqueur'
     },
     {
-      name: 'Golden Garam Masala Tea',
-      description: 'Add turmeric for extra health benefits',
-      ingredients: 'Turmeric Powder, Black Pepper'
+      name: 'Mint Truffles',
+      description: 'Add mint extract and crushed mint leaves',
+      ingredients: 'Mint Extract, Fresh Mint Leaves'
     }
   ];
 
@@ -112,10 +140,10 @@ const RecipeGaramMasalaTea = () => {
       <div className="container mx-auto px-4">
         {/* Back Button */}
         <div className="mb-8">
-          <Link to="/all-recipes">
+          <Link to="/#recipes">
             <Button variant="outline" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
-              Back to All Recipes
+              Back to Recipes
             </Button>
           </Link>
         </div>
@@ -125,32 +153,32 @@ const RecipeGaramMasalaTea = () => {
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-accent"></div>
             <span className="text-accent text-sm font-bold tracking-wider uppercase px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-              Beverages
+              Gourmet Dessert
             </span>
             <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-accent"></div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 font-merriweather leading-tight">
-            Aromatic <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Garam Masala Tea</span>
+            Pink Salt <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Chocolate Truffles</span>
           </h1>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Experience the warming comfort of our signature Garam Masala Tea. This aromatic blend combines 
-              premium Unnati Garam Masala with traditional tea brewing methods for a truly unique and healthful beverage.
+              Luxurious chocolate truffles enhanced with our premium Unnati Pink Salt. 
+              These elegant treats combine the richness of dark chocolate with the subtle mineral notes of pink salt.
             </p>
             
             {/* Recipe Stats */}
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <div className="flex items-center gap-2 text-accent">
                 <Clock className="w-4 h-4" />
-                <span>Prep Time: 10 mins</span>
+                <span>Prep Time: 3.5 hours</span>
               </div>
               <div className="flex items-center gap-2 text-primary">
                 <Users className="w-4 h-4" />
-                <span>Serves: 2 people</span>
+                <span>Serves: 12 people</span>
               </div>
               <div className="flex items-center gap-2 text-green-600">
                 <Star className="w-4 h-4" />
-                <span>Difficulty: Beginner</span>
+                <span>Difficulty: Medium</span>
               </div>
             </div>
           </div>
@@ -162,8 +190,8 @@ const RecipeGaramMasalaTea = () => {
             {/* Recipe Image */}
             <Card className="overflow-hidden border-0 shadow-lg">
               <img 
-                src={masalaTea} 
-                alt="Garam Masala Tea Recipe" 
+                src={pinkSaltChocolateTrufflesImage} 
+                alt="Pink Salt Chocolate Truffles Recipe" 
                 className="w-full h-64 md:h-80 object-cover"
               />
             </Card>
@@ -221,6 +249,26 @@ const RecipeGaramMasalaTea = () => {
               </CardContent>
             </Card>
 
+            {/* Serving Suggestions */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground">
+                  Perfect Pairings
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {servingSuggestions.map((suggestion, index) => (
+                    <div key={index} className="p-4 bg-muted/30 rounded-lg">
+                      <h4 className="font-semibold text-foreground mb-2">{suggestion.name}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{suggestion.description}</p>
+                      <p className="text-xs text-accent font-medium">Try with: {suggestion.pairing}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Recipe Variations */}
             <Card className="border-0 shadow-lg">
               <CardHeader>
@@ -244,27 +292,27 @@ const RecipeGaramMasalaTea = () => {
 
           {/* Sidebar */}
           <div className="space-y-6">
-            {/* Unnati Garam Masala Highlight */}
+            {/* Unnati Pink Salt Highlight */}
             <Card className="border-0 shadow-lg bg-gradient-to-br from-accent/5 to-primary/5">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-foreground text-center">
-                  Made with Unnati Garam Masala
+                  Made with Unnati Pink Salt
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <img 
-                  src={garamMasalaImage} 
-                  alt="Unnati Garam Masala" 
+                  src={pinkSaltImage} 
+                  alt="Unnati Pink Salt" 
                   className="w-24 h-24 mx-auto mb-4 object-contain"
                 />
                 <p className="text-sm text-muted-foreground mb-4">
-                  Our signature Garam Masala is a carefully crafted blend of 15+ premium spices, roasted and ground to perfection for authentic Indian flavors.
+                  Our premium pink salt is rich in essential minerals and trace elements, adding a subtle savory note that enhances the chocolate flavor.
                 </p>
                 <Button
                   className="w-full bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90"
                   onClick={handleBuyNow}
                 >
-                  Buy Garam Masala
+                  Buy Pink Salt
                 </Button>
               </CardContent>
             </Card>
@@ -310,22 +358,22 @@ const RecipeGaramMasalaTea = () => {
               </CardContent>
             </Card>
 
-            {/* Best Time to Drink */}
-            <Card className="border-0 shadow-lg bg-gradient-to-br from-orange-500/5 to-red-500/5">
+            {/* Storage Tips */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-green-500/5 to-blue-500/5">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-foreground text-center">
-                  Best Time to Drink
+                  Storage & Freshness
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <div className="space-y-3">
-                  <div className="p-3 bg-orange-500/10 rounded-lg">
-                    <h4 className="font-semibold text-foreground text-sm">Morning</h4>
-                    <p className="text-xs text-muted-foreground">Start your day with warmth and energy</p>
+                  <div className="p-3 bg-green-500/10 rounded-lg">
+                    <h4 className="font-semibold text-foreground text-sm">Refrigerator</h4>
+                    <p className="text-xs text-muted-foreground">Store in airtight container for up to 1 week</p>
                   </div>
-                  <div className="p-3 bg-red-500/10 rounded-lg">
-                    <h4 className="font-semibold text-foreground text-sm">Evening</h4>
-                    <p className="text-xs text-muted-foreground">Perfect after-dinner digestive drink</p>
+                  <div className="p-3 bg-blue-500/10 rounded-lg">
+                    <h4 className="font-semibold text-foreground text-sm">Freezer</h4>
+                    <p className="text-xs text-muted-foreground">Can be frozen for up to 1 month</p>
                   </div>
                 </div>
               </CardContent>
@@ -338,23 +386,23 @@ const RecipeGaramMasalaTea = () => {
           <Card className="max-w-2xl mx-auto border-0 shadow-lg bg-gradient-to-r from-accent/5 to-primary/5">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                Warm Up with Aromatic Spices!
+                Create Luxurious Chocolate Treats!
               </h3>
               <p className="text-muted-foreground mb-6">
-                Get our premium Unnati Garam Masala and create this comforting, aromatic tea that brings warmth and wellness to every sip.
+                Get our premium Unnati Pink Salt and create elegant chocolate truffles that impress everyone.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90"
-                  onClick={handleBuyNow}
+                  onClick={handleShopUnnatiSpices}
                 >
                   Shop Unnati Spices
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  onClick={handleMoreRecipes}
+                  onClick={handleViewMoreRecipes}
                 >
                   View More Recipes
                 </Button>
@@ -367,4 +415,4 @@ const RecipeGaramMasalaTea = () => {
   );
 };
 
-export default RecipeGaramMasalaTea;
+export default RecipePinkSaltChocolateTruffles;

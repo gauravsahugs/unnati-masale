@@ -3,107 +3,136 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Clock, Users, Star, ArrowLeft, Utensils, Heart, Leaf, Zap } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import garamMasalaImage from '@/assets/garam-masala-spice.png';
-import masalaTea from '@/assets/garam masala tea.jpeg';
+import turmericRicePilafImage from '@/assets/Healthy-Turmeric-Rice.jpg'; // Using placeholder image
+import turmericPowderImage from '@/assets/turmeric-powder.png';
 
-const FLIPKART_URL = 'https://www.flipkart.com/search?q=unnati+garam+masala';
+const FLIPKART_URL = 'https://www.flipkart.com/search?q=unnati+masale+turmeric+powder';
 
-const RecipeGaramMasalaTea = () => {
+const RecipeTurmericRicePilaf = () => {
   const navigate = useNavigate();
 
   const handleBuyNow = () => {
     window.open(FLIPKART_URL, '_blank', 'noopener,noreferrer');
   };
 
-  const handleMoreRecipes = () => {
+  const handleShopUnnatiSpices = () => {
+    window.open(FLIPKART_URL, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleViewMoreRecipes = () => {
     navigate('/all-recipes');
   };
 
   const ingredients = [
-    { name: 'Water', amount: '2 cups', note: 'Fresh filtered water' },
-    { name: 'Unnati Garam Masala', amount: '1/2 tsp', note: 'Our signature blend' },
-    { name: 'Tea Leaves', amount: '1 tsp', note: 'Black tea or green tea' },
-    { name: 'Ginger', amount: '1/2 inch', note: 'Fresh, grated' },
-    { name: 'Honey', amount: '1 tbsp', note: 'Natural sweetener' },
-    { name: 'Milk', amount: '1/4 cup', note: 'Optional, for creaminess' },
-    { name: 'Cardamom Pods', amount: '2', note: 'Crushed for aroma' },
-    { name: 'Cinnamon Stick', amount: '1 small', note: 'For warmth' }
+    { name: 'Basmati Rice', amount: '1 cup', note: 'Washed and soaked for 30 minutes' },
+    { name: 'Unnati Turmeric Powder', amount: '1 tsp', note: 'Our ground turmeric spice' },
+    { name: 'Onion', amount: '1 medium', note: 'Finely chopped' },
+    { name: 'Ginger-Garlic Paste', amount: '1 tbsp', note: 'Fresh paste' },
+    { name: 'Whole Spices', amount: 'As needed', note: 'Cardamom, cinnamon, cloves' },
+    { name: 'Ghee or Oil', amount: '2 tbsp', note: 'For cooking' },
+    { name: 'Salt', amount: 'To taste', note: 'Adjust as needed' },
+    { name: 'Water', amount: '2 cups', note: 'For cooking rice' },
+    { name: 'Fresh Coriander', amount: 'For garnish', note: 'Chopped finely' }
   ];
 
   const instructions = [
     {
       step: 1,
-      title: 'Boil Water',
-      description: 'Bring 2 cups of water to a rolling boil in a saucepan. Add grated ginger and let it simmer for 2 minutes.',
-      time: '5 mins'
+      title: 'Prepare Rice',
+      description: 'Wash basmati rice thoroughly and soak in water for 30 minutes. Drain and set aside.',
+      time: '30 mins'
     },
     {
       step: 2,
-      title: 'Add Spices',
-      description: 'Add Unnati Garam Masala, crushed cardamom pods, and cinnamon stick. Let the spices infuse for 3-4 minutes.',
-      time: '4 mins'
-    },
-    {
-      step: 3,
-      title: 'Add Tea',
-      description: 'Add tea leaves and simmer for 2-3 minutes until the desired strength is achieved.',
-      time: '3 mins'
-    },
-    {
-      step: 4,
-      title: 'Strain & Sweeten',
-      description: 'Strain the tea into cups. Add honey to taste and stir well until dissolved.',
+      title: 'Heat Oil',
+      description: 'Heat ghee or oil in a heavy-bottomed pan. Add whole spices and let them crackle.',
       time: '2 mins'
     },
     {
+      step: 3,
+      title: 'Sauté Aromatics',
+      description: 'Add chopped onions and sauté until golden brown. Add ginger-garlic paste and cook for 2 minutes.',
+      time: '5 mins'
+    },
+    {
+      step: 4,
+      title: 'Add Turmeric',
+      description: 'Add Unnati Turmeric Powder and stir well. Add drained rice and mix gently.',
+      time: '3 mins'
+    },
+    {
       step: 5,
-      title: 'Add Milk (Optional)',
-      description: 'If desired, add warm milk for a creamier texture. Serve hot and enjoy the aromatic blend.',
-      time: '1 min'
+      title: 'Cook Rice',
+      description: 'Add water and salt. Bring to boil, then simmer covered until rice is cooked and fluffy.',
+      time: '20 mins'
+    },
+    {
+      step: 6,
+      title: 'Garnish and Serve',
+      description: 'Garnish with fresh coriander leaves and serve hot with your favorite curry.',
+      time: '2 mins'
     }
   ];
 
   const benefits = [
     {
       icon: <Heart className="w-5 h-5 text-red-500" />,
-      title: 'Digestive Aid',
-      description: 'Garam masala spices help improve digestion and reduce bloating after meals.'
+      title: 'Anti-Inflammatory',
+      description: 'Turmeric contains curcumin, a powerful anti-inflammatory compound that supports joint health.'
     },
     {
       icon: <Leaf className="w-5 h-5 text-green-500" />,
-      title: 'Warming Properties',
-      description: 'Perfect winter drink that helps keep the body warm and boosts circulation.'
+      title: 'Digestive Health',
+      description: 'Turmeric aids digestion and helps maintain a healthy gut microbiome.'
     },
     {
       icon: <Zap className="w-5 h-5 text-yellow-500" />,
-      title: 'Immunity Boost',
-      description: 'Natural spices in garam masala strengthen the immune system naturally.'
+      title: 'Immune Support',
+      description: 'Turmeric boosts immunity and has natural antibacterial properties.'
     }
   ];
 
   const tips = [
-    'Use fresh, high-quality garam masala for the best aroma and flavor',
-    'Adjust the amount of garam masala based on your spice preference',
-    'Let spices simmer longer for stronger flavor infusion',
-    'Add a pinch of black pepper for extra warmth',
-    'Can be served with or without milk based on preference'
+    'Use aged basmati rice for better aroma and texture',
+    'Don\'t stir rice too much while cooking to avoid breaking grains',
+    'Let rice rest for 5 minutes after cooking before fluffing',
+    'Adjust turmeric quantity based on your taste preference',
+    'Add saffron strands for extra flavor and color'
+  ];
+
+  const servingSuggestions = [
+    {
+      name: 'With Curries',
+      description: 'Perfect accompaniment for rich Indian curries',
+      pairing: 'Butter Chicken, Paneer Curry, Dal Makhani'
+    },
+    {
+      name: 'With Raita',
+      description: 'Serve with cooling yogurt-based side dishes',
+      pairing: 'Cucumber Raita, Boondi Raita, Mint Raita'
+    },
+    {
+      name: 'With Pickles',
+      description: 'Great with tangy pickles and chutneys',
+      pairing: 'Mango Pickle, Green Chutney, Onion Salad'
+    }
   ];
 
   const variations = [
     {
-      name: 'Masala Chai',
-      description: 'Add milk and sugar for traditional masala chai',
-      ingredients: 'Milk, Sugar, Extra Spices'
+      name: 'Saffron Turmeric Rice',
+      description: 'Add saffron strands for a luxurious golden color and aroma',
+      ingredients: 'Saffron Strands, Warm Milk'
     },
     {
-      name: 'Iced Garam Masala Tea',
-      description: 'Chill and serve over ice for a refreshing summer drink',
-      ingredients: 'Ice Cubes, Mint Leaves'
+      name: 'Vegetable Turmeric Rice',
+      description: 'Add mixed vegetables for a complete meal',
+      ingredients: 'Carrots, Peas, Beans, Corn'
     },
     {
-      name: 'Golden Garam Masala Tea',
-      description: 'Add turmeric for extra health benefits',
-      ingredients: 'Turmeric Powder, Black Pepper'
+      name: 'Nuts Turmeric Rice',
+      description: 'Add nuts and dried fruits for richness',
+      ingredients: 'Cashews, Raisins, Almonds'
     }
   ];
 
@@ -112,10 +141,10 @@ const RecipeGaramMasalaTea = () => {
       <div className="container mx-auto px-4">
         {/* Back Button */}
         <div className="mb-8">
-          <Link to="/all-recipes">
+          <Link to="/#recipes">
             <Button variant="outline" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
-              Back to All Recipes
+              Back to Recipes
             </Button>
           </Link>
         </div>
@@ -125,32 +154,32 @@ const RecipeGaramMasalaTea = () => {
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-accent"></div>
             <span className="text-accent text-sm font-bold tracking-wider uppercase px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-              Beverages
+              Aromatic Rice Dish
             </span>
             <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-accent"></div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 font-merriweather leading-tight">
-            Aromatic <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Garam Masala Tea</span>
+            Turmeric <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Rice Pilaf</span>
           </h1>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Experience the warming comfort of our signature Garam Masala Tea. This aromatic blend combines 
-              premium Unnati Garam Masala with traditional tea brewing methods for a truly unique and healthful beverage.
+              A fragrant and flavorful rice dish made with our premium Unnati Turmeric Powder. 
+              This aromatic pilaf is not only delicious but also packed with health benefits.
             </p>
             
             {/* Recipe Stats */}
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <div className="flex items-center gap-2 text-accent">
                 <Clock className="w-4 h-4" />
-                <span>Prep Time: 10 mins</span>
+                <span>Prep Time: 62 mins</span>
               </div>
               <div className="flex items-center gap-2 text-primary">
                 <Users className="w-4 h-4" />
-                <span>Serves: 2 people</span>
+                <span>Serves: 4 people</span>
               </div>
               <div className="flex items-center gap-2 text-green-600">
                 <Star className="w-4 h-4" />
-                <span>Difficulty: Beginner</span>
+                <span>Difficulty: Easy</span>
               </div>
             </div>
           </div>
@@ -162,8 +191,8 @@ const RecipeGaramMasalaTea = () => {
             {/* Recipe Image */}
             <Card className="overflow-hidden border-0 shadow-lg">
               <img 
-                src={masalaTea} 
-                alt="Garam Masala Tea Recipe" 
+                src={turmericRicePilafImage} 
+                alt="Turmeric Rice Pilaf Recipe" 
                 className="w-full h-64 md:h-80 object-cover"
               />
             </Card>
@@ -221,6 +250,26 @@ const RecipeGaramMasalaTea = () => {
               </CardContent>
             </Card>
 
+            {/* Serving Suggestions */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground">
+                  Perfect Pairings
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {servingSuggestions.map((suggestion, index) => (
+                    <div key={index} className="p-4 bg-muted/30 rounded-lg">
+                      <h4 className="font-semibold text-foreground mb-2">{suggestion.name}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{suggestion.description}</p>
+                      <p className="text-xs text-accent font-medium">Try with: {suggestion.pairing}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Recipe Variations */}
             <Card className="border-0 shadow-lg">
               <CardHeader>
@@ -244,27 +293,27 @@ const RecipeGaramMasalaTea = () => {
 
           {/* Sidebar */}
           <div className="space-y-6">
-            {/* Unnati Garam Masala Highlight */}
+            {/* Unnati Turmeric Powder Highlight */}
             <Card className="border-0 shadow-lg bg-gradient-to-br from-accent/5 to-primary/5">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-foreground text-center">
-                  Made with Unnati Garam Masala
+                  Made with Unnati Turmeric Powder
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <img 
-                  src={garamMasalaImage} 
-                  alt="Unnati Garam Masala" 
+                  src={turmericPowderImage} 
+                  alt="Unnati Turmeric Powder" 
                   className="w-24 h-24 mx-auto mb-4 object-contain"
                 />
                 <p className="text-sm text-muted-foreground mb-4">
-                  Our signature Garam Masala is a carefully crafted blend of 15+ premium spices, roasted and ground to perfection for authentic Indian flavors.
+                  Our premium turmeric powder is made from carefully selected rhizomes, ground to perfection to preserve its natural color, aroma, and health benefits.
                 </p>
                 <Button
                   className="w-full bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90"
                   onClick={handleBuyNow}
                 >
-                  Buy Garam Masala
+                  Buy Turmeric Powder
                 </Button>
               </CardContent>
             </Card>
@@ -310,22 +359,22 @@ const RecipeGaramMasalaTea = () => {
               </CardContent>
             </Card>
 
-            {/* Best Time to Drink */}
-            <Card className="border-0 shadow-lg bg-gradient-to-br from-orange-500/5 to-red-500/5">
+            {/* Storage Tips */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-green-500/5 to-blue-500/5">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-foreground text-center">
-                  Best Time to Drink
+                  Storage & Freshness
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <div className="space-y-3">
-                  <div className="p-3 bg-orange-500/10 rounded-lg">
-                    <h4 className="font-semibold text-foreground text-sm">Morning</h4>
-                    <p className="text-xs text-muted-foreground">Start your day with warmth and energy</p>
+                  <div className="p-3 bg-green-500/10 rounded-lg">
+                    <h4 className="font-semibold text-foreground text-sm">Refrigerator</h4>
+                    <p className="text-xs text-muted-foreground">Store in airtight container for up to 3 days</p>
                   </div>
-                  <div className="p-3 bg-red-500/10 rounded-lg">
-                    <h4 className="font-semibold text-foreground text-sm">Evening</h4>
-                    <p className="text-xs text-muted-foreground">Perfect after-dinner digestive drink</p>
+                  <div className="p-3 bg-blue-500/10 rounded-lg">
+                    <h4 className="font-semibold text-foreground text-sm">Freezer</h4>
+                    <p className="text-xs text-muted-foreground">Can be frozen for up to 1 month</p>
                   </div>
                 </div>
               </CardContent>
@@ -338,23 +387,23 @@ const RecipeGaramMasalaTea = () => {
           <Card className="max-w-2xl mx-auto border-0 shadow-lg bg-gradient-to-r from-accent/5 to-primary/5">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                Warm Up with Aromatic Spices!
+                Add Golden Goodness to Your Rice!
               </h3>
               <p className="text-muted-foreground mb-6">
-                Get our premium Unnati Garam Masala and create this comforting, aromatic tea that brings warmth and wellness to every sip.
+                Get our premium Unnati Turmeric Powder and create aromatic, healthy rice dishes that delight your family.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90"
-                  onClick={handleBuyNow}
+                  onClick={handleShopUnnatiSpices}
                 >
                   Shop Unnati Spices
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  onClick={handleMoreRecipes}
+                  onClick={handleViewMoreRecipes}
                 >
                   View More Recipes
                 </Button>
@@ -367,4 +416,4 @@ const RecipeGaramMasalaTea = () => {
   );
 };
 
-export default RecipeGaramMasalaTea;
+export default RecipeTurmericRicePilaf;
