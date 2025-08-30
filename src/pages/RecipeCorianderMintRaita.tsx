@@ -3,107 +3,131 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Clock, Users, Star, ArrowLeft, Utensils, Heart, Leaf, Zap } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import garamMasalaImage from '@/assets/garam-masala-spice.png';
-import masalaTea from '@/assets/garam masala tea.jpeg';
+import corianderMintRaitaImage from '@/assets/Raita-Recipe.jpg'; // Using placeholder image
+import corianderPowderImage from '@/assets/coriander-powder.png';
 
-const FLIPKART_URL = 'https://www.flipkart.com/search?q=unnati+garam+masala';
+const FLIPKART_URL = 'https://www.flipkart.com/search?q=unnati+coriander+powder';
 
-const RecipeGaramMasalaTea = () => {
+const RecipeCorianderMintRaita = () => {
   const navigate = useNavigate();
 
   const handleBuyNow = () => {
     window.open(FLIPKART_URL, '_blank', 'noopener,noreferrer');
   };
 
-  const handleMoreRecipes = () => {
+  const handleShopUnnatiSpices = () => {
+    window.open(FLIPKART_URL, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleViewMoreRecipes = () => {
     navigate('/all-recipes');
   };
 
   const ingredients = [
-    { name: 'Water', amount: '2 cups', note: 'Fresh filtered water' },
-    { name: 'Unnati Garam Masala', amount: '1/2 tsp', note: 'Our signature blend' },
-    { name: 'Tea Leaves', amount: '1 tsp', note: 'Black tea or green tea' },
-    { name: 'Ginger', amount: '1/2 inch', note: 'Fresh, grated' },
-    { name: 'Honey', amount: '1 tbsp', note: 'Natural sweetener' },
-    { name: 'Milk', amount: '1/4 cup', note: 'Optional, for creaminess' },
-    { name: 'Cardamom Pods', amount: '2', note: 'Crushed for aroma' },
-    { name: 'Cinnamon Stick', amount: '1 small', note: 'For warmth' }
+    { name: 'Fresh Yogurt', amount: '2 cups', note: 'Thick, chilled yogurt' },
+    { name: 'Unnati Coriander Powder', amount: '1 tsp', note: 'Our ground coriander spice' },
+    { name: 'Fresh Mint Leaves', amount: '1/2 cup', note: 'Finely chopped' },
+    { name: 'Fresh Coriander Leaves', amount: '1/4 cup', note: 'Finely chopped' },
+    { name: 'Cucumber', amount: '1 small', note: 'Grated and squeezed' },
+    { name: 'Onion', amount: '1 small', note: 'Finely chopped' },
+    { name: 'Green Chillies', amount: '2', note: 'Finely chopped (optional)' },
+    { name: 'Roasted Cumin Powder', amount: '1/2 tsp', note: 'For aroma' },
+    { name: 'Salt', amount: 'To taste', note: 'Adjust as needed' },
+    { name: 'Black Salt', amount: '1/4 tsp', note: 'For authentic taste' }
   ];
 
   const instructions = [
     {
       step: 1,
-      title: 'Boil Water',
-      description: 'Bring 2 cups of water to a rolling boil in a saucepan. Add grated ginger and let it simmer for 2 minutes.',
+      title: 'Prepare Yogurt',
+      description: 'Whisk the yogurt until smooth and creamy. Ensure it\'s well-chilled for the best taste.',
       time: '5 mins'
     },
     {
       step: 2,
-      title: 'Add Spices',
-      description: 'Add Unnati Garam Masala, crushed cardamom pods, and cinnamon stick. Let the spices infuse for 3-4 minutes.',
-      time: '4 mins'
+      title: 'Prepare Vegetables',
+      description: 'Grate cucumber and squeeze out excess water. Finely chop mint, coriander, onion, and green chillies.',
+      time: '10 mins'
     },
     {
       step: 3,
-      title: 'Add Tea',
-      description: 'Add tea leaves and simmer for 2-3 minutes until the desired strength is achieved.',
+      title: 'Mix Ingredients',
+      description: 'Add all chopped vegetables to the yogurt. Mix gently to combine without making it watery.',
       time: '3 mins'
     },
     {
       step: 4,
-      title: 'Strain & Sweeten',
-      description: 'Strain the tea into cups. Add honey to taste and stir well until dissolved.',
+      title: 'Add Spices',
+      description: 'Add Unnati Coriander Powder, roasted cumin powder, salt, and black salt. Mix well.',
       time: '2 mins'
     },
     {
       step: 5,
-      title: 'Add Milk (Optional)',
-      description: 'If desired, add warm milk for a creamier texture. Serve hot and enjoy the aromatic blend.',
-      time: '1 min'
+      title: 'Chill and Serve',
+      description: 'Refrigerate for 30 minutes to enhance flavors. Garnish with fresh mint leaves before serving.',
+      time: '30 mins'
     }
   ];
 
   const benefits = [
     {
       icon: <Heart className="w-5 h-5 text-red-500" />,
-      title: 'Digestive Aid',
-      description: 'Garam masala spices help improve digestion and reduce bloating after meals.'
+      title: 'Digestive Health',
+      description: 'Yogurt and coriander powder promote healthy digestion and gut health.'
     },
     {
       icon: <Leaf className="w-5 h-5 text-green-500" />,
-      title: 'Warming Properties',
-      description: 'Perfect winter drink that helps keep the body warm and boosts circulation.'
+      title: 'Cooling Effect',
+      description: 'Mint and cucumber provide natural cooling properties, perfect for hot weather.'
     },
     {
       icon: <Zap className="w-5 h-5 text-yellow-500" />,
-      title: 'Immunity Boost',
-      description: 'Natural spices in garam masala strengthen the immune system naturally.'
+      title: 'Probiotic Benefits',
+      description: 'Yogurt contains beneficial bacteria that support immune system and gut health.'
     }
   ];
 
   const tips = [
-    'Use fresh, high-quality garam masala for the best aroma and flavor',
-    'Adjust the amount of garam masala based on your spice preference',
-    'Let spices simmer longer for stronger flavor infusion',
-    'Add a pinch of black pepper for extra warmth',
-    'Can be served with or without milk based on preference'
+    'Use thick, fresh yogurt for the best consistency',
+    'Squeeze cucumber well to prevent watery raita',
+    'Adjust green chillies according to your spice tolerance',
+    'Serve chilled for the most refreshing taste',
+    'Can be prepared a few hours ahead and refrigerated'
+  ];
+
+  const servingSuggestions = [
+    {
+      name: 'With Biryani',
+      description: 'Perfect cooling accompaniment for spicy biryanis',
+      pairing: 'Chicken Biryani, Vegetable Biryani, Pulao'
+    },
+    {
+      name: 'With Parathas',
+      description: 'Great side dish for stuffed parathas',
+      pairing: 'Aloo Paratha, Paneer Paratha, Mixed Paratha'
+    },
+    {
+      name: 'With Rice Dishes',
+      description: 'Excellent with any rice-based main course',
+      pairing: 'Jeera Rice, Lemon Rice, Coconut Rice'
+    }
   ];
 
   const variations = [
     {
-      name: 'Masala Chai',
-      description: 'Add milk and sugar for traditional masala chai',
-      ingredients: 'Milk, Sugar, Extra Spices'
+      name: 'Boondi Raita',
+      description: 'Add crispy boondi for extra texture and crunch',
+      ingredients: 'Boondi, Extra Mint Leaves'
     },
     {
-      name: 'Iced Garam Masala Tea',
-      description: 'Chill and serve over ice for a refreshing summer drink',
-      ingredients: 'Ice Cubes, Mint Leaves'
+      name: 'Fruit Raita',
+      description: 'Add seasonal fruits for a sweet and tangy version',
+      ingredients: 'Pomegranate, Grapes, Apple'
     },
     {
-      name: 'Golden Garam Masala Tea',
-      description: 'Add turmeric for extra health benefits',
-      ingredients: 'Turmeric Powder, Black Pepper'
+      name: 'Spicy Raita',
+      description: 'Add extra spices and green chillies for heat',
+      ingredients: 'Extra Green Chillies, Red Chilli Powder'
     }
   ];
 
@@ -112,10 +136,10 @@ const RecipeGaramMasalaTea = () => {
       <div className="container mx-auto px-4">
         {/* Back Button */}
         <div className="mb-8">
-          <Link to="/all-recipes">
+          <Link to="/#recipes">
             <Button variant="outline" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
-              Back to All Recipes
+              Back to Recipes
             </Button>
           </Link>
         </div>
@@ -125,32 +149,32 @@ const RecipeGaramMasalaTea = () => {
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-accent"></div>
             <span className="text-accent text-sm font-bold tracking-wider uppercase px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-              Beverages
+              Cooling Side Dish
             </span>
             <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-accent"></div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 font-merriweather leading-tight">
-            Aromatic <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Garam Masala Tea</span>
+            Coriander Mint <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Raita</span>
           </h1>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Experience the warming comfort of our signature Garam Masala Tea. This aromatic blend combines 
-              premium Unnati Garam Masala with traditional tea brewing methods for a truly unique and healthful beverage.
+              A refreshing and cooling raita made with fresh mint, coriander, and our premium Unnati Coriander Powder. 
+              Perfect accompaniment for spicy dishes, this raita provides a perfect balance of flavors.
             </p>
             
             {/* Recipe Stats */}
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <div className="flex items-center gap-2 text-accent">
                 <Clock className="w-4 h-4" />
-                <span>Prep Time: 10 mins</span>
+                <span>Prep Time: 50 mins</span>
               </div>
               <div className="flex items-center gap-2 text-primary">
                 <Users className="w-4 h-4" />
-                <span>Serves: 2 people</span>
+                <span>Serves: 6 people</span>
               </div>
               <div className="flex items-center gap-2 text-green-600">
                 <Star className="w-4 h-4" />
-                <span>Difficulty: Beginner</span>
+                <span>Difficulty: Easy</span>
               </div>
             </div>
           </div>
@@ -162,8 +186,8 @@ const RecipeGaramMasalaTea = () => {
             {/* Recipe Image */}
             <Card className="overflow-hidden border-0 shadow-lg">
               <img 
-                src={masalaTea} 
-                alt="Garam Masala Tea Recipe" 
+                src={corianderMintRaitaImage} 
+                alt="Coriander Mint Raita Recipe" 
                 className="w-full h-64 md:h-80 object-cover"
               />
             </Card>
@@ -221,6 +245,26 @@ const RecipeGaramMasalaTea = () => {
               </CardContent>
             </Card>
 
+            {/* Serving Suggestions */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground">
+                  Perfect Pairings
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {servingSuggestions.map((suggestion, index) => (
+                    <div key={index} className="p-4 bg-muted/30 rounded-lg">
+                      <h4 className="font-semibold text-foreground mb-2">{suggestion.name}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{suggestion.description}</p>
+                      <p className="text-xs text-accent font-medium">Try with: {suggestion.pairing}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Recipe Variations */}
             <Card className="border-0 shadow-lg">
               <CardHeader>
@@ -244,27 +288,27 @@ const RecipeGaramMasalaTea = () => {
 
           {/* Sidebar */}
           <div className="space-y-6">
-            {/* Unnati Garam Masala Highlight */}
+            {/* Unnati Coriander Powder Highlight */}
             <Card className="border-0 shadow-lg bg-gradient-to-br from-accent/5 to-primary/5">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-foreground text-center">
-                  Made with Unnati Garam Masala
+                  Made with Unnati Coriander Powder
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <img 
-                  src={garamMasalaImage} 
-                  alt="Unnati Garam Masala" 
+                  src={corianderPowderImage} 
+                  alt="Unnati Coriander Powder" 
                   className="w-24 h-24 mx-auto mb-4 object-contain"
                 />
                 <p className="text-sm text-muted-foreground mb-4">
-                  Our signature Garam Masala is a carefully crafted blend of 15+ premium spices, roasted and ground to perfection for authentic Indian flavors.
+                  Our ground coriander powder is made from premium quality coriander seeds, carefully roasted and ground to preserve authentic flavor and aroma.
                 </p>
                 <Button
                   className="w-full bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90"
                   onClick={handleBuyNow}
                 >
-                  Buy Garam Masala
+                  Buy Coriander Powder
                 </Button>
               </CardContent>
             </Card>
@@ -310,22 +354,22 @@ const RecipeGaramMasalaTea = () => {
               </CardContent>
             </Card>
 
-            {/* Best Time to Drink */}
-            <Card className="border-0 shadow-lg bg-gradient-to-br from-orange-500/5 to-red-500/5">
+            {/* Storage Tips */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-green-500/5 to-blue-500/5">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-foreground text-center">
-                  Best Time to Drink
+                  Storage & Freshness
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <div className="space-y-3">
-                  <div className="p-3 bg-orange-500/10 rounded-lg">
-                    <h4 className="font-semibold text-foreground text-sm">Morning</h4>
-                    <p className="text-xs text-muted-foreground">Start your day with warmth and energy</p>
+                  <div className="p-3 bg-green-500/10 rounded-lg">
+                    <h4 className="font-semibold text-foreground text-sm">Refrigerator</h4>
+                    <p className="text-xs text-muted-foreground">Store in airtight container for up to 2 days</p>
                   </div>
-                  <div className="p-3 bg-red-500/10 rounded-lg">
-                    <h4 className="font-semibold text-foreground text-sm">Evening</h4>
-                    <p className="text-xs text-muted-foreground">Perfect after-dinner digestive drink</p>
+                  <div className="p-3 bg-blue-500/10 rounded-lg">
+                    <h4 className="font-semibold text-foreground text-sm">Fresh Serving</h4>
+                    <p className="text-xs text-muted-foreground">Best consumed within 24 hours</p>
                   </div>
                 </div>
               </CardContent>
@@ -338,23 +382,23 @@ const RecipeGaramMasalaTea = () => {
           <Card className="max-w-2xl mx-auto border-0 shadow-lg bg-gradient-to-r from-accent/5 to-primary/5">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                Warm Up with Aromatic Spices!
+                Add Freshness to Your Meals!
               </h3>
               <p className="text-muted-foreground mb-6">
-                Get our premium Unnati Garam Masala and create this comforting, aromatic tea that brings warmth and wellness to every sip.
+                Get our premium Unnati Coriander Powder and create refreshing, flavorful raitas that complement any meal.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90"
-                  onClick={handleBuyNow}
+                  onClick={handleShopUnnatiSpices}
                 >
                   Shop Unnati Spices
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  onClick={handleMoreRecipes}
+                  onClick={handleViewMoreRecipes}
                 >
                   View More Recipes
                 </Button>
@@ -367,4 +411,4 @@ const RecipeGaramMasalaTea = () => {
   );
 };
 
-export default RecipeGaramMasalaTea;
+export default RecipeCorianderMintRaita;

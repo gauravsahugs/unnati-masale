@@ -1,109 +1,129 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Clock, Users, Star, ArrowLeft, Utensils, Heart, Leaf, Zap } from 'lucide-react';
+import { Clock, Users, Star, ArrowLeft, Utensils, Heart, Leaf, Zap, Droplets } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import garamMasalaImage from '@/assets/garam-masala-spice.png';
-import masalaTea from '@/assets/garam masala tea.jpeg';
+import pinkSaltLemonadeImage from '@/assets/Pink-Salt-lemonade.webp'; // Using placeholder image
+import pinkSaltImage from '@/assets/pink-salt.jpg';
 
-const FLIPKART_URL = 'https://www.flipkart.com/search?q=unnati+garam+masala';
+const FLIPKART_URL = 'https://www.flipkart.com/search?q=unnati+masale+pink+salt';
 
-const RecipeGaramMasalaTea = () => {
+const RecipePinkSaltLemonade = () => {
   const navigate = useNavigate();
 
   const handleBuyNow = () => {
     window.open(FLIPKART_URL, '_blank', 'noopener,noreferrer');
   };
 
-  const handleMoreRecipes = () => {
+  const handleShopUnnatiSpices = () => {
+    window.open(FLIPKART_URL, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleViewMoreRecipes = () => {
     navigate('/all-recipes');
   };
 
   const ingredients = [
-    { name: 'Water', amount: '2 cups', note: 'Fresh filtered water' },
-    { name: 'Unnati Garam Masala', amount: '1/2 tsp', note: 'Our signature blend' },
-    { name: 'Tea Leaves', amount: '1 tsp', note: 'Black tea or green tea' },
-    { name: 'Ginger', amount: '1/2 inch', note: 'Fresh, grated' },
-    { name: 'Honey', amount: '1 tbsp', note: 'Natural sweetener' },
-    { name: 'Milk', amount: '1/4 cup', note: 'Optional, for creaminess' },
-    { name: 'Cardamom Pods', amount: '2', note: 'Crushed for aroma' },
-    { name: 'Cinnamon Stick', amount: '1 small', note: 'For warmth' }
+    { name: 'Fresh Lemons', amount: '4-5 medium', note: 'Room temperature for better juicing' },
+    { name: 'Unnati Pink Salt', amount: '1/4 tsp', note: 'Our mineral-rich pink salt' },
+    { name: 'Water', amount: '4 cups', note: 'Filtered or purified water' },
+    { name: 'Honey or Sugar', amount: '2-3 tbsp', note: 'Adjust to taste preference' },
+    { name: 'Mint Leaves', amount: 'For garnish', note: 'Fresh mint sprigs' },
+    { name: 'Ice Cubes', amount: 'As needed', note: 'For serving chilled' }
   ];
 
   const instructions = [
     {
       step: 1,
-      title: 'Boil Water',
-      description: 'Bring 2 cups of water to a rolling boil in a saucepan. Add grated ginger and let it simmer for 2 minutes.',
-      time: '5 mins'
+      title: 'Prepare Lemons',
+      description: 'Roll lemons on counter to soften them. This makes juicing easier and yields more juice.',
+      time: '2 mins'
     },
     {
       step: 2,
-      title: 'Add Spices',
-      description: 'Add Unnati Garam Masala, crushed cardamom pods, and cinnamon stick. Let the spices infuse for 3-4 minutes.',
-      time: '4 mins'
+      title: 'Extract Juice',
+      description: 'Cut lemons in half and juice them thoroughly. Strain to remove seeds and pulp for smooth lemonade.',
+      time: '5 mins'
     },
     {
       step: 3,
-      title: 'Add Tea',
-      description: 'Add tea leaves and simmer for 2-3 minutes until the desired strength is achieved.',
+      title: 'Mix Ingredients',
+      description: 'In a large pitcher, combine lemon juice, water, honey/sugar, and Unnati Pink Salt. Stir well until dissolved.',
       time: '3 mins'
     },
     {
       step: 4,
-      title: 'Strain & Sweeten',
-      description: 'Strain the tea into cups. Add honey to taste and stir well until dissolved.',
-      time: '2 mins'
+      title: 'Chill and Garnish',
+      description: 'Refrigerate for 30 minutes or add ice cubes. Garnish with fresh mint leaves for added freshness.',
+      time: '30 mins'
     },
     {
       step: 5,
-      title: 'Add Milk (Optional)',
-      description: 'If desired, add warm milk for a creamier texture. Serve hot and enjoy the aromatic blend.',
-      time: '1 min'
+      title: 'Serve Fresh',
+      description: 'Pour into glasses with ice cubes and serve immediately for the best taste and refreshment.',
+      time: '2 mins'
     }
   ];
 
   const benefits = [
     {
       icon: <Heart className="w-5 h-5 text-red-500" />,
-      title: 'Digestive Aid',
-      description: 'Garam masala spices help improve digestion and reduce bloating after meals.'
+      title: 'Electrolyte Balance',
+      description: 'Pink salt provides essential minerals like sodium, potassium, and magnesium for proper hydration.'
     },
     {
       icon: <Leaf className="w-5 h-5 text-green-500" />,
-      title: 'Warming Properties',
-      description: 'Perfect winter drink that helps keep the body warm and boosts circulation.'
+      title: 'Vitamin C Boost',
+      description: 'Fresh lemon juice is rich in vitamin C, supporting immune system and skin health.'
     },
     {
       icon: <Zap className="w-5 h-5 text-yellow-500" />,
-      title: 'Immunity Boost',
-      description: 'Natural spices in garam masala strengthen the immune system naturally.'
+      title: 'Digestive Aid',
+      description: 'Lemon juice stimulates digestive enzymes and pink salt helps maintain stomach acid balance.'
     }
   ];
 
   const tips = [
-    'Use fresh, high-quality garam masala for the best aroma and flavor',
-    'Adjust the amount of garam masala based on your spice preference',
-    'Let spices simmer longer for stronger flavor infusion',
-    'Add a pinch of black pepper for extra warmth',
-    'Can be served with or without milk based on preference'
+    'Use room temperature lemons for easier juicing and better yield',
+    'Adjust sweetness and saltiness according to your taste preference',
+    'For a spicier version, add a pinch of black pepper or ginger',
+    'Store in refrigerator for up to 2 days for best taste',
+    'Use fresh mint leaves for the best garnish and aroma'
+  ];
+
+  const servingSuggestions = [
+    {
+      name: 'Summer Refreshment',
+      description: 'Perfect cooling drink for hot summer days',
+      pairing: 'BBQ, Grilled Meats, Summer Salads'
+    },
+    {
+      name: 'Post-Workout Recovery',
+      description: 'Excellent electrolyte replacement after exercise',
+      pairing: 'Protein Shakes, Energy Bars, Light Snacks'
+    },
+    {
+      name: 'Party Beverage',
+      description: 'Great addition to any party or gathering',
+      pairing: 'Appetizers, Finger Foods, Desserts'
+    }
   ];
 
   const variations = [
     {
-      name: 'Masala Chai',
-      description: 'Add milk and sugar for traditional masala chai',
-      ingredients: 'Milk, Sugar, Extra Spices'
+      name: 'Ginger Lemonade',
+      description: 'Add fresh ginger juice for extra zing and digestive benefits',
+      ingredients: 'Fresh Ginger Juice, Extra Honey'
     },
     {
-      name: 'Iced Garam Masala Tea',
-      description: 'Chill and serve over ice for a refreshing summer drink',
-      ingredients: 'Ice Cubes, Mint Leaves'
+      name: 'Cucumber Lemonade',
+      description: 'Blend cucumber for a cooling and hydrating effect',
+      ingredients: 'Fresh Cucumber, Extra Water'
     },
     {
-      name: 'Golden Garam Masala Tea',
-      description: 'Add turmeric for extra health benefits',
-      ingredients: 'Turmeric Powder, Black Pepper'
+      name: 'Berry Lemonade',
+      description: 'Add strawberries or raspberries for fruity flavor',
+      ingredients: 'Fresh Berries, Berry Syrup'
     }
   ];
 
@@ -112,10 +132,10 @@ const RecipeGaramMasalaTea = () => {
       <div className="container mx-auto px-4">
         {/* Back Button */}
         <div className="mb-8">
-          <Link to="/all-recipes">
+          <Link to="/#recipes">
             <Button variant="outline" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
-              Back to All Recipes
+              Back to Recipes
             </Button>
           </Link>
         </div>
@@ -125,32 +145,32 @@ const RecipeGaramMasalaTea = () => {
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-accent"></div>
             <span className="text-accent text-sm font-bold tracking-wider uppercase px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-              Beverages
+              Refreshing Beverage
             </span>
             <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-accent"></div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 font-merriweather leading-tight">
-            Aromatic <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Garam Masala Tea</span>
+            Pink Salt <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Lemonade</span>
           </h1>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Experience the warming comfort of our signature Garam Masala Tea. This aromatic blend combines 
-              premium Unnati Garam Masala with traditional tea brewing methods for a truly unique and healthful beverage.
+              A refreshing and hydrating lemonade enhanced with mineral-rich pink salt. 
+              Perfect for hot summer days and post-workout recovery, this drink provides essential electrolytes and vitamin C.
             </p>
             
             {/* Recipe Stats */}
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <div className="flex items-center gap-2 text-accent">
                 <Clock className="w-4 h-4" />
-                <span>Prep Time: 10 mins</span>
+                <span>Prep Time: 42 mins</span>
               </div>
               <div className="flex items-center gap-2 text-primary">
                 <Users className="w-4 h-4" />
-                <span>Serves: 2 people</span>
+                <span>Serves: 4 people</span>
               </div>
               <div className="flex items-center gap-2 text-green-600">
                 <Star className="w-4 h-4" />
-                <span>Difficulty: Beginner</span>
+                <span>Difficulty: Easy</span>
               </div>
             </div>
           </div>
@@ -162,8 +182,8 @@ const RecipeGaramMasalaTea = () => {
             {/* Recipe Image */}
             <Card className="overflow-hidden border-0 shadow-lg">
               <img 
-                src={masalaTea} 
-                alt="Garam Masala Tea Recipe" 
+                src={pinkSaltLemonadeImage} 
+                alt="Pink Salt Lemonade Recipe" 
                 className="w-full h-64 md:h-80 object-cover"
               />
             </Card>
@@ -221,6 +241,26 @@ const RecipeGaramMasalaTea = () => {
               </CardContent>
             </Card>
 
+            {/* Serving Suggestions */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground">
+                  Perfect Pairings
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {servingSuggestions.map((suggestion, index) => (
+                    <div key={index} className="p-4 bg-muted/30 rounded-lg">
+                      <h4 className="font-semibold text-foreground mb-2">{suggestion.name}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{suggestion.description}</p>
+                      <p className="text-xs text-accent font-medium">Try with: {suggestion.pairing}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Recipe Variations */}
             <Card className="border-0 shadow-lg">
               <CardHeader>
@@ -244,27 +284,27 @@ const RecipeGaramMasalaTea = () => {
 
           {/* Sidebar */}
           <div className="space-y-6">
-            {/* Unnati Garam Masala Highlight */}
+            {/* Unnati Pink Salt Highlight */}
             <Card className="border-0 shadow-lg bg-gradient-to-br from-accent/5 to-primary/5">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-foreground text-center">
-                  Made with Unnati Garam Masala
+                  Made with Unnati Pink Salt
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <img 
-                  src={garamMasalaImage} 
-                  alt="Unnati Garam Masala" 
+                  src={pinkSaltImage} 
+                  alt="Unnati Pink Salt" 
                   className="w-24 h-24 mx-auto mb-4 object-contain"
                 />
                 <p className="text-sm text-muted-foreground mb-4">
-                  Our signature Garam Masala is a carefully crafted blend of 15+ premium spices, roasted and ground to perfection for authentic Indian flavors.
+                  Our premium pink salt is rich in essential minerals and trace elements, providing authentic taste and health benefits to your beverages.
                 </p>
                 <Button
                   className="w-full bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90"
                   onClick={handleBuyNow}
                 >
-                  Buy Garam Masala
+                  Buy Pink Salt
                 </Button>
               </CardContent>
             </Card>
@@ -310,22 +350,22 @@ const RecipeGaramMasalaTea = () => {
               </CardContent>
             </Card>
 
-            {/* Best Time to Drink */}
-            <Card className="border-0 shadow-lg bg-gradient-to-br from-orange-500/5 to-red-500/5">
+            {/* Storage Tips */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-green-500/5 to-blue-500/5">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-foreground text-center">
-                  Best Time to Drink
+                  Storage & Freshness
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <div className="space-y-3">
-                  <div className="p-3 bg-orange-500/10 rounded-lg">
-                    <h4 className="font-semibold text-foreground text-sm">Morning</h4>
-                    <p className="text-xs text-muted-foreground">Start your day with warmth and energy</p>
+                  <div className="p-3 bg-green-500/10 rounded-lg">
+                    <h4 className="font-semibold text-foreground text-sm">Refrigerator</h4>
+                    <p className="text-xs text-muted-foreground">Store in airtight container for up to 2 days</p>
                   </div>
-                  <div className="p-3 bg-red-500/10 rounded-lg">
-                    <h4 className="font-semibold text-foreground text-sm">Evening</h4>
-                    <p className="text-xs text-muted-foreground">Perfect after-dinner digestive drink</p>
+                  <div className="p-3 bg-blue-500/10 rounded-lg">
+                    <h4 className="font-semibold text-foreground text-sm">Fresh Serving</h4>
+                    <p className="text-xs text-muted-foreground">Best consumed within 24 hours</p>
                   </div>
                 </div>
               </CardContent>
@@ -338,23 +378,23 @@ const RecipeGaramMasalaTea = () => {
           <Card className="max-w-2xl mx-auto border-0 shadow-lg bg-gradient-to-r from-accent/5 to-primary/5">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                Warm Up with Aromatic Spices!
+                Refresh Your Day with Pink Salt!
               </h3>
               <p className="text-muted-foreground mb-6">
-                Get our premium Unnati Garam Masala and create this comforting, aromatic tea that brings warmth and wellness to every sip.
+                Get our premium Unnati Pink Salt and create refreshing, healthy beverages that keep you hydrated and energized.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90"
-                  onClick={handleBuyNow}
+                  onClick={handleShopUnnatiSpices}
                 >
                   Shop Unnati Spices
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  onClick={handleMoreRecipes}
+                  onClick={handleViewMoreRecipes}
                 >
                   View More Recipes
                 </Button>
@@ -367,4 +407,4 @@ const RecipeGaramMasalaTea = () => {
   );
 };
 
-export default RecipeGaramMasalaTea;
+export default RecipePinkSaltLemonade;

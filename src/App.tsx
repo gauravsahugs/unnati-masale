@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import ComingSoon from "./pages/ComingSoon";
 import Privacy from "./pages/Privacy";
@@ -16,6 +17,13 @@ import RecipeCorianderChutney from "./pages/RecipeCorianderChutney";
 import AllRecipes from "./pages/AllRecipes";
 import RecipeRedChilliPickle from "./pages/RecipeRedChilliPickle";
 import RecipeGaramMasalaTea from "./pages/RecipeGaramMasalaTea";
+import RecipePinkSaltLemonade from "./pages/RecipePinkSaltLemonade";
+import RecipeBlackSaltFruitChaat from "./pages/RecipeBlackSaltFruitChaat";
+import RecipeTurmericRicePilaf from "./pages/RecipeTurmericRicePilaf";
+import RecipeCorianderMintRaita from "./pages/RecipeCorianderMintRaita";
+import RecipeGaramMasalaRoastedNuts from "./pages/RecipeGaramMasalaRoastedNuts";
+import RecipeRedChilliPotatoWedges from "./pages/RecipeRedChilliPotatoWedges";
+import RecipePinkSaltChocolateTruffles from "./pages/RecipePinkSaltChocolateTruffles";
 import ErrorBoundary from "./pages/ErrorBoundary";
 import { ExternalLink } from "lucide-react";
 import flipkartLogo from "@/assets/flipkart.png"; // Make sure this exists
@@ -104,39 +112,48 @@ function BlinkitBanner() {
 }
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        {/* Flipkart Banner fixed at the top, always visible */}
-        <FlipkartBanner />
-        {/* Add padding-top to prevent content being hidden behind the fixed banner */}
-        <div>
-          <HashRouter>
-            <Routes>
-              <Route path="/" element={<Index />} errorElement={<ErrorBoundary />} />
-              <Route path="/coming-soon" element={<ComingSoon />} errorElement={<ErrorBoundary />} />
-              <Route path="/privacy" element={<Privacy />} errorElement={<ErrorBoundary />} />
-              <Route path="/terms" element={<Terms />} errorElement={<ErrorBoundary />} />
-              <Route path="/quality" element={<Quality />} errorElement={<ErrorBoundary />} />
-              <Route path="/certifications" element={<Certifications />} errorElement={<ErrorBoundary />} />
-              <Route path="/recipe/mango-pickle" element={<RecipeMangoPickle />} errorElement={<ErrorBoundary />} />
-              <Route path="/recipe/turmeric-milk" element={<RecipeTurmericMilk />} errorElement={<ErrorBoundary />} />
-              <Route path="/recipe/coriander-chutney" element={<RecipeCorianderChutney />} errorElement={<ErrorBoundary />} />
-              <Route path="/all-recipes" element={<AllRecipes />} errorElement={<ErrorBoundary />} />
-              <Route path="/recipe/red-chilli-pickle" element={<RecipeRedChilliPickle />} errorElement={<ErrorBoundary />} />
-              <Route path="/recipe/garam-masala-tea" element={<RecipeGaramMasalaTea />} errorElement={<ErrorBoundary />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<ErrorBoundary />} />
-            </Routes>
-          </HashRouter>
-        </div>
-        {/* Blinkit Banner floating at the bottom left */}
-        <BlinkitBanner />
-      </TooltipProvider>
-    </LanguageProvider>
-  </QueryClientProvider>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          {/* Flipkart Banner fixed at the top, always visible */}
+          <FlipkartBanner />
+          {/* Add padding-top to prevent content being hidden behind the fixed banner */}
+          <div>
+            <HashRouter>
+              <Routes>
+                <Route path="/" element={<Index />} errorElement={<ErrorBoundary />} />
+                <Route path="/coming-soon" element={<ComingSoon />} errorElement={<ErrorBoundary />} />
+                <Route path="/privacy" element={<Privacy />} errorElement={<ErrorBoundary />} />
+                <Route path="/terms" element={<Terms />} errorElement={<ErrorBoundary />} />
+                <Route path="/quality" element={<Quality />} errorElement={<ErrorBoundary />} />
+                <Route path="/certifications" element={<Certifications />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/mango-pickle" element={<RecipeMangoPickle />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/turmeric-milk" element={<RecipeTurmericMilk />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/coriander-chutney" element={<RecipeCorianderChutney />} errorElement={<ErrorBoundary />} />
+                <Route path="/all-recipes" element={<AllRecipes />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/red-chilli-pickle" element={<RecipeRedChilliPickle />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/garam-masala-tea" element={<RecipeGaramMasalaTea />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/pink-salt-lemonade" element={<RecipePinkSaltLemonade />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/black-salt-fruit-chaat" element={<RecipeBlackSaltFruitChaat />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/turmeric-rice-pilaf" element={<RecipeTurmericRicePilaf />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/coriander-mint-raita" element={<RecipeCorianderMintRaita />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/garam-masala-roasted-nuts" element={<RecipeGaramMasalaRoastedNuts />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/red-chilli-potato-wedges" element={<RecipeRedChilliPotatoWedges />} errorElement={<ErrorBoundary />} />
+                <Route path="/recipe/pink-salt-chocolate-truffles" element={<RecipePinkSaltChocolateTruffles />} errorElement={<ErrorBoundary />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<ErrorBoundary />} />
+              </Routes>
+            </HashRouter>
+          </div>
+          {/* Blinkit Banner floating at the bottom left */}
+          <BlinkitBanner />
+        </TooltipProvider>
+      </LanguageProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;

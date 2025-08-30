@@ -42,11 +42,11 @@ const Header = () => {
               alt="Unnati Masale Logo" 
               className="h-12 w-12 object-contain "
             />
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-foreground font-merriweather">
+            <div>
+              <h1 className="text-[16px] font-bold text-foreground font-merriweather">
                 Unnati Masale
               </h1>
-              <p className="text-xs text-foreground font-medium">Swaad Bemisaal, Shudhata ke Sath</p>
+              <p className="text-[10px] text-foreground font-medium">Swaad Bemisaal, Shudhata ke Sath</p>
             </div>
           </Link>
 

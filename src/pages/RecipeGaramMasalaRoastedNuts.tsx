@@ -3,107 +3,130 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Clock, Users, Star, ArrowLeft, Utensils, Heart, Leaf, Zap } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import garamMasalaRoastedNutsImage from '@/assets/Masala-Roasted-Nuts-Recipe-6.webp'; // Using placeholder image
 import garamMasalaImage from '@/assets/garam-masala-spice.png';
-import masalaTea from '@/assets/garam masala tea.jpeg';
 
-const FLIPKART_URL = 'https://www.flipkart.com/search?q=unnati+garam+masala';
+const FLIPKART_URL = 'https://www.flipkart.com/search?q=unnati+masale+garam+masala';
 
-const RecipeGaramMasalaTea = () => {
+const RecipeGaramMasalaRoastedNuts = () => {
   const navigate = useNavigate();
 
   const handleBuyNow = () => {
     window.open(FLIPKART_URL, '_blank', 'noopener,noreferrer');
   };
 
-  const handleMoreRecipes = () => {
+  const handleShopUnnatiSpices = () => {
+    window.open(FLIPKART_URL, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleViewMoreRecipes = () => {
     navigate('/all-recipes');
   };
 
   const ingredients = [
-    { name: 'Water', amount: '2 cups', note: 'Fresh filtered water' },
-    { name: 'Unnati Garam Masala', amount: '1/2 tsp', note: 'Our signature blend' },
-    { name: 'Tea Leaves', amount: '1 tsp', note: 'Black tea or green tea' },
-    { name: 'Ginger', amount: '1/2 inch', note: 'Fresh, grated' },
-    { name: 'Honey', amount: '1 tbsp', note: 'Natural sweetener' },
-    { name: 'Milk', amount: '1/4 cup', note: 'Optional, for creaminess' },
-    { name: 'Cardamom Pods', amount: '2', note: 'Crushed for aroma' },
-    { name: 'Cinnamon Stick', amount: '1 small', note: 'For warmth' }
+    { name: 'Mixed Nuts', amount: '2 cups', note: 'Almonds, cashews, walnuts, pistachios' },
+    { name: 'Unnati Garam Masala', amount: '1 tbsp', note: 'Our aromatic spice blend' },
+    { name: 'Ghee or Oil', amount: '2 tbsp', note: 'For roasting' },
+    { name: 'Salt', amount: '1/2 tsp', note: 'To taste' },
+    { name: 'Black Pepper', amount: '1/4 tsp', note: 'Freshly ground' },
+    { name: 'Turmeric Powder', amount: '1/4 tsp', note: 'For color and health' },
+    { name: 'Red Chilli Powder', amount: '1/4 tsp', note: 'For mild heat' },
+    { name: 'Lemon Juice', amount: '1 tbsp', note: 'Freshly squeezed' },
+    { name: 'Fresh Curry Leaves', amount: '10-12', note: 'For aroma (optional)' }
   ];
 
   const instructions = [
     {
       step: 1,
-      title: 'Boil Water',
-      description: 'Bring 2 cups of water to a rolling boil in a saucepan. Add grated ginger and let it simmer for 2 minutes.',
+      title: 'Prepare Nuts',
+      description: 'Mix all nuts in a bowl. You can use any combination of almonds, cashews, walnuts, and pistachios.',
       time: '5 mins'
     },
     {
       step: 2,
-      title: 'Add Spices',
-      description: 'Add Unnati Garam Masala, crushed cardamom pods, and cinnamon stick. Let the spices infuse for 3-4 minutes.',
-      time: '4 mins'
-    },
-    {
-      step: 3,
-      title: 'Add Tea',
-      description: 'Add tea leaves and simmer for 2-3 minutes until the desired strength is achieved.',
-      time: '3 mins'
-    },
-    {
-      step: 4,
-      title: 'Strain & Sweeten',
-      description: 'Strain the tea into cups. Add honey to taste and stir well until dissolved.',
+      title: 'Heat Oil',
+      description: 'Heat ghee or oil in a large pan over medium heat. Add curry leaves if using and let them crackle.',
       time: '2 mins'
     },
     {
-      step: 5,
-      title: 'Add Milk (Optional)',
-      description: 'If desired, add warm milk for a creamier texture. Serve hot and enjoy the aromatic blend.',
+      step: 3,
+      title: 'Add Spices',
+      description: 'Add Unnati Garam Masala, turmeric powder, red chilli powder, salt, and black pepper. Stir for 30 seconds.',
       time: '1 min'
+    },
+    {
+      step: 4,
+      title: 'Roast Nuts',
+      description: 'Add mixed nuts and roast on medium heat, stirring constantly until golden brown and fragrant.',
+      time: '8 mins'
+    },
+    {
+      step: 5,
+      title: 'Finish and Cool',
+      description: 'Drizzle lemon juice, mix well, and transfer to a plate. Let cool completely before storing.',
+      time: '5 mins'
     }
   ];
 
   const benefits = [
     {
       icon: <Heart className="w-5 h-5 text-red-500" />,
-      title: 'Digestive Aid',
-      description: 'Garam masala spices help improve digestion and reduce bloating after meals.'
+      title: 'Heart Health',
+      description: 'Nuts are rich in healthy fats and antioxidants that support cardiovascular health.'
     },
     {
       icon: <Leaf className="w-5 h-5 text-green-500" />,
-      title: 'Warming Properties',
-      description: 'Perfect winter drink that helps keep the body warm and boosts circulation.'
+      title: 'Digestive Aid',
+      description: 'Garam masala spices aid digestion and help reduce bloating and gas.'
     },
     {
       icon: <Zap className="w-5 h-5 text-yellow-500" />,
-      title: 'Immunity Boost',
-      description: 'Natural spices in garam masala strengthen the immune system naturally.'
+      title: 'Energy Boost',
+      description: 'Nuts provide sustained energy and essential nutrients for daily activities.'
     }
   ];
 
   const tips = [
-    'Use fresh, high-quality garam masala for the best aroma and flavor',
-    'Adjust the amount of garam masala based on your spice preference',
-    'Let spices simmer longer for stronger flavor infusion',
-    'Add a pinch of black pepper for extra warmth',
-    'Can be served with or without milk based on preference'
+    'Use fresh, high-quality nuts for the best taste and texture',
+    'Don\'t overcrowd the pan while roasting to ensure even cooking',
+    'Stir constantly to prevent burning and ensure even roasting',
+    'Let nuts cool completely before storing to maintain crispiness',
+    'Adjust spice levels according to your taste preference'
+  ];
+
+  const servingSuggestions = [
+    {
+      name: 'Party Snack',
+      description: 'Perfect appetizer for gatherings and parties',
+      pairing: 'Mocktails, Fresh Juices, Tea'
+    },
+    {
+      name: 'Movie Night',
+      description: 'Great healthy alternative to popcorn',
+      pairing: 'Hot Chocolate, Coffee, Soft Drinks'
+    },
+    {
+      name: 'Office Snack',
+      description: 'Nutritious mid-day energy boost',
+      pairing: 'Green Tea, Herbal Tea, Water'
+    }
   ];
 
   const variations = [
     {
-      name: 'Masala Chai',
-      description: 'Add milk and sugar for traditional masala chai',
-      ingredients: 'Milk, Sugar, Extra Spices'
+      name: 'Sweet Spicy Nuts',
+      description: 'Add honey or jaggery for a sweet and spicy version',
+      ingredients: 'Honey/Jaggery, Extra Garam Masala'
     },
     {
-      name: 'Iced Garam Masala Tea',
-      description: 'Chill and serve over ice for a refreshing summer drink',
-      ingredients: 'Ice Cubes, Mint Leaves'
+      name: 'Herb Roasted Nuts',
+      description: 'Add fresh herbs like rosemary or thyme',
+      ingredients: 'Fresh Herbs, Garlic Powder'
     },
     {
-      name: 'Golden Garam Masala Tea',
-      description: 'Add turmeric for extra health benefits',
-      ingredients: 'Turmeric Powder, Black Pepper'
+      name: 'Citrus Nuts',
+      description: 'Add orange or lime zest for citrus flavor',
+      ingredients: 'Citrus Zest, Extra Lemon Juice'
     }
   ];
 
@@ -112,10 +135,10 @@ const RecipeGaramMasalaTea = () => {
       <div className="container mx-auto px-4">
         {/* Back Button */}
         <div className="mb-8">
-          <Link to="/all-recipes">
+          <Link to="/#recipes">
             <Button variant="outline" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
-              Back to All Recipes
+              Back to Recipes
             </Button>
           </Link>
         </div>
@@ -125,32 +148,32 @@ const RecipeGaramMasalaTea = () => {
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-accent"></div>
             <span className="text-accent text-sm font-bold tracking-wider uppercase px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-              Beverages
+              Healthy Snack
             </span>
             <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-accent"></div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 font-merriweather leading-tight">
-            Aromatic <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Garam Masala Tea</span>
+            Garam Masala <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Roasted Nuts</span>
           </h1>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Experience the warming comfort of our signature Garam Masala Tea. This aromatic blend combines 
-              premium Unnati Garam Masala with traditional tea brewing methods for a truly unique and healthful beverage.
+              A flavorful and healthy snack made with mixed nuts and our aromatic Unnati Garam Masala. 
+              Perfect for parties, movie nights, or as a nutritious energy boost throughout the day.
             </p>
             
             {/* Recipe Stats */}
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <div className="flex items-center gap-2 text-accent">
                 <Clock className="w-4 h-4" />
-                <span>Prep Time: 10 mins</span>
+                <span>Prep Time: 21 mins</span>
               </div>
               <div className="flex items-center gap-2 text-primary">
                 <Users className="w-4 h-4" />
-                <span>Serves: 2 people</span>
+                <span>Serves: 8 people</span>
               </div>
               <div className="flex items-center gap-2 text-green-600">
                 <Star className="w-4 h-4" />
-                <span>Difficulty: Beginner</span>
+                <span>Difficulty: Easy</span>
               </div>
             </div>
           </div>
@@ -162,8 +185,8 @@ const RecipeGaramMasalaTea = () => {
             {/* Recipe Image */}
             <Card className="overflow-hidden border-0 shadow-lg">
               <img 
-                src={masalaTea} 
-                alt="Garam Masala Tea Recipe" 
+                src={garamMasalaRoastedNutsImage} 
+                alt="Garam Masala Roasted Nuts Recipe" 
                 className="w-full h-64 md:h-80 object-cover"
               />
             </Card>
@@ -221,6 +244,26 @@ const RecipeGaramMasalaTea = () => {
               </CardContent>
             </Card>
 
+            {/* Serving Suggestions */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground">
+                  Perfect Pairings
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {servingSuggestions.map((suggestion, index) => (
+                    <div key={index} className="p-4 bg-muted/30 rounded-lg">
+                      <h4 className="font-semibold text-foreground mb-2">{suggestion.name}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{suggestion.description}</p>
+                      <p className="text-xs text-accent font-medium">Try with: {suggestion.pairing}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Recipe Variations */}
             <Card className="border-0 shadow-lg">
               <CardHeader>
@@ -258,7 +301,7 @@ const RecipeGaramMasalaTea = () => {
                   className="w-24 h-24 mx-auto mb-4 object-contain"
                 />
                 <p className="text-sm text-muted-foreground mb-4">
-                  Our signature Garam Masala is a carefully crafted blend of 15+ premium spices, roasted and ground to perfection for authentic Indian flavors.
+                  Our premium garam masala is a carefully crafted blend of aromatic spices, roasted and ground to perfection for authentic Indian flavor.
                 </p>
                 <Button
                   className="w-full bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90"
@@ -310,22 +353,22 @@ const RecipeGaramMasalaTea = () => {
               </CardContent>
             </Card>
 
-            {/* Best Time to Drink */}
-            <Card className="border-0 shadow-lg bg-gradient-to-br from-orange-500/5 to-red-500/5">
+            {/* Storage Tips */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-green-500/5 to-blue-500/5">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-foreground text-center">
-                  Best Time to Drink
+                  Storage & Freshness
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <div className="space-y-3">
-                  <div className="p-3 bg-orange-500/10 rounded-lg">
-                    <h4 className="font-semibold text-foreground text-sm">Morning</h4>
-                    <p className="text-xs text-muted-foreground">Start your day with warmth and energy</p>
+                  <div className="p-3 bg-green-500/10 rounded-lg">
+                    <h4 className="font-semibold text-foreground text-sm">Airtight Container</h4>
+                    <p className="text-xs text-muted-foreground">Store in airtight container for up to 2 weeks</p>
                   </div>
-                  <div className="p-3 bg-red-500/10 rounded-lg">
-                    <h4 className="font-semibold text-foreground text-sm">Evening</h4>
-                    <p className="text-xs text-muted-foreground">Perfect after-dinner digestive drink</p>
+                  <div className="p-3 bg-blue-500/10 rounded-lg">
+                    <h4 className="font-semibold text-foreground text-sm">Refrigerator</h4>
+                    <p className="text-xs text-muted-foreground">Can be stored for up to 1 month</p>
                   </div>
                 </div>
               </CardContent>
@@ -338,23 +381,23 @@ const RecipeGaramMasalaTea = () => {
           <Card className="max-w-2xl mx-auto border-0 shadow-lg bg-gradient-to-r from-accent/5 to-primary/5">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                Warm Up with Aromatic Spices!
+                Add Aromatic Flavor to Your Snacks!
               </h3>
               <p className="text-muted-foreground mb-6">
-                Get our premium Unnati Garam Masala and create this comforting, aromatic tea that brings warmth and wellness to every sip.
+                Get our premium Unnati Garam Masala and create flavorful, healthy snacks that everyone will love.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90"
-                  onClick={handleBuyNow}
+                  onClick={handleShopUnnatiSpices}
                 >
                   Shop Unnati Spices
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  onClick={handleMoreRecipes}
+                  onClick={handleViewMoreRecipes}
                 >
                   View More Recipes
                 </Button>
@@ -367,4 +410,4 @@ const RecipeGaramMasalaTea = () => {
   );
 };
 
-export default RecipeGaramMasalaTea;
+export default RecipeGaramMasalaRoastedNuts;
